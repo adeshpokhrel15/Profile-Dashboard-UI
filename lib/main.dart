@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:papro/screens/dashBoard.dart';
 import 'package:papro/screens/profile.dart';
+import 'package:papro/screens/settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,9 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: myProfile(),
+      home:
+          //dashBoard()
+          //    settingPage(),
+          myProfile(),
     );
   }
 }

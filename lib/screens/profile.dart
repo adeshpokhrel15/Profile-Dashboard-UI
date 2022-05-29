@@ -1,7 +1,8 @@
-import 'dart:ui';
-
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:papro/screens/dashBoard.dart';
+import 'package:papro/screens/settings.dart';
 
 class myProfile extends StatefulWidget {
   @override
@@ -14,20 +15,6 @@ class _myProfileState extends State<myProfile> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Icon(
-          Icons.textsms_outlined,
-          color: Colors.black,
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
-      ),
       body: Column(
         children: [
           Center(
@@ -39,7 +26,9 @@ class _myProfileState extends State<myProfile> {
                   width: 60,
                   child: MaterialButton(
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => dashBoard());
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
@@ -68,7 +57,9 @@ class _myProfileState extends State<myProfile> {
                   width: 60,
                   child: MaterialButton(
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => settingPage());
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
