@@ -2,8 +2,6 @@
 // import 'package:flutter/material.dart';
 
 // class barChart extends StatefulWidget {
-//   const barChart({Key? key}) : super(key: key);
-
 //   @override
 //   State<barChart> createState() => _barChartState();
 // }
@@ -13,7 +11,7 @@
 
 //   @override
 //   void initState() {
-//     showingTooltip = -1;
+//     showingTooltip = -2;
 //     super.initState();
 //   }
 
@@ -74,6 +72,7 @@
 //     );
 //   }
 // }
+
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:papro/models/bar.dart';
@@ -92,7 +91,7 @@ class barChart extends StatelessWidget {
     ),
     BarChartModel(
       name: "Jar",
-      value: 12,
+      value: 15,
       color: charts.ColorUtil.fromDartColor(Colors.green),
     ),
     BarChartModel(
