@@ -115,11 +115,6 @@ class barChart extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Bar Chart"),
-        centerTitle: true,
-        backgroundColor: Colors.green[700],
-      ),
       body: Container(
         height: 420,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),

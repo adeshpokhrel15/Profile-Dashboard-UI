@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:papro/screens/barChart.dart';
+import 'package:papro/screens/pieChart.dart';
 
 class dashBoard extends StatefulWidget {
   @override
@@ -15,21 +16,51 @@ class _dashBoardState extends State<dashBoard> {
     return LayoutBuilder(builder: (context, constraints) {
       return SafeArea(
         child: Scaffold(
-          body: ListView(children: [
-            Text(
-              'Digital Profile',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            title: Center(
+              child: Text(
+                'Digital Profile',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
               ),
-              textAlign: TextAlign.center,
+            ),
+          ),
+          body: ListView(children: [
+            Card(
+              elevation: 8,
+              child: Container(
+                height: 230,
+                //  height: MediaQuery.of(context).size.height * 0.3,
+                width: double.infinity,
+                child: barChart(),
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Container(
-              height: 230,
+              height: 270,
               //  height: MediaQuery.of(context).size.height * 0.3,
               width: double.infinity,
-              child: barChart(),
+              child: pieChart(),
+            ),
+            SizedBox(height: 13),
+            Center(
+              child: Text(
+                'Waling Nagarpalika Tathyanka',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green),
+              ),
+            ),
+            SizedBox(
+              height: 7,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),

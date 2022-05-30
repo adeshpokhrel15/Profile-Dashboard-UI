@@ -15,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: pieChart(),
-      //barChart(),
-      //dashBoard()
-      //settingPage(),
-      //myProfile(),
+      home:
+          //pieChart(),
+          //barChart(),
+          // dashBoard()
+          //settingPage(),
+          myProfile(),
     );
   }
 }

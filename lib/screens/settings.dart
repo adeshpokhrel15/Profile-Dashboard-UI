@@ -177,8 +177,8 @@ class settingPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22.0)),
             elevation: 5.0,
-            child: Text('Sign Up'),
-            color: Color(0xFF00a2e8),
+            child: Text('Log Out'),
+            color: Colors.lightGreen,
             textColor: Colors.black,
           ),
         ),

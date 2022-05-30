@@ -9,10 +9,12 @@ class pieChart extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-              padding: const EdgeInsets.only(right: 30.0),
+            padding: const EdgeInsets.all(7.0),
+            child: Container(
+              width: 252,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -22,17 +24,19 @@ class pieChart extends StatelessWidget {
                   cartmodel(name: 'Man', valdata: 211008),
                   cartmodel(name: 'Others', valdata: 0),
                 ],
-              )),
+              ),
+            ),
+          ),
           Container(
-              height: 300,
+              height: 230,
               child: PieChart(
                   dataMap: dataMap,
-                  chartRadius: MediaQuery.of(context).size.width / 7,
+                  chartRadius: MediaQuery.of(context).size.width,
                   legendOptions: LegendOptions(
                     legendPosition: LegendPosition.bottom,
                   ),
                   chartValuesOptions: ChartValuesOptions(
-                    showChartValues: true,
+                    showChartValuesInPercentage: true,
                   ))),
         ],
       ),
@@ -43,8 +47,9 @@ class pieChart extends StatelessWidget {
     return Card(
         elevation: 10,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 name,
@@ -53,10 +58,10 @@ class pieChart extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.green),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 25.0),
-                child: Text('$valdata',
-                    style: TextStyle(color: Colors.grey, fontSize: 20)),
+              Spacer(),
+              Text(
+                '$valdata',
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               SizedBox(
                 height: 5,
