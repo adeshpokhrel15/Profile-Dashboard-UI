@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:papro/screens/barChart.dart';
 
 class dashBoard extends StatefulWidget {
   @override
@@ -14,16 +15,26 @@ class _dashBoardState extends State<dashBoard> {
     return LayoutBuilder(builder: (context, constraints) {
       return SafeArea(
         child: Scaffold(
-          body: Column(children: [
-            Container(
-              height: 300,
-              width: 200,
-              color: Colors.red,
+          body: ListView(children: [
+            Text(
+              'Digital Profile',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+              textAlign: TextAlign.center,
             ),
-            Expanded(
-                child: Padding(
+            Container(
+              height: 230,
+              //  height: MediaQuery.of(context).size.height * 0.3,
+              width: double.infinity,
+              child: barChart(),
+            ),
+            Padding(
               padding: const EdgeInsets.all(10.0),
               child: GridView.count(
+                  shrinkWrap: true,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   primary: false,
@@ -66,7 +77,7 @@ class _dashBoardState extends State<dashBoard> {
                         image:
                             'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
                   ]),
-            )),
+            ),
           ]),
           bottomNavigationBar: BottomNavyBar(
             selectedIndex: currentIndex,
