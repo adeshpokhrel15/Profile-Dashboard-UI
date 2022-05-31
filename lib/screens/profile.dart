@@ -176,20 +176,14 @@ class _myProfileState extends State<myProfile> {
         items: [
           BottomNavyBarItem(
             icon: Icon(Icons.apps),
-            title: Text('Home'),
+            title: Text('Profile'),
             activeColor: Colors.red,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.people),
-            title: Text('Users'),
+            title: Text('Home'),
             activeColor: Colors.purpleAccent,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.notifications),
-            title: Text('Notifications'),
-            activeColor: Colors.pink,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(

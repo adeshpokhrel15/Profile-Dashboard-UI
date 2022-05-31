@@ -1,7 +1,9 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:papro/screens/barChart.dart';
 import 'package:papro/screens/pieChart.dart';
+import 'package:papro/screens/profile.dart';
 
 class dashBoard extends StatefulWidget {
   @override
@@ -28,6 +30,12 @@ class _dashBoardState extends State<dashBoard> {
                   color: Colors.green,
                 ),
               ),
+            ),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black),
+              onPressed: () {
+                Get.to(() => myProfile());
+              },
             ),
           ),
           body: ListView(children: [
@@ -121,7 +129,7 @@ class _dashBoardState extends State<dashBoard> {
             items: [
               BottomNavyBarItem(
                 icon: Icon(Icons.apps),
-                title: Text('Home'),
+                title: Text('Profile'),
                 activeColor: Colors.red,
                 textAlign: TextAlign.center,
               ),
@@ -129,12 +137,6 @@ class _dashBoardState extends State<dashBoard> {
                 icon: Icon(Icons.people),
                 title: Text('Users'),
                 activeColor: Colors.purpleAccent,
-                textAlign: TextAlign.center,
-              ),
-              BottomNavyBarItem(
-                icon: Icon(Icons.notifications),
-                title: Text('Notifications'),
-                activeColor: Colors.pink,
                 textAlign: TextAlign.center,
               ),
               BottomNavyBarItem(
