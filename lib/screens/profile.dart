@@ -203,7 +203,10 @@ class _myProfileState extends State<myProfile> {
     ));
   }
 
-  Card cardmethod({required String title, required String image}) {
+  Card cardmethod({
+    required String title,
+    required String image,
+  }) {
     return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
         elevation: 5,
