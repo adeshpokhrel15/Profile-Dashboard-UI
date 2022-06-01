@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/screens/barChart.dart';
+import 'package:papro/screens/buttomNavigationbar.dart';
 import 'package:papro/screens/pieChart.dart';
 import 'package:papro/screens/profile.dart';
 
@@ -34,42 +35,42 @@ class _dashBoardState extends State<dashBoard> {
             leading: IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
-                Get.to(() => myProfile());
+                Get.to(() => MyHomePage());
               },
             ),
           ),
           body: ListView(children: [
-            Card(
-              elevation: 8,
-              child: Container(
-                height: 230,
-                //  height: MediaQuery.of(context).size.height * 0.3,
-                width: double.infinity,
-                child: barChart(),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 270,
-              //  height: MediaQuery.of(context).size.height * 0.3,
-              width: double.infinity,
-              child: pieChart(),
-            ),
-            SizedBox(height: 13),
-            Center(
-              child: Text(
-                'Waling Nagarpalika Tathyanka',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
-              ),
-            ),
-            SizedBox(
-              height: 7,
-            ),
+            // Card(
+            //   elevation: 8,
+            //   child: Container(
+            //     height: 230,
+            //     //  height: MediaQuery.of(context).size.height * 0.3,
+            //     width: double.infinity,
+            //     child: barChart(),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Container(
+            //   height: 270,
+            //   //  height: MediaQuery.of(context).size.height * 0.3,
+            //   width: double.infinity,
+            //   child: pieChart(),
+            // ),
+            // SizedBox(height: 13),
+            // Center(
+            //   child: Text(
+            //     'Waling Nagarpalika Tathyanka',
+            //     style: TextStyle(
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.green),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 7,
+            // ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: GridView.count(
@@ -118,35 +119,36 @@ class _dashBoardState extends State<dashBoard> {
                   ]),
             ),
           ]),
-          bottomNavigationBar: BottomNavyBar(
-            selectedIndex: currentIndex,
-            showElevation: true,
-            itemCornerRadius: 15,
-            curve: Curves.easeIn,
-            onItemSelected: (index) => setState(() {
-              currentIndex = index;
-            }),
-            items: [
-              BottomNavyBarItem(
-                icon: Icon(Icons.apps),
-                title: Text('Profile'),
-                activeColor: Colors.red,
-                textAlign: TextAlign.center,
-              ),
-              BottomNavyBarItem(
-                icon: Icon(Icons.people),
-                title: Text('Users'),
-                activeColor: Colors.purpleAccent,
-                textAlign: TextAlign.center,
-              ),
-              BottomNavyBarItem(
-                icon: Icon(Icons.settings),
-                title: Text('Settings'),
-                activeColor: Colors.blue,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
+
+          // bottomNavigationBar: BottomNavyBar(
+          //   selectedIndex: currentIndex,
+          //   showElevation: true,
+          //   itemCornerRadius: 15,
+          //   curve: Curves.easeIn,
+          //   onItemSelected: (index) => setState(() {
+          //     currentIndex = index;
+          //   }),
+          //   items: [
+          //     BottomNavyBarItem(
+          //       icon: Icon(Icons.apps),
+          //       title: Text('Profile'),
+          //       activeColor: Colors.red,
+          //       textAlign: TextAlign.center,
+          //     ),
+          //     BottomNavyBarItem(
+          //       icon: Icon(Icons.people),
+          //       title: Text('Users'),
+          //       activeColor: Colors.purpleAccent,
+          //       textAlign: TextAlign.center,
+          //     ),
+          //     BottomNavyBarItem(
+          //       icon: Icon(Icons.settings),
+          //       title: Text('Settings'),
+          //       activeColor: Colors.blue,
+          //       textAlign: TextAlign.center,
+          //     ),
+          //   ],
+          // ),
         ),
       );
     });

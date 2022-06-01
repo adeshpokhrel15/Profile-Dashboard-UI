@@ -30,9 +30,10 @@ class settingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      body: Column(children: [
+      body: ListView(children: [
         Stack(children: [
           Container(
               height: MediaQuery.of(context).size.height * 0.27,
@@ -66,7 +67,7 @@ class settingPage extends StatelessWidget {
                 ),
               )),
           Padding(
-            padding: const EdgeInsets.only(top: 153, left: 28),
+            padding: EdgeInsets.only(top: h * 0.17, left: 28),
             child: Row(
               children: [
                 Container(

@@ -21,24 +21,24 @@ class _myProfileState extends State<myProfile> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 40,
-                  width: 60,
-                  child: MaterialButton(
-                    color: Colors.white,
-                    onPressed: () {
-                      Get.to(() => dashBoard());
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    elevation: 5.0,
-                    child: Icon(
-                      Icons.menu_outlined,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ),
+                // Container(
+                //   height: 40,
+                //   width: 60,
+                //   child: MaterialButton(
+                //     color: Colors.white,
+                //     onPressed: () {
+                //       Get.to(() => dashBoard());
+                //     },
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(30.0),
+                //     ),
+                //     elevation: 5.0,
+                //     child: Icon(
+                //       Icons.menu_outlined,
+                //       color: Colors.blue,
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Container(
@@ -52,24 +52,24 @@ class _myProfileState extends State<myProfile> {
                         borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
-                Container(
-                  height: 40,
-                  width: 60,
-                  child: MaterialButton(
-                    color: Colors.white,
-                    onPressed: () {
-                      Get.to(() => settingPage());
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    elevation: 5.0,
-                    child: Icon(
-                      Icons.mode,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ),
+                // Container(
+                //   height: 40,
+                //   width: 60,
+                //   child: MaterialButton(
+                //     color: Colors.white,
+                //     onPressed: () {
+                //       Get.to(() => settingPage());
+                //     },
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(30.0),
+                //     ),
+                //     elevation: 5.0,
+                //     child: Icon(
+                //       Icons.mode,
+                //       color: Colors.blue,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -165,35 +165,41 @@ class _myProfileState extends State<myProfile> {
           )),
         ],
       ),
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: currentIndex,
-        showElevation: true,
-        itemCornerRadius: 15,
-        curve: Curves.easeIn,
-        onItemSelected: (index) => setState(() {
-          currentIndex = index;
-        }),
-        items: [
-          BottomNavyBarItem(
-            icon: Icon(Icons.apps),
-            title: Text('Profile'),
-            activeColor: Colors.red,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.people),
-            title: Text('Home'),
-            activeColor: Colors.purpleAccent,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
-            activeColor: Colors.blue,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavyBar(
+      //   selectedIndex: currentIndex,
+      //   showElevation: true,
+      //   itemCornerRadius: 15,
+      //   curve: Curves.easeIn,
+      //   onItemSelected: (index) => setState(() {
+      //     currentIndex = index;
+      //   }),
+      //   items: [
+      //     BottomNavyBarItem(
+      //       icon: Icon(Icons.apps),
+      //       title: Text('Home'),
+      //       activeColor: Colors.red,
+      //       textAlign: TextAlign.center,
+      //     ),
+      //     BottomNavyBarItem(
+      //       icon: Icon(Icons.people),
+      //       title: Text('Users'),
+      //       activeColor: Colors.purpleAccent,
+      //       textAlign: TextAlign.center,
+      //     ),
+      //     BottomNavyBarItem(
+      //       icon: Icon(Icons.notifications),
+      //       title: Text('Notifications'),
+      //       activeColor: Colors.pink,
+      //       textAlign: TextAlign.center,
+      //     ),
+      //     BottomNavyBarItem(
+      //       icon: Icon(Icons.settings),
+      //       title: Text('Settings'),
+      //       activeColor: Colors.blue,
+      //       textAlign: TextAlign.center,
+      //     ),
+      //   ],
+      // ),
     ));
   }
 

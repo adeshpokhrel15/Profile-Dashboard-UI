@@ -28,7 +28,7 @@ class pieChart extends StatelessWidget {
             ),
           ),
           Container(
-              height: 230,
+              height: 234,
               child: PieChart(
                   dataMap: dataMap,
                   chartRadius: MediaQuery.of(context).size.width,
@@ -54,14 +54,14 @@ class pieChart extends StatelessWidget {
               Text(
                 name,
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.green),
               ),
               Spacer(),
               Text(
                 '$valdata',
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+                style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               SizedBox(
                 height: 5,
