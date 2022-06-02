@@ -52,6 +52,7 @@ class _personalFormState extends State<personalForm> {
   final _form = GlobalKey<FormState>();
 
   bool _isObscure = true;
+  DateTime dateTime = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +166,6 @@ class _personalFormState extends State<personalForm> {
                           SizedBox(
                             height: 20,
                           ),
-
                           TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -232,7 +232,6 @@ class _personalFormState extends State<personalForm> {
                           SizedBox(
                             height: 20,
                           ),
-
                           TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -259,113 +258,145 @@ class _personalFormState extends State<personalForm> {
                           SizedBox(
                             height: 40,
                           ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Blood Group',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              ),
+                              Text(bloods[ind]),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 100,
+                                    child: Center(
+                                      child: CupertinoPicker(
+                                          looping: true,
+                                          itemExtent: 50,
+                                          onSelectedItemChanged: (ind) {
+                                            setState(() {
+                                              this.ind = ind;
+                                            });
+                                            final blood = bloods[ind];
+                                            print(blood);
+                                          },
+                                          children: bloods.map((blood) {
+                                            return Center(
+                                              child: Text(
+                                                bloods[ind],
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.blue),
+                                              ),
+                                            );
+                                          }).toList()),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Gender',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
+                                  ),
+                                  SizedBox(
+                                    width: 70,
+                                  ),
 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'Blood Group',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue),
-                                ),
-                                Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 100,
-                                      child: Center(
-                                        child: CupertinoPicker(
-                                            looping: true,
-                                            itemExtent: 50,
-                                            onSelectedItemChanged: (ind) {
-                                              setState(() {
-                                                this.ind = ind;
-                                              });
-                                              final blood = bloods[ind];
-                                              print(blood);
-                                            },
-                                            children: bloods.map((blood) {
-                                              return Center(
-                                                child: Text(
-                                                  bloods[ind],
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.blue),
+                                  InkWell(
+                                    child: Icon(
+                                      Icons.add_circle,
+                                      size: 30,
+                                      color: Colors.blue,
+                                    ),
+                                    onTap: () {
+                                      showCupertinoModalPopup(
+                                          context: context,
+                                          builder: (context) =>
+                                              CupertinoActionSheet(
+                                                actions: [buildDatePicker()],
+                                                cancelButton:
+                                                    CupertinoActionSheetAction(
+                                                  child: Text('Done'),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
                                                 ),
-                                              );
-                                            }).toList()),
+                                              ));
+                                    },
+                                  ),
+                                  SizedBox(
+                                    width: 40,
+                                  ),
+
+                                  Container(
+                                    width: 130,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 10,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        items[index],
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.blue),
+                                        textAlign: TextAlign.end,
                                       ),
                                     ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  'Gender',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue),
-                                ),
-                                Column(
-                                  children: [
-                                    // Text(
-                                    //   items[index],
-                                    //   style: TextStyle(
-                                    //       fontSize: 20,
-                                    //       fontWeight: FontWeight.bold,
-                                    //       color: Colors.blue),
-                                    //   textAlign: TextAlign.end,
-                                    // ),
-                                    SizedBox(
-                                      height: 100,
-                                      child: Center(
-                                        child: CupertinoPicker(
-                                            looping: true,
-                                            itemExtent: 50,
-                                            onSelectedItemChanged: (index) {
-                                              setState(() {
-                                                this.index = index;
-                                              });
-                                              final item = items[index];
-                                              print(item);
-                                            },
-                                            children: items.map((item) {
-                                              return Center(
-                                                child: Text(
-                                                  items[index],
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.blue),
-                                                ),
-                                              );
-                                            }).toList()),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                  ),
+
+                                  // SizedBox(
+                                  //   height: 100,
+                                  //   child: Center(
+                                  //     child: CupertinoPicker(
+                                  //         looping: true,
+                                  //         itemExtent: 50,
+                                  //         onSelectedItemChanged: (index) {
+                                  //           setState(() {
+                                  //             this.index = index;
+                                  //           });
+                                  //           final item = items[index];
+                                  //           print(item);
+                                  //         },
+                                  //         children: items.map((item) {
+                                  //           return Center(
+                                  //             child: Text(
+                                  //               items[index],
+                                  //               style: TextStyle(
+                                  //                   fontSize: 20,
+                                  //                   fontWeight:
+                                  //                       FontWeight.bold,
+                                  //                   color: Colors.blue),
+                                  //             ),
+                                  //           );
+                                  //         }).toList()),
+                                  //   ),
+                                  // ),
+                                ],
+                              ),
+                            ],
                           ),
-                          // SizedBox(
-                          //   height: 20,
-                          // ),
-
                           SizedBox(
                             height: 20,
                           ),
-
                           Container(
                             height: 50,
                             width: 150,
@@ -389,4 +420,31 @@ class _personalFormState extends State<personalForm> {
                   ),
                 ))));
   }
+
+  Widget buildDatePicker() => SizedBox(
+        height: 300,
+        child: Center(
+          child: CupertinoPicker(
+              //  looping: true,
+              itemExtent: 50,
+              onSelectedItemChanged: (index) {
+                setState(() {
+                  this.index = index;
+                });
+                final item = items[index];
+                print(item);
+              },
+              children: items.map((item) {
+                return Center(
+                  child: Text(
+                    item,
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  ),
+                );
+              }).toList()),
+        ),
+      );
 }
