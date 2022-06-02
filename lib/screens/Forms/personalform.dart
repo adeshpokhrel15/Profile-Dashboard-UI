@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class personalForm extends StatefulWidget {
@@ -8,6 +9,20 @@ class personalForm extends StatefulWidget {
 enum SingingCharacter { Male, Female, Others }
 
 class _personalFormState extends State<personalForm> {
+  int index = 0;
+  int ind = 0;
+  final items = ['Male', 'Female', 'Others'];
+
+  final bloods = [
+    'A+',
+    'A-',
+    'B+',
+    'B-',
+    'AB+',
+    'AB-',
+    'O+',
+    'O-',
+  ];
   SingingCharacter? _character = SingingCharacter.Male;
 
   String dropdownValue = 'A+';
@@ -242,38 +257,8 @@ class _personalFormState extends State<personalForm> {
                             ),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 40,
                           ),
-                          // Row(
-                          //   children: [
-                          //     Text('Blood Group'),
-                          //     SizedBox(
-                          //       width: 10,
-                          //     ),
-                          //     Column(
-                          //       mainAxisAlignment: MainAxisAlignment.center,
-                          //       children: <Widget>[
-                          //         Text(
-                          //           '$_dateTime'.split(" ")[0],
-                          //           style: TextStyle(
-                          //               fontSize: 12, color: Colors.black),
-                          //         ),
-                          //         ElevatedButton(
-                          //             onPressed: () => _onDatePicker(context),
-                          //             child: Text('Pick Date')),
-                          //         CalendarDatePicker(
-                          //             initialDate: _dateTime,
-                          //             firstDate: firstDate,
-                          //             lastDate: lastDate,
-                          //             onDateChanged: (newData) {
-                          //               setState(() {
-                          //                 _dateTime = newData;
-                          //               });
-                          //             })
-                          //       ],
-                          //     ),
-                          //   ],
-                          // ),
 
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -286,43 +271,40 @@ class _personalFormState extends State<personalForm> {
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue),
-                                  textAlign: TextAlign.end,
+                                ),
+                                Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 100,
+                                      child: Center(
+                                        child: CupertinoPicker(
+                                            looping: true,
+                                            itemExtent: 50,
+                                            onSelectedItemChanged: (ind) {
+                                              setState(() {
+                                                this.ind = ind;
+                                              });
+                                              final blood = bloods[ind];
+                                              print(blood);
+                                            },
+                                            children: bloods.map((blood) {
+                                              return Center(
+                                                child: Text(
+                                                  bloods[ind],
+                                                  style: TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.blue),
+                                                ),
+                                              );
+                                            }).toList()),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 SizedBox(
-                                  width: 30,
-                                ),
-                                DropdownButton<String>(
-                                  value: dropdownValue,
-                                  icon: const Icon(
-                                    Icons.arrow_downward,
-                                  ),
-                                  elevation: 20,
-                                  style: const TextStyle(color: Colors.red),
-                                  underline: Container(
-                                    height: 2,
-                                    color: Colors.black,
-                                  ),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      dropdownValue = newValue!;
-                                    });
-                                  },
-                                  items: <String>[
-                                    'A+',
-                                    'A-',
-                                    'B+',
-                                    'B-',
-                                    'AB+',
-                                    'AB-',
-                                    'O+',
-                                    'O-',
-                                  ].map<DropdownMenuItem<String>>(
-                                      (String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
+                                  height: 20,
                                 ),
                                 SizedBox(
                                   height: 20,
@@ -334,95 +316,50 @@ class _personalFormState extends State<personalForm> {
                                       fontWeight: FontWeight.bold,
                                       color: Colors.blue),
                                 ),
-                                ListTile(
-                                  title: const Text('Male'),
-                                  leading: Radio<SingingCharacter>(
-                                    value: SingingCharacter.Male,
-                                    groupValue: _character,
-                                    onChanged: (SingingCharacter? value) {
-                                      setState(() {
-                                        _character = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                                ListTile(
-                                  title: const Text('Female'),
-                                  leading: Radio<SingingCharacter>(
-                                    value: SingingCharacter.Female,
-                                    groupValue: _character,
-                                    onChanged: (SingingCharacter? value) {
-                                      setState(() {
-                                        _character = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                                ListTile(
-                                  title: const Text('Other'),
-                                  leading: Radio<SingingCharacter>(
-                                    value: SingingCharacter.Others,
-                                    groupValue: _character,
-                                    onChanged: (SingingCharacter? value) {
-                                      setState(() {
-                                        _character = value;
-                                      });
-                                    },
-                                  ),
+                                Column(
+                                  children: [
+                                    // Text(
+                                    //   items[index],
+                                    //   style: TextStyle(
+                                    //       fontSize: 20,
+                                    //       fontWeight: FontWeight.bold,
+                                    //       color: Colors.blue),
+                                    //   textAlign: TextAlign.end,
+                                    // ),
+                                    SizedBox(
+                                      height: 100,
+                                      child: Center(
+                                        child: CupertinoPicker(
+                                            looping: true,
+                                            itemExtent: 50,
+                                            onSelectedItemChanged: (index) {
+                                              setState(() {
+                                                this.index = index;
+                                              });
+                                              final item = items[index];
+                                              print(item);
+                                            },
+                                            children: items.map((item) {
+                                              return Center(
+                                                child: Text(
+                                                  items[index],
+                                                  style: TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.blue),
+                                                ),
+                                              );
+                                            }).toList()),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          // Column(
-                          //   children: <Widget>[
-                          //     Text(
-                          //       'Gender',
-                          //       style: TextStyle(
-                          //           fontSize: 20,
-                          //           fontWeight: FontWeight.bold,
-                          //           color: Colors.blue),
-                          //     ),
-                          //     ListTile(
-                          //       title: const Text('Male'),
-                          //       leading: Radio<SingingCharacter>(
-                          //         value: SingingCharacter.Male,
-                          //         groupValue: _character,
-                          //         onChanged: (SingingCharacter? value) {
-                          //           setState(() {
-                          //             _character = value;
-                          //           });
-                          //         },
-                          //       ),
-                          //     ),
-                          //     ListTile(
-                          //       title: const Text('Female'),
-                          //       leading: Radio<SingingCharacter>(
-                          //         value: SingingCharacter.Female,
-                          //         groupValue: _character,
-                          //         onChanged: (SingingCharacter? value) {
-                          //           setState(() {
-                          //             _character = value;
-                          //           });
-                          //         },
-                          //       ),
-                          //     ),
-                          //     ListTile(
-                          //       title: const Text('Other'),
-                          //       leading: Radio<SingingCharacter>(
-                          //         value: SingingCharacter.Others,
-                          //         groupValue: _character,
-                          //         onChanged: (SingingCharacter? value) {
-                          //           setState(() {
-                          //             _character = value;
-                          //           });
-                          //         },
-                          //       ),
-                          //     ),
-                          //   ],
+                          // SizedBox(
+                          //   height: 20,
                           // ),
 
                           SizedBox(
@@ -452,18 +389,4 @@ class _personalFormState extends State<personalForm> {
                   ),
                 ))));
   }
-
-  // _onDatePicker(BuildContext context) async {
-  //   final DateTime? date = await showDatePicker(
-  //     context: context,
-  //     initialDate: DateTime.now(),
-  //     firstDate: DateTime(1900),
-  //     lastDate: DateTime(2021),
-  //   );
-  //   if (date != null) {
-  //     setState(() {
-  //       _dateTime = date;
-  //     });
-  //   }
-  // }
 }

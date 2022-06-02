@@ -39,6 +39,7 @@ dependencies:
   charts_flutter: ^0.12.0
   pie_chart: ^5.3.1
   google_nav_bar: ^5.0.6
+  flutter_cupertino_datetime_picker: ^3.0.0
 
 dev_dependencies:
   flutter_test:

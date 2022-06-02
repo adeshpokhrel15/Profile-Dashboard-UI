@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
+import 'package:papro/screens/profile.dart';
 
 void main() {
   runApp(MyApp());
