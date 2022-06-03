@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/calender/dateutils.dart';
 import 'package:papro/screens/Forms/addressform.dart';
+import 'package:papro/screens/Forms/childrenDetailsform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/Forms/workingform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),
-          workingform.routeName: (context) => workingform()
+          workingform.routeName: (context) => workingform(),
+          childrenForm.routeName: (context) => childrenForm(),
         });
   }
 }
