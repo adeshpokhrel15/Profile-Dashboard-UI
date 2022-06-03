@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nepali_utils/nepali_utils.dart';
 import 'package:nepali_date_picker/nepali_date_picker.dart' as picker;
-import 'package:papro/calender/dateutils.dart';
 
 class citizendetailsForm extends StatefulWidget {
   static const routeName = 'citizendetails-form';
@@ -108,39 +107,13 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                           SizedBox(
                             height: 20,
                           ),
-                          TextFormField(
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            validator: (val) {
-                              if (val!.isEmpty) {
-                                return 'Varification by is required ';
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.emailAddress,
-                            controller: verifiedby,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              labelText: 'Verified by',
-                              prefixIcon: Icon(
-                                Icons.calendar_today,
-                                color: Colors.lightBlue,
-                              ),
-                              hintText: "Verified by",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Row(
                                 children: [
                                   Text(
-                                    'Date of Birth',
+                                    'Issued Date',
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
@@ -202,6 +175,32 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                                 ],
                               ),
                             ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'Varification by is required ';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            controller: verifiedby,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              labelText: 'Verified by',
+                              prefixIcon: Icon(
+                                Icons.calendar_today,
+                                color: Colors.lightBlue,
+                              ),
+                              hintText: "Verified by",
+                            ),
                           ),
                           SizedBox(
                             height: 20,
