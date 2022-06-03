@@ -10,9 +10,8 @@ class calender extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('hello'),
           TextButton(
-              onPressed: () async {
+              onPressed: () {
                 picker.showCupertinoDatePicker(
                   context: context,
                   initialDate: NepaliDateTime.now(),

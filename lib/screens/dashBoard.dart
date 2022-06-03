@@ -1,6 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:papro/screens/Forms/addressform.dart';
+import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/barChart.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
 import 'package:papro/screens/pieChart.dart';
@@ -83,63 +85,65 @@ class _dashBoardState extends State<dashBoard> {
                     cardmethod(
                         title: 'Personal',
                         image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0'),
+                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
+                        routeName: personalForm.routeName),
                     cardmethod(
                         title: 'Address',
                         image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Family',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
-                    cardmethod(
-                        title: 'School',
-                        image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0'),
-                    cardmethod(
-                        title: 'Profile',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Health Profile',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
-                    cardmethod(
-                        title: 'Working Details',
-                        image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0'),
-                    cardmethod(
-                        title: 'Children Details',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Children',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
-                    cardmethod(
-                        title: 'Health Profile',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Ethnicities',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
-                    cardmethod(
-                        title: 'Business Type',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Children School Schema',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
-                    cardmethod(
-                        title: 'Food Consumption Profile',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
-                    cardmethod(
-                        title: 'Exxpenses Profile',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')
+                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
+                        routeName: addressForm.routeName),
+                    // cardmethod(
+                    //     title: 'Family',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    // cardmethod(
+                    //     title: 'School',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0'),
+                    // cardmethod(
+                    //     title: 'Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
+                    // cardmethod(
+                    //     title: 'Health Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    // cardmethod(
+                    //     title: 'Working Details',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0'),
+                    // cardmethod(
+                    //     title: 'Children Details',
+                    //     image:
+                    //         'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
+                    // cardmethod(
+                    //     title: 'Children',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    // cardmethod(
+                    //     title: 'Health Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
+                    // cardmethod(
+                    //     title: 'Ethnicities',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    // cardmethod(
+                    //     title: 'Business Type',
+                    //     image:
+                    //         'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
+                    // cardmethod(
+                    //     title: 'Children School Schema',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    // cardmethod(
+                    //     title: 'Food Consumption Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1'),
+                    // cardmethod(
+                    //     title: 'Exxpenses Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')
                   ]),
             ),
           ]),
@@ -178,22 +182,31 @@ class _dashBoardState extends State<dashBoard> {
     });
   }
 
-  Card cardmethod({required String title, required String image}) {
-    return Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
-        elevation: 5,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.network(
-              image,
-              height: 128,
-            ),
-            Text(
-              title,
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
-        ));
+  // Card cardmethod({required String title, required String image, required Function onTap}) {
+  cardmethod(
+      {required String title,
+      required String image,
+      required String routeName}) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(routeName);
+      },
+      child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+          elevation: 5,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.network(
+                image,
+                height: 128,
+              ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          )),
+    );
   }
 }

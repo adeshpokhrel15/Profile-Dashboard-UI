@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/calender/dateutils.dart';
+import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
 import 'package:papro/screens/profile.dart';
@@ -13,8 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: calender(),
-    );
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage(),
+        routes: {
+          personalForm.routeName: (context) => personalForm(),
+          addressForm.routeName: (context) => addressForm(),
+        });
   }
 }
