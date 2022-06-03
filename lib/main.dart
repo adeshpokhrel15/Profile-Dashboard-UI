@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:papro/calender/dateutils.dart';
 import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/childrenDetailsform.dart';
+import 'package:papro/screens/Forms/ethencitiesform.dart';
+import 'package:papro/screens/Forms/expenserProfileform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/Forms/workingform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
           addressForm.routeName: (context) => addressForm(),
           workingform.routeName: (context) => workingform(),
           childrenForm.routeName: (context) => childrenForm(),
+          ethencitiesform.routName: (context) => ethencitiesform(),
+          expensesprofileform.routeName: (context) => expensesprofileform(),
         });
   }
 }
