@@ -6,6 +6,7 @@ import 'package:papro/screens/Forms/childrenDetailsform.dart';
 import 'package:papro/screens/Forms/ethencitiesform.dart';
 import 'package:papro/screens/Forms/expenserProfileform.dart';
 import 'package:papro/screens/Forms/familyForm.dart';
+import 'package:papro/screens/Forms/houseform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/Forms/workingform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
           ethencitiesform.routName: (context) => ethencitiesform(),
           expensesprofileform.routeName: (context) => expensesprofileform(),
           familyform.routeName: (context) => familyform(),
+          houseform.routeName: (context) => houseform(),
         });
   }
 }
