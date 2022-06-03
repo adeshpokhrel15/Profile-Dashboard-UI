@@ -4,6 +4,7 @@ import 'package:papro/calender/dateutils.dart';
 import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/buttomNavigationbar.dart';
+import 'package:papro/screens/dashBoard.dart';
 import 'package:papro/screens/profile.dart';
 
 void main() {
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MyHomePage(),
+        home: addressForm(),
+        //dashBoard(),
+
+        //MyHomePage(),
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),

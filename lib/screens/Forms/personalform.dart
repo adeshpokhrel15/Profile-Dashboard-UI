@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,21 @@ import 'package:papro/calender/dateutils.dart';
 
 class personalForm extends StatefulWidget {
   static const routeName = 'personal-form';
+  final nameController = TextEditingController();
+
+  final mailController = TextEditingController();
+
+  final ageController = TextEditingController();
+
+  final genderController = TextEditingController();
+
+  final dobController = TextEditingController();
+
+  final htiController = TextEditingController();
+
+  final mobileController = TextEditingController();
+
+  final panController = TextEditingController();
 
   @override
   State<personalForm> createState() => _personalFormState();
@@ -17,7 +34,11 @@ enum SingingCharacter { Male, Female, Others }
 class _personalFormState extends State<personalForm> {
   int index = 0;
   int ind = 0;
-  final items = ['Male', 'Female', 'Others'];
+  final items = [
+    'Male',
+    'Female',
+    'Others',
+  ];
 
   final bloods = [
     'A+',
@@ -50,8 +71,6 @@ class _personalFormState extends State<personalForm> {
   final panController = TextEditingController();
 
   DateTime _dateTime = DateTime.now();
-  final firstDate = DateTime(1900);
-  final lastDate = DateTime(2021);
 
   final bloodgroupController = TextEditingController();
 
@@ -64,6 +83,26 @@ class _personalFormState extends State<personalForm> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              title: Center(
+                child: Text(
+                  'Personal Form',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+              elevation: 0,
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.black),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
             body: Form(
                 key: _form,
                 child: SingleChildScrollView(
@@ -75,18 +114,6 @@ class _personalFormState extends State<personalForm> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         //r  crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Center(
-                            child: Text(
-                              'Personal Form',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
                           TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,

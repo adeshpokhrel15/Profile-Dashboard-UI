@@ -1,15 +1,565 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class addressForm extends StatelessWidget {
+class addressForm extends StatefulWidget {
   static const routeName = 'address-form';
+
+  @override
+  State<addressForm> createState() => _addressFormState();
+}
+
+class _addressFormState extends State<addressForm> {
+  final _form = GlobalKey<FormState>();
+
+  String dropdownValue = 'A+';
+
+  final tempProv = TextEditingController();
+
+  final tempDist = TextEditingController();
+
+  final tempMunci = TextEditingController();
+
+  final temoWard = TextEditingController();
+
+  final tempTol = TextEditingController();
+
+  final tempBno = TextEditingController();
+
+  final permProv = TextEditingController();
+
+  final permDist = TextEditingController();
+
+  final permMunci = TextEditingController();
+
+  final permWard = TextEditingController();
+
+  final permTol = TextEditingController();
+
+  final permBno = TextEditingController();
+  int ind = 0;
+
+  final bloods = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Column(
-        children: [Text('Temporary Address')],
-      ),
-    ));
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              title: Center(
+                child: Text(
+                  'Address Form',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+              elevation: 0,
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.black),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
+            body: Form(
+                key: _form,
+                child: SingleChildScrollView(
+                    child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Container(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Center(
+                            child: Text(
+                              'Temporary Address',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            controller: tempProv,
+                            textCapitalization: TextCapitalization.words,
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'provience is required';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              labelText: 'Provience',
+                              prefixIcon: Icon(
+                                Icons.person,
+                                color: Colors.blue,
+                              ),
+                              hintText: 'Provience Name',
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'district is required';
+                              }
+
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            controller: tempDist,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                labelText: 'District',
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Colors.orange,
+                                ),
+                                hintText: " District Name"),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'muncipilaty is required ';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            controller: tempMunci,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              labelText: 'Municipality',
+                              prefixIcon: Icon(
+                                Icons.calendar_today,
+                                color: Colors.lightBlue,
+                              ),
+                              hintText: "Municipality name",
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (val) {
+                              if (val!.isEmpty) {
+                                return 'Street/Tol is required ';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            controller: tempTol,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                labelText: 'Street/Tol name'),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    'Ward No.',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
+                                  ),
+                                  SizedBox(
+                                    width: 40,
+                                  ),
+                                  InkWell(
+                                    child: Icon(
+                                      Icons.add_circle,
+                                      size: 30,
+                                      color: Colors.blue,
+                                    ),
+                                    onTap: () {
+                                      showCupertinoModalPopup(
+                                          context: context,
+                                          builder: (context) =>
+                                              CupertinoActionSheet(
+                                                actions: [wardpicker()],
+                                                cancelButton:
+                                                    CupertinoActionSheetAction(
+                                                  child: Text('Done'),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                              ));
+                                    },
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Container(
+                                    width: 130,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 10,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${bloods[ind]}',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.blue),
+                                        textAlign: TextAlign.end,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Bloock No. ';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: TextInputType.emailAddress,
+                                // controller: panController,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Bloock No.',
+                                  prefixIcon: Icon(
+                                    Icons.block,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: "Bloock No.",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Center(
+                                child: Text(
+                                  'Permanent Address',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: permProv,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'provience is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Provience',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Provience Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'district is required';
+                                  }
+
+                                  return null;
+                                },
+                                keyboardType: TextInputType.emailAddress,
+                                controller: permDist,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    labelText: 'District',
+                                    prefixIcon: Icon(
+                                      Icons.email,
+                                      color: Colors.orange,
+                                    ),
+                                    hintText: " District Name"),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'muncipilaty is required ';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: TextInputType.emailAddress,
+                                controller: permMunci,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Municipality',
+                                  prefixIcon: Icon(
+                                    Icons.calendar_today,
+                                    color: Colors.lightBlue,
+                                  ),
+                                  hintText: "Municipality name",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Street/Tol is required ';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: TextInputType.emailAddress,
+                                controller: permTol,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    labelText: 'Street/Tol name'),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    'Ward No.',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
+                                  ),
+                                  SizedBox(
+                                    width: 40,
+                                  ),
+                                  InkWell(
+                                    child: Icon(
+                                      Icons.add_circle,
+                                      size: 30,
+                                      color: Colors.blue,
+                                    ),
+                                    onTap: () {
+                                      showCupertinoModalPopup(
+                                          context: context,
+                                          builder: (context) =>
+                                              CupertinoActionSheet(
+                                                actions: [wardpicker()],
+                                                cancelButton:
+                                                    CupertinoActionSheetAction(
+                                                  child: Text('Done'),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                              ));
+                                    },
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Container(
+                                    width: 130,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 10,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${bloods[ind]}',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.blue),
+                                        textAlign: TextAlign.end,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Bloock No. ';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: TextInputType.emailAddress,
+                                // controller: panController,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Bloock No.',
+                                  prefixIcon: Icon(
+                                    Icons.block,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: "Bloock No.",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Center(
+                                child: Container(
+                                  height: 50,
+                                  width: 150,
+                                  child: MaterialButton(
+                                    onPressed: () async {
+                                      _form.currentState!.save();
+                                      _form.currentState!.validate();
+                                      FocusScope.of(context).unfocus();
+                                    },
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(22.0)),
+                                    elevation: 5.0,
+                                    child: Text('Submit'),
+                                    color: Color(0xFF00a2e8),
+                                    textColor: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ]),
+                  ),
+                )))));
   }
+
+  Widget wardpicker() => SizedBox(
+        height: 250,
+        child: Center(
+          child: CupertinoPicker(
+              looping: true,
+              itemExtent: 50,
+              onSelectedItemChanged: (ind) {
+                setState(() {
+                  this.ind = ind;
+                });
+                final blood = bloods[ind];
+                print(blood);
+              },
+              children: bloods.map((blood) {
+                return Center(
+                  child: Text(
+                    '${blood}',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  ),
+                );
+              }).toList()),
+        ),
+      );
 }
