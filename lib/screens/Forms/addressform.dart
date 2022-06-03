@@ -11,8 +11,6 @@ class addressForm extends StatefulWidget {
 class _addressFormState extends State<addressForm> {
   final _form = GlobalKey<FormState>();
 
-  String dropdownValue = 'A+';
-
   final tempProv = TextEditingController();
 
   final tempDist = TextEditingController();
