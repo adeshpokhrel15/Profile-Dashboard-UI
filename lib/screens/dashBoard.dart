@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/childrenDetailsform.dart';
+import 'package:papro/screens/Forms/citizenshipdetailsForm.dart';
 import 'package:papro/screens/Forms/ethencitiesform.dart';
 import 'package:papro/screens/Forms/expenserProfileform.dart';
 import 'package:papro/screens/Forms/familyForm.dart';
@@ -119,10 +120,11 @@ class _dashBoardState extends State<dashBoard> {
                         image:
                             'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
                         routeName: childrenForm.routeName),
-                    // cardmethod(
-                    //     title: 'Children',
-                    //     image:
-                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    cardmethod(
+                        title: 'Citizenship Details',
+                        image:
+                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                        routeName: citizendetailsForm.routeName),
                     // cardmethod(
                     //     title: 'Health Profile',
                     //     image:
