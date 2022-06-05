@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:papro/models/checkbox.dart';
 
 class foodconsumptionProfile extends StatefulWidget {
-  static const routeName = "apperenceProfile-form";
+  static const routeName = "foodconsumptionProfile-form";
   @override
   State<foodconsumptionProfile> createState() => _foodconsumptionProfileState();
 }
@@ -29,7 +29,7 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            'Appearance Profile',
+            'Food Consumption Profile',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

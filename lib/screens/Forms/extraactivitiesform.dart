@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:papro/models/checkbox.dart';
 
-class appearenceProfile extends StatefulWidget {
-  static const routeName = "apperenceProfile-form";
+class extraactivitiesProfile extends StatefulWidget {
+  static const routeName = 'activities-form';
   @override
-  State<appearenceProfile> createState() => _appearenceProfileState();
+  State<extraactivitiesProfile> createState() => _extraactivitiesProfileState();
 }
 
-class _appearenceProfileState extends State<appearenceProfile> {
+class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
   final _form = GlobalKey<FormState>();
 
-  final skincolor = TextEditingController();
+  final interestedfield = TextEditingController();
+  final professionalstatus = TextEditingController();
 
-  final handicapedid = TextEditingController();
+  final durationofactivities = TextEditingController();
   bool value = false;
   final notification = [
     CheckBoxState(
@@ -29,7 +30,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            'Appearance Profile',
+            'Extra Cariculum Activities Profile',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -54,11 +55,11 @@ class _appearenceProfileState extends State<appearenceProfile> {
             children: [
               TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: skincolor,
+                controller: interestedfield,
                 textCapitalization: TextCapitalization.words,
                 validator: (val) {
                   if (val!.isEmpty) {
-                    return 'Skin color is required';
+                    return 'Interested field is required';
                   }
                   return null;
                 },
@@ -66,24 +67,46 @@ class _appearenceProfileState extends State<appearenceProfile> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  labelText: 'Skin color',
+                  labelText: 'Interested field',
                   prefixIcon: Icon(
                     Icons.person,
                     color: Colors.blue,
                   ),
-                  hintText: 'Skin color',
+                  hintText: 'Interested field',
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                'Is Handicapped?',
+                'Is Taking Training?',
                 style: TextStyle(fontSize: 20),
               ),
               ...notification.map(buildSingleCheckbox).toList(),
               SizedBox(
                 height: 20,
+              ),
+              TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (val) {
+                  if (val!.isEmpty) {
+                    return 'Professional status is required';
+                  }
+
+                  return null;
+                },
+                keyboardType: TextInputType.emailAddress,
+                controller: professionalstatus,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    labelText: 'Professional status',
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.orange,
+                    ),
+                    hintText: "Professional status"),
               ),
               SizedBox(
                 height: 20,
@@ -92,23 +115,23 @@ class _appearenceProfileState extends State<appearenceProfile> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (val) {
                   if (val!.isEmpty) {
-                    return 'Handicapped id is required';
+                    return 'Duration of activities is required';
                   }
 
                   return null;
                 },
                 keyboardType: TextInputType.emailAddress,
-                controller: handicapedid,
+                controller: durationofactivities,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    labelText: 'Handicapped Id',
+                    labelText: 'Duration of activities',
                     prefixIcon: Icon(
                       Icons.email,
                       color: Colors.orange,
                     ),
-                    hintText: "Handicapped Id"),
+                    hintText: "Duration of activities"),
               ),
               SizedBox(
                 height: 20,
