@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/screens/Forms/addressform.dart';
+import 'package:papro/screens/Forms/appearanceProfile.dart';
 import 'package:papro/screens/Forms/businessprofileForm.dart';
 import 'package:papro/screens/Forms/childrenDetailsform.dart';
 import 'package:papro/screens/Forms/citizenshipdetailsForm.dart';
@@ -25,10 +26,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home:
+            // appearanceProfile(),
             //addressForm(),
-            dashBoard(),
+            //  dashBoard(),
 
-        //MyHomePage(),
+            MyHomePage(),
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),

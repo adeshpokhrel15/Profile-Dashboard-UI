@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -172,6 +170,73 @@ class _personalFormState extends State<personalForm> {
                           SizedBox(
                             height: 20,
                           ),
+                          Row(
+                            children: [
+                              Text(
+                                'Date of Birth',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              ),
+                              SizedBox(
+                                width: 43,
+                              ),
+                              InkWell(
+                                child: Icon(
+                                  Icons.add_circle,
+                                  size: 30,
+                                  color: Colors.blue,
+                                ),
+                                onTap: () {
+                                  picker.showCupertinoDatePicker(
+                                    context: context,
+                                    initialDate: NepaliDateTime.now(),
+                                    firstDate: NepaliDateTime(2000),
+                                    lastDate: NepaliDateTime(2090),
+                                    language: Language.english,
+                                    dateOrder: picker.DateOrder.mdy,
+                                    onDateChanged: (newDate) {
+                                      setState(() {
+                                        dobController.text =
+                                            newDate.toIso8601String();
+                                      });
+                                      dobController.text =
+                                          newDate.toIso8601String();
+                                    },
+                                  );
+                                },
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                width: 130,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 10,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    dobController.text,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
                           TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -198,26 +263,6 @@ class _personalFormState extends State<personalForm> {
                           SizedBox(
                             height: 20,
                           ),
-                          // TextFormField(
-                          //   autovalidateMode:
-                          //       AutovalidateMode.onUserInteraction,
-                          //   keyboardType: TextInputType.emailAddress,
-                          //   controller: dobController,
-                          //   decoration: InputDecoration(
-                          //     border: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(30),
-                          //     ),
-                          //     labelText: 'DOB',
-                          //     hintText: "year/month/day",
-                          //     prefixIcon: Icon(
-                          //       Icons.calendar_today,
-                          //       color: Colors.lightBlue,
-                          //     ),
-                          //   ),
-                          // ),
-                          // SizedBox(
-                          //   height: 20,
-                          // ),
                           TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -234,6 +279,69 @@ class _personalFormState extends State<personalForm> {
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 labelText: 'Handicapped Type Id'),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Gender',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              ),
+                              SizedBox(
+                                width: 90,
+                              ),
+                              InkWell(
+                                child: Icon(
+                                  Icons.add_circle,
+                                  size: 30,
+                                  color: Colors.blue,
+                                ),
+                                onTap: () {
+                                  showCupertinoModalPopup(
+                                      context: context,
+                                      builder: (context) =>
+                                          CupertinoActionSheet(
+                                            actions: [buildDatePicker()],
+                                            cancelButton:
+                                                CupertinoActionSheetAction(
+                                              child: Text('Done'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                            ),
+                                          ));
+                                },
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                width: 130,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 10,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    items[index],
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           SizedBox(
                             height: 20,
@@ -358,149 +466,6 @@ class _personalFormState extends State<personalForm> {
                               ),
                               SizedBox(
                                 height: 50,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    'Gender',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.blue),
-                                  ),
-                                  SizedBox(
-                                    width: 90,
-                                  ),
-                                  InkWell(
-                                    child: Icon(
-                                      Icons.add_circle,
-                                      size: 30,
-                                      color: Colors.blue,
-                                    ),
-                                    onTap: () {
-                                      showCupertinoModalPopup(
-                                          context: context,
-                                          builder: (context) =>
-                                              CupertinoActionSheet(
-                                                actions: [buildDatePicker()],
-                                                cancelButton:
-                                                    CupertinoActionSheetAction(
-                                                  child: Text('Done'),
-                                                  onPressed: () =>
-                                                      Navigator.pop(context),
-                                                ),
-                                              ));
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 130,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: 10,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        items[index],
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.blue),
-                                        textAlign: TextAlign.end,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    'Date of Birth',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.blue),
-                                  ),
-                                  SizedBox(
-                                    width: 43,
-                                  ),
-                                  InkWell(
-                                    child: Icon(
-                                      Icons.add_circle,
-                                      size: 30,
-                                      color: Colors.blue,
-                                    ),
-                                    onTap: () {
-                                      picker.showCupertinoDatePicker(
-                                        context: context,
-                                        initialDate: NepaliDateTime.now(),
-                                        firstDate: NepaliDateTime(2000),
-                                        lastDate: NepaliDateTime(2090),
-                                        language: Language.english,
-                                        dateOrder: picker.DateOrder.mdy,
-                                        onDateChanged: (newDate) {
-                                          setState(() {
-                                            dobController.text =
-                                                newDate.toIso8601String();
-                                          });
-                                          dobController.text =
-                                              newDate.toIso8601String();
-                                        },
-                                      );
-                                      // picker.showCupertinoDatePicker(
-                                      //   context: context,
-                                      //   initialDate: NepaliDateTime.now(),
-                                      //   firstDate: NepaliDateTime(2000),
-                                      //   lastDate: NepaliDateTime(2090),
-                                      //   language: Language.english,
-                                      //   dateOrder: picker.DateOrder.mdy,
-                                      //   onDateChanged: (newDate) {
-                                      //     setState(() {
-                                      //       dobController.text =
-                                      //           newDate.toIso8601String();
-                                      //     });
-                                      //     // dobController.text =
-                                      //     //     newDate.toIso8601String();
-                                      //   },
-                                      // );
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 130,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: 10,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        dobController.text,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.blue),
-                                        textAlign: TextAlign.end,
-                                      ),
-                                    ),
-                                  ),
-                                ],
                               ),
                             ],
                           ),
