@@ -5,11 +5,13 @@ import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/appearenceform.dart';
 import 'package:papro/screens/Forms/businessprofileForm.dart';
 import 'package:papro/screens/Forms/childrenDetailsform.dart';
+import 'package:papro/screens/Forms/childrenhealth.dart';
 import 'package:papro/screens/Forms/citizenshipdetailsForm.dart';
 import 'package:papro/screens/Forms/ethencitiesform.dart';
 import 'package:papro/screens/Forms/expenserProfileform.dart';
 import 'package:papro/screens/Forms/extraactivitiesform.dart';
 import 'package:papro/screens/Forms/familyForm.dart';
+import 'package:papro/screens/Forms/foodconsumptionProfile.dart';
 import 'package:papro/screens/Forms/houseform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/Forms/schoolprofileForm.dart';
@@ -102,21 +104,21 @@ class _dashBoardState extends State<dashBoard> {
                         image:
                             'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
                         routeName: workingform.routeName),
-                    // cardmethod(
-                    //     title: 'Extra Activities',
-                    //     image:
-                    //         'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
-                    //     routeName: null),
-
                     cardmethod(
-                        title: 'Profile',
+                        title: 'Children Health',
+                        image:
+                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
+                        routeName: childrenhealth.routeName),
+                    cardmethod(
+                        title: 'Extra Activities',
                         image:
                             'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
                         routeName: extraactivitiesProfile.routeName),
-                    // cardmethod(
-                    //     title: 'Health Profile',
-                    //     image:
-                    //         'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'),
+                    cardmethod(
+                        title: 'Food Consumption',
+                        image:
+                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                        routeName: foodconsumptionProfile.routeName),
                     cardmethod(
                         title: 'Family',
                         image:
@@ -157,7 +159,6 @@ class _dashBoardState extends State<dashBoard> {
                         image:
                             'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
                         routeName: appearenceProfile.routeName),
-
                     cardmethod(
                         title: 'Expenses Profile',
                         image:

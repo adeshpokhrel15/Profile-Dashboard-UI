@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/appearenceform.dart';
+import 'package:papro/screens/Forms/childrenhealth.dart';
 import 'package:papro/screens/Forms/extraactivitiesform.dart';
 import 'package:papro/screens/Forms/foodconsumptionProfile.dart';
 import 'package:papro/screens/Forms/businessprofileForm.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home:
+            //foodconsumptionProfile(),
             // appearanceProfile(),
             //addressForm(),
             //  dashBoard(),
@@ -48,6 +50,9 @@ class MyApp extends StatelessWidget {
           appearenceProfile.routeName: (context) => appearenceProfile(),
           extraactivitiesProfile.routeName: (context) =>
               extraactivitiesProfile(),
+          foodconsumptionProfile.routeName: (context) =>
+              foodconsumptionProfile(),
+          childrenhealth.routeName: (context) => childrenhealth(),
         });
   }
 }

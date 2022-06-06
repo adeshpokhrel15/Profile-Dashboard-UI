@@ -14,6 +14,11 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
 
   final familydetailid = TextEditingController();
   bool value = false;
+
+  bool _checkOrganic = false;
+  bool _checkBalnced = false;
+  bool _checkRunning = false;
+
   final notification = [
     CheckBoxState(
       title: 'Yes',
@@ -56,7 +61,10 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
                 'Is Balanced Diet?',
                 style: TextStyle(fontSize: 20),
               ),
-              ...notification.map(buildSingleCheckbox).toList(),
+              // ...notification.map(buildSingleCheckbox).toList(),
+
+              ...buildSingleCheckbox(),
+
               SizedBox(
                 height: 20,
               ),
@@ -114,9 +122,37 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
                 'Is Organic?',
                 style: TextStyle(fontSize: 20),
               ),
-              ...notification.map(buildorganic).toList(),
+              // ...notification.map(buildorganic).toList(),
+
+              ...buildorganic(),
               SizedBox(
                 height: 20,
+              ),
+              Text(
+                'Is Running?',
+                style: TextStyle(fontSize: 20),
+              ),
+              // ...notification.map(buildorganic).toList(),
+
+              ...buildrunning(),
+              Center(
+                child: Container(
+                  height: 50,
+                  width: 150,
+                  child: MaterialButton(
+                    onPressed: () async {
+                      _form.currentState!.save();
+                      _form.currentState!.validate();
+                      FocusScope.of(context).unfocus();
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(22.0)),
+                    elevation: 5.0,
+                    child: Text('Submit'),
+                    color: Color(0xFF00a2e8),
+                    textColor: Colors.black,
+                  ),
+                ),
               ),
             ],
           ),
@@ -125,17 +161,81 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
     ));
   }
 
-  Widget buildorganic(CheckBoxState checkbox) => CheckboxListTile(
+  List<Widget> buildorganic() {
+    List<Widget> widgetss = [
+      CheckboxListTile(
         activeColor: Colors.green,
-        value: checkbox.value,
-        title: Text(checkbox.title),
-        onChanged: (value) => setState((() => checkbox.value = value!)),
-      );
+        value: _checkOrganic,
+        title: Text('Yes'),
+        onChanged: (value) => setState(
+          (() => _checkOrganic = true),
+        ),
+      ),
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: !_checkOrganic,
+        title: Text('No'),
+        onChanged: (value) => setState(
+          (() => _checkOrganic = false),
+        ),
+      ),
+    ];
 
-  Widget buildSingleCheckbox(CheckBoxState checkbox) => CheckboxListTile(
+    return widgetss;
+  }
+
+  // Widget buildSingleCheckbox(CheckBoxState checkbox) => CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: checkbox.value,
+  //       title: Text(checkbox.title),
+  //       onChanged: (value) => setState(
+  //         (() => checkbox.value = value!),
+  //       ),
+  //     );
+
+  List<Widget> buildSingleCheckbox() {
+    List<Widget> widgetss = [
+      CheckboxListTile(
         activeColor: Colors.green,
-        value: checkbox.value,
-        title: Text(checkbox.title),
-        onChanged: (value) => setState((() => checkbox.value = value!)),
-      );
+        value: _checkBalnced,
+        title: Text('Yes'),
+        onChanged: (value) => setState(
+          (() => _checkBalnced = true),
+        ),
+      ),
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: !_checkBalnced,
+        title: Text('No'),
+        onChanged: (value) => setState(
+          (() => _checkBalnced = false),
+        ),
+      ),
+    ];
+
+    return widgetss;
+  }
+
+  List<Widget> buildrunning() {
+    List<Widget> widgetss = [
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: _checkRunning,
+        title: Text('Yes'),
+        onChanged: (value) => setState(
+          (() => _checkRunning = true),
+        ),
+      ),
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: !_checkRunning,
+        title: Text('No'),
+        onChanged: (value) => setState(
+          (() => _checkRunning = false),
+        ),
+      ),
+    ];
+
+    return widgetss;
+  }
 }
