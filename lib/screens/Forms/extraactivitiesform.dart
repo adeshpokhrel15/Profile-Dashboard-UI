@@ -30,7 +30,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            'Extra Cariculum Activities Profile',
+            'Extra Cariculum Activities',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
               ),
               Container(
                 height: 50,
-                width: 150,
+                width: 80,
                 child: MaterialButton(
                   onPressed: () async {
                     _form.currentState!.save();
@@ -148,7 +148,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(22.0)),
                   elevation: 5.0,
-                  child: Text('Submit'),
+                  child: Text('Save as Draft'),
                   color: Color(0xFF00a2e8),
                   textColor: Colors.black,
                 ),

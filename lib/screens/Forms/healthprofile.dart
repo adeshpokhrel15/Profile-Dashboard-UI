@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:papro/models/checkbox.dart';
 
-class childrenhealthProfile extends StatefulWidget {
-  static const routeName = "childrenhealthProfile-form";
+class healthProfileForm extends StatefulWidget {
+  static const routeName = 'healthprofile-form';
+
   @override
-  State<childrenhealthProfile> createState() => _childrenhealthProfileState();
+  State<healthProfileForm> createState() => _healthProfileFormState();
 }
 
-class _childrenhealthProfileState extends State<childrenhealthProfile> {
+class _healthProfileFormState extends State<healthProfileForm> {
   final _form = GlobalKey<FormState>();
   int ind = 0;
   final bloods = [
@@ -629,3 +629,7 @@ class _childrenhealthProfileState extends State<childrenhealthProfile> {
         ),
       );
 }
+//       ),
+//     );
+//   }
+// }

@@ -109,7 +109,7 @@ class _personalFormState extends State<personalForm> {
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //r  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           TextFormField(
                             autovalidateMode:
@@ -211,7 +211,7 @@ class _personalFormState extends State<personalForm> {
                                 width: 20,
                               ),
                               Container(
-                                width: 130,
+                                width: MediaQuery.of(context).size.width * 0.35,
                                 height: 40,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -309,6 +309,7 @@ class _personalFormState extends State<personalForm> {
                                             actions: [buildDatePicker()],
                                             cancelButton:
                                                 CupertinoActionSheetAction(
+                                              isDestructiveAction: true,
                                               child: Text('Done'),
                                               onPressed: () =>
                                                   Navigator.pop(context),
@@ -320,7 +321,7 @@ class _personalFormState extends State<personalForm> {
                                 width: 20,
                               ),
                               Container(
-                                width: 130,
+                                width: MediaQuery.of(context).size.width * 0.27,
                                 height: 40,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -441,7 +442,8 @@ class _personalFormState extends State<personalForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.2,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -484,7 +486,7 @@ class _personalFormState extends State<personalForm> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(22.0)),
                               elevation: 5.0,
-                              child: Text('Submit'),
+                              child: Text('Save as Draft'),
                               color: Color(0xFF00a2e8),
                               textColor: Colors.black,
                             ),

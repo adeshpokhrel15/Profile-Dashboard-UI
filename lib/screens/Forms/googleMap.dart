@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class googlemap extends StatefulWidget {
+class googlemapProfile extends StatefulWidget {
   static const routeName = "googlemap-form";
   @override
-  State<googlemap> createState() => _googlemapState();
+  State<googlemapProfile> createState() => _googlemapProfileState();
 }
 
-class _googlemapState extends State<googlemap> {
+class _googlemapProfileState extends State<googlemapProfile> {
   final _form = GlobalKey<FormState>();
 
   final longitude = TextEditingController();
@@ -20,7 +20,7 @@ class _googlemapState extends State<googlemap> {
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            'Google Map Form',
+            'Google Map',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -37,54 +37,70 @@ class _googlemapState extends State<googlemap> {
         ),
       ),
       body: Form(
-          key: _form,
-          child: SingleChildScrollView(
-            child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextFormField(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      controller: latitude,
-                      textCapitalization: TextCapitalization.words,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        labelText: 'Latitude',
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Colors.blue,
-                        ),
-                        hintText: 'Latitude',
-                      ),
+        key: _form,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ListView(
+            padding: EdgeInsets.all(10),
+            children: [
+              TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                controller: longitude,
+                textCapitalization: TextCapitalization.words,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  labelText: 'Longitude',
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.blue,
+                  ),
+                  hintText: 'Longitude',
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                keyboardType: TextInputType.emailAddress,
+                controller: latitude,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    SizedBox(
-                      height: 20,
+                    labelText: 'Latitude',
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.orange,
                     ),
-                    TextFormField(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      keyboardType: TextInputType.emailAddress,
-                      controller: longitude,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          labelText: 'Longitude',
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: Colors.orange,
-                          ),
-                          hintText: " Longitude"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                )),
-          )),
+                    hintText: "Latitude"),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 50,
+                width: 80,
+                child: MaterialButton(
+                  onPressed: () async {
+                    _form.currentState!.save();
+                    _form.currentState!.validate();
+                    FocusScope.of(context).unfocus();
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(22.0)),
+                  elevation: 5.0,
+                  child: Text('Save as Draft'),
+                  color: Color(0xFF00a2e8),
+                  textColor: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     ));
   }
 }

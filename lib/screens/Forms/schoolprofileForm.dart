@@ -22,7 +22,7 @@ class schoolprofile extends StatelessWidget {
               backgroundColor: Colors.white,
               title: Center(
                 child: Text(
-                  'Business Profile Form',
+                  'School Profile',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -47,7 +47,7 @@ class schoolprofile extends StatelessWidget {
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             TextFormField(
                               autovalidateMode:
@@ -172,26 +172,23 @@ class schoolprofile extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 30,
                             ),
-                            Center(
-                              child: Container(
-                                height: 50,
-                                width: 150,
-                                child: MaterialButton(
-                                  onPressed: () async {
-                                    _form.currentState!.save();
-                                    _form.currentState!.validate();
-                                    FocusScope.of(context).unfocus();
-                                  },
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(22.0)),
-                                  elevation: 5.0,
-                                  child: Text('Submit'),
-                                  color: Color(0xFF00a2e8),
-                                  textColor: Colors.black,
-                                ),
+                            Container(
+                              height: 50,
+                              width: 150,
+                              child: MaterialButton(
+                                onPressed: () async {
+                                  _form.currentState!.save();
+                                  _form.currentState!.validate();
+                                  FocusScope.of(context).unfocus();
+                                },
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(22.0)),
+                                elevation: 5.0,
+                                child: Text('Save as Draft'),
+                                color: Color(0xFF00a2e8),
+                                textColor: Colors.black,
                               ),
                             ),
                           ]),

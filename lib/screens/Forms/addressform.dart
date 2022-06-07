@@ -34,6 +34,8 @@ class _addressFormState extends State<addressForm> {
   final permTol = TextEditingController();
 
   final permBno = TextEditingController();
+  final tempward = TextEditingController();
+  final permward = TextEditingController();
   int ind = 0;
 
   final bloods = [
@@ -92,7 +94,7 @@ class _addressFormState extends State<addressForm> {
                   child: Container(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Center(
                             child: Text(
@@ -247,7 +249,8 @@ class _addressFormState extends State<addressForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.20,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -278,7 +281,7 @@ class _addressFormState extends State<addressForm> {
                                     AutovalidateMode.onUserInteraction,
                                 validator: (val) {
                                   if (val!.isEmpty) {
-                                    return 'Bloock No. ';
+                                    return 'Block No. is required ';
                                   }
                                   return null;
                                 },
@@ -288,12 +291,12 @@ class _addressFormState extends State<addressForm> {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Bloock No.',
+                                  labelText: 'Block No.',
                                   prefixIcon: Icon(
                                     Icons.block,
                                     color: Colors.blue,
                                   ),
-                                  hintText: "Bloock No.",
+                                  hintText: "Block No.",
                                 ),
                               ),
                               SizedBox(
@@ -452,7 +455,8 @@ class _addressFormState extends State<addressForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.20,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -483,7 +487,7 @@ class _addressFormState extends State<addressForm> {
                                     AutovalidateMode.onUserInteraction,
                                 validator: (val) {
                                   if (val!.isEmpty) {
-                                    return 'Bloock No. ';
+                                    return 'Block No. is required ';
                                   }
                                   return null;
                                 },
@@ -493,12 +497,12 @@ class _addressFormState extends State<addressForm> {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Bloock No.',
+                                  labelText: 'Block No.',
                                   prefixIcon: Icon(
                                     Icons.block,
                                     color: Colors.blue,
                                   ),
-                                  hintText: "Bloock No.",
+                                  hintText: "Block No.",
                                 ),
                               ),
                               SizedBox(
@@ -507,27 +511,24 @@ class _addressFormState extends State<addressForm> {
                               SizedBox(
                                 height: 20,
                               ),
-                              Center(
-                                child: Container(
-                                  height: 50,
-                                  width: 150,
-                                  child: MaterialButton(
-                                    onPressed: () async {
-                                      _form.currentState!.save();
-                                      _form.currentState!.validate();
-                                      FocusScope.of(context).unfocus();
-                                    },
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(22.0)),
-                                    elevation: 5.0,
-                                    child: Text('Submit'),
-                                    color: Color(0xFF00a2e8),
-                                    textColor: Colors.black,
-                                  ),
-                                ),
-                              ),
                             ],
+                          ),
+                          Container(
+                            height: 50,
+                            width: 150,
+                            child: MaterialButton(
+                              onPressed: () async {
+                                _form.currentState!.save();
+                                _form.currentState!.validate();
+                                FocusScope.of(context).unfocus();
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(22.0)),
+                              elevation: 5.0,
+                              child: Text('Save as Draft'),
+                              color: Color(0xFF00a2e8),
+                              textColor: Colors.black,
+                            ),
                           ),
                         ]),
                   ),

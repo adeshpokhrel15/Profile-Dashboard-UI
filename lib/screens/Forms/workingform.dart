@@ -28,7 +28,7 @@ class _workingformState extends State<workingform> {
               backgroundColor: Colors.white,
               title: Center(
                 child: Text(
-                  'Working Form',
+                  'Working Details',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _workingformState extends State<workingform> {
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             TextFormField(
                               autovalidateMode:
@@ -176,24 +176,24 @@ class _workingformState extends State<workingform> {
                                 hintText: "Designation",
                               ),
                             ),
-                            Center(
-                              child: Container(
-                                height: 50,
-                                width: 150,
-                                child: MaterialButton(
-                                  onPressed: () async {
-                                    _form.currentState!.save();
-                                    _form.currentState!.validate();
-                                    FocusScope.of(context).unfocus();
-                                  },
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(22.0)),
-                                  elevation: 5.0,
-                                  child: Text('Submit'),
-                                  color: Color(0xFF00a2e8),
-                                  textColor: Colors.black,
-                                ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              height: 50,
+                              width: 150,
+                              child: MaterialButton(
+                                onPressed: () async {
+                                  _form.currentState!.save();
+                                  _form.currentState!.validate();
+                                  FocusScope.of(context).unfocus();
+                                },
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(22.0)),
+                                elevation: 5.0,
+                                child: Text('Save as Draft'),
+                                color: Color(0xFF00a2e8),
+                                textColor: Colors.black,
                               ),
                             ),
                           ]),

@@ -12,6 +12,8 @@ import 'package:papro/screens/Forms/expenserProfileform.dart';
 import 'package:papro/screens/Forms/extraactivitiesform.dart';
 import 'package:papro/screens/Forms/familyForm.dart';
 import 'package:papro/screens/Forms/foodconsumptionProfile.dart';
+import 'package:papro/screens/Forms/googleMap.dart';
+import 'package:papro/screens/Forms/healthProfile.dart';
 import 'package:papro/screens/Forms/houseform.dart';
 import 'package:papro/screens/Forms/personalform.dart';
 import 'package:papro/screens/Forms/schoolprofileForm.dart';
@@ -49,37 +51,6 @@ class _dashBoardState extends State<dashBoard> {
             ),
           ),
           body: ListView(children: [
-            // Card(
-            //   elevation: 8,
-            //   child: Container(
-            //     height: 230,
-            //     //  height: MediaQuery.of(context).size.height * 0.3,
-            //     width: double.infinity,
-            //     child: barChart(),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
-            // Container(
-            //   height: 270,
-            //   //  height: MediaQuery.of(context).size.height * 0.3,
-            //   width: double.infinity,
-            //   child: pieChart(),
-            // ),
-            // SizedBox(height: 13),
-            // Center(
-            //   child: Text(
-            //     'Waling Nagarpalika Tathyanka',
-            //     style: TextStyle(
-            //         fontSize: 20,
-            //         fontWeight: FontWeight.bold,
-            //         color: Colors.green),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 7,
-            // ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: GridView.count(
@@ -92,117 +63,97 @@ class _dashBoardState extends State<dashBoard> {
                     cardmethod(
                         title: 'Personal',
                         image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
+                            'https://th.bing.com/th/id/OIP.sZ57HGYrq8Vf-Kb01YXMZQHaGo?pid=ImgDet&rs=1',
                         routeName: personalForm.routeName),
                     cardmethod(
                         title: 'Address',
                         image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
+                            'https://media.istockphoto.com/photos/cartoon-address-book-on-a-white-background-picture-id173682846?k=6&m=173682846&s=170667a&w=0&h=TMDGkmJHjNnfdIuEWA9FplWwTcoW4YcxUZHSWfAWHS4=',
                         routeName: addressForm.routeName),
-                    cardmethod(
-                        title: 'Working Details',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-                        routeName: workingform.routeName),
-                    cardmethod(
-                        title: 'Children Health',
-                        image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
-                        routeName: childrenhealth.routeName),
-                    cardmethod(
-                        title: 'Extra Activities',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
-                        routeName: extraactivitiesProfile.routeName),
-                    cardmethod(
-                        title: 'Food Consumption',
-                        image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-                        routeName: foodconsumptionProfile.routeName),
                     cardmethod(
                         title: 'Family',
                         image:
-                            'https://th.bing.com/th/id/R.24b3df49de1aa97e660b350437e8988b?rik=tgwtU84HhFd2pg&pid=ImgRaw&r=0',
+                            'https://th.bing.com/th/id/R.15e93cca6d64155a85e946e9b0c00d0f?rik=IhWxsKz1Ey2pdA&pid=ImgRaw&r=0',
                         routeName: familyform.routeName),
                     cardmethod(
-                        title: 'Children Details',
+                        title: 'Working Details',
                         image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
-                        routeName: childrenForm.routeName),
+                            'https://th.bing.com/th/id/OIP.XTzI1VBI5Skk9DrBKYA3hwHaHa?pid=ImgDet&rs=1',
+                        routeName: workingform.routeName),
+                    cardmethod(
+                        title: 'Ethnicities',
+                        image:
+                            'https://th.bing.com/th/id/OIP.NkPhDatdN435qULtaAH-4AHaC0?pid=ImgDet&rs=1',
+                        routeName: ethencitiesform.routName),
+                    cardmethod(
+                        title: 'Expenses Profile',
+                        image:
+                            'https://th.bing.com/th/id/OIP.eAXHj__1cZWzM21YWOD7ZwHaHa?pid=ImgDet&rs=1',
+                        routeName: expensesprofileform.routeName),
+                    cardmethod(
+                        title: 'Food Consumption',
+                        image:
+                            'https://th.bing.com/th/id/OIP._nnxvjIUh7FiOg-ITtlWVQHaHv?pid=ImgDet&rs=1',
+                        routeName: foodconsumptionProfile.routeName),
+                    cardmethod(
+                        title: 'House Details',
+                        image:
+                            'https://th.bing.com/th/id/OIP.Xg7xqArWOb0uNareYX9INQHaHa?pid=ImgDet&rs=1',
+                        routeName: houseform.routeName),
                     cardmethod(
                         title: 'Citizenship Details',
                         image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                            'https://th.bing.com/th/id/R.8c1697f47e872879caacff734c7727b1?rik=QxanUsRSMZwfOw&pid=ImgRaw&r=0',
                         routeName: citizendetailsForm.routeName),
                     cardmethod(
                         title: 'Business Profile',
                         image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
+                            'https://th.bing.com/th/id/R.77f9af013149d558c4e730f54d1e8ec1?rik=jiAax7%2faPXbGTg&riu=http%3a%2f%2fp.motionelements.com%2fstock-video%2fbusiness%2fme6527947-business-cartoon-hd-a0005.jpg&ehk=RQZpx9kGz1lCG7pYo%2fzuIS8qgRBj5m9MAKxFTAs5aG0%3d&risl=&pid=ImgRaw&r=0',
                         routeName: businessprofile.routName),
                     cardmethod(
-                        title: 'Ethnicities',
+                        title: 'Extra Activities',
                         image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-                        routeName: ethencitiesform.routName),
-                    cardmethod(
-                        title: 'House form',
-                        image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
-                        routeName: houseform.routeName),
+                            'https://th.bing.com/th/id/OIP.CF-B6OOkmgLJiMCjMWAh-gHaE7?pid=ImgDet&rs=1',
+                        routeName: extraactivitiesProfile.routeName),
                     cardmethod(
                         title: 'School Profile',
                         image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                            'https://th.bing.com/th/id/R.e3649eed065b379b20d55bef40a156dc?rik=Dco%2bPUuvoeUy1w&riu=http%3a%2f%2fsetgis.net%2fimages%2fschool_cartoon.png&ehk=5PBS318jNLge5wN6Hk2CKDLUlesrktttR4AyklfU3nc%3d&risl=&pid=ImgRaw&r=0',
                         routeName: schoolprofile.routName),
                     cardmethod(
                         title: 'Appearence Profile',
                         image:
-                            'https://th.bing.com/th/id/OIP._2RmufX0Ot6iAagJcQImhQHaHS?pid=ImgDet&w=2400&h=2360&rs=1',
+                            'https://th.bing.com/th/id/OIP.mMJKLLUwaFwtN2MktfSaAAHaEn?pid=ImgDet&rs=1',
                         routeName: appearenceProfile.routeName),
                     cardmethod(
-                        title: 'Expenses Profile',
+                        title: 'Children Details',
                         image:
-                            'https://th.bing.com/th/id/R.3d2cc5a40e68ff78b942b89f412726a9?rik=Z6lFVqibEDcS2g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fXgX%2fKTjXgXo7c.jpg&ehk=doVwVpYwXJPNM6Af2GU%2b7aZfzJdLgevyqEEU7Bk7F94%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-                        routeName: expensesprofileform.routeName)
+                            'https://th.bing.com/th/id/OIP.XwigfuFrDXe8ief9D0o0FwHaIa?pid=ImgDet&rs=1',
+                        routeName: childrendetailsForm.routeName),
+                    cardmethod(
+                        title: 'Children Health',
+                        image:
+                            'https://th.bing.com/th/id/OIP.AG5iqB0QCsS_BSveyZGKVwHaEd?pid=ImgDet&rs=1',
+                        routeName: childrenhealthProfile.routeName),
+                    cardmethod(
+                        title: 'Google Map',
+                        image:
+                            'https://th.bing.com/th/id/OIP.H_KBRkqdebToJdAGo0zK6gHaHH?pid=ImgDet&rs=1',
+                        routeName: googlemapProfile.routeName)
+                    ///////////////////////////////////////
+                    // cardmethod(
+                    //     title: 'Health Profile',
+                    //     image:
+                    //         'https://th.bing.com/th/id/R.6d92929fa0f6af19444fb74f495bd3f6?rik=eVkadmpAKbnnJQ&riu=http%3a%2f%2fastrologer.swayamvaralaya.com%2fwp-content%2fuploads%2f2012%2f08%2fhealth1.jpg&ehk=BRlD7AaHMIK1Ftwpqwqkh6Ze5lj4RyDBUeyqmghogpQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                    //     routeName: healthProfile.routeName),
                   ]),
             ),
           ]),
-
-          // bottomNavigationBar: BottomNavyBar(
-          //   selectedIndex: currentIndex,
-          //   showElevation: true,
-          //   itemCornerRadius: 15,
-          //   curve: Curves.easeIn,
-          //   onItemSelected: (index) => setState(() {
-          //     currentIndex = index;
-          //   }),
-          //   items: [
-          //     BottomNavyBarItem(
-          //       icon: Icon(Icons.apps),
-          //       title: Text('Profile'),
-          //       activeColor: Colors.red,
-          //       textAlign: TextAlign.center,
-          //     ),
-          //     BottomNavyBarItem(
-          //       icon: Icon(Icons.people),
-          //       title: Text('Users'),
-          //       activeColor: Colors.purpleAccent,
-          //       textAlign: TextAlign.center,
-          //     ),
-          //     BottomNavyBarItem(
-          //       icon: Icon(Icons.settings),
-          //       title: Text('Settings'),
-          //       activeColor: Colors.blue,
-          //       textAlign: TextAlign.center,
-          //     ),
-          //   ],
-          // ),
         ),
       );
     });
   }
 
-  // Card cardmethod({required String title, required String image, required Function onTap}) {
   cardmethod(
       {required String title,
       required String image,

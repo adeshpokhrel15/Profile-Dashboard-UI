@@ -55,7 +55,7 @@ class businessprofile extends StatelessWidget {
                     child: Container(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             TextFormField(
                               autovalidateMode:
@@ -179,29 +179,6 @@ class businessprofile extends StatelessWidget {
                                 hintText: "Annual income",
                               ),
                             ),
-                            TextFormField(
-                              autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
-                              validator: (val) {
-                                if (val!.isEmpty) {
-                                  return 'Annual Expense is required';
-                                }
-                                return null;
-                              },
-                              keyboardType: TextInputType.emailAddress,
-                              controller: annualexpense,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                labelText: 'Annual Expense',
-                                prefixIcon: Icon(
-                                  Icons.block,
-                                  color: Colors.blue,
-                                ),
-                                hintText: "Annual Expense",
-                              ),
-                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -283,24 +260,21 @@ class businessprofile extends StatelessWidget {
                             SizedBox(
                               height: 20,
                             ),
-                            Center(
-                              child: Container(
-                                height: 50,
-                                width: 150,
-                                child: MaterialButton(
-                                  onPressed: () async {
-                                    _form.currentState!.save();
-                                    _form.currentState!.validate();
-                                    FocusScope.of(context).unfocus();
-                                  },
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(22.0)),
-                                  elevation: 5.0,
-                                  child: Text('Submit'),
-                                  color: Color(0xFF00a2e8),
-                                  textColor: Colors.black,
-                                ),
+                            Container(
+                              height: 50,
+                              width: 150,
+                              child: MaterialButton(
+                                onPressed: () async {
+                                  _form.currentState!.save();
+                                  _form.currentState!.validate();
+                                  FocusScope.of(context).unfocus();
+                                },
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(22.0)),
+                                elevation: 5.0,
+                                child: Text('Submit'),
+                                color: Color(0xFF00a2e8),
+                                textColor: Colors.black,
                               ),
                             ),
                           ]),

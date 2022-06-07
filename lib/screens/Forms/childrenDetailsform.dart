@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:nepali_utils/nepali_utils.dart';
 import 'package:nepali_date_picker/nepali_date_picker.dart' as picker;
 
-class childrenForm extends StatefulWidget {
-  static const routeName = "children-form";
+class childrendetailsForm extends StatefulWidget {
+  static const routeName = "childrendetails-form";
   @override
-  State<childrenForm> createState() => _childrenFormState();
+  State<childrendetailsForm> createState() => _childrendetailsFormState();
 }
 
 enum SingingCharacter { Male, Female, Others }
 
-class _childrenFormState extends State<childrenForm> {
+class _childrendetailsFormState extends State<childrendetailsForm> {
   int index = 0;
   final items = [
     'Male',
@@ -34,7 +34,7 @@ class _childrenFormState extends State<childrenForm> {
               backgroundColor: Colors.white,
               title: Center(
                 child: Text(
-                  'Children Form',
+                  'Children Details',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class _childrenFormState extends State<childrenForm> {
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //r  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           TextFormField(
                             autovalidateMode:
@@ -153,7 +153,8 @@ class _childrenFormState extends State<childrenForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.27,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -220,7 +221,8 @@ class _childrenFormState extends State<childrenForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.35,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -246,7 +248,7 @@ class _childrenFormState extends State<childrenForm> {
                             ],
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 30,
                           ),
                           Container(
                             height: 50,
@@ -260,7 +262,7 @@ class _childrenFormState extends State<childrenForm> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(22.0)),
                               elevation: 5.0,
-                              child: Text('Submit'),
+                              child: Text('Save as Draft'),
                               color: Color(0xFF00a2e8),
                               textColor: Colors.black,
                             ),

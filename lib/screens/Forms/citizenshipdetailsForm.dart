@@ -28,7 +28,7 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
               backgroundColor: Colors.white,
               title: Center(
                 child: Text(
-                  'Personal Form',
+                  'Citizenship Details',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //r  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           TextFormField(
                             autovalidateMode:
@@ -151,7 +151,8 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                                     width: 20,
                                   ),
                                   Container(
-                                    width: 130,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.35,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -203,7 +204,7 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                             ),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 30,
                           ),
                           Container(
                             height: 50,
@@ -217,7 +218,7 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(22.0)),
                               elevation: 5.0,
-                              child: Text('Submit'),
+                              child: Text('Save as Draft'),
                               color: Color(0xFF00a2e8),
                               textColor: Colors.black,
                             ),

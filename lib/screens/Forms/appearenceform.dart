@@ -125,7 +125,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(22.0)),
                   elevation: 5.0,
-                  child: Text('Submit'),
+                  child: Text('Save as Draft'),
                   color: Color(0xFF00a2e8),
                   textColor: Colors.black,
                 ),
