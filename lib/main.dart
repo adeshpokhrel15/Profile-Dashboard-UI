@@ -40,16 +40,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: healthProfileForm(),
-        //childrenhealthProfile(),
-        //personalForm(),
-        //transistionForm(),
-        //foodconsumptionProfile(),
-        // appearanceProfile(),
-        //addressForm(),
-        //  dashBoard(),
+        home:
+            //healthProfileForm(),
+            //childrenhealthProfile(),
+            //personalForm(),
+            //transistionForm(),
+            //foodconsumptionProfile(),
+            // appearanceProfile(),
+            //addressForm(),
+            //  dashBoard(),
 
-        //      MyHomePage(),
+            MyHomePage(),
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
           childrendetailsForm.routeName: (context) => childrendetailsForm(),
           expensesprofileform.routeName: (context) => expensesprofileform(),
           googlemapProfile.routeName: (context) => googlemapProfile(),
-          //     healthProfile.routeName: (context) => healthProfile(),
+          healthProfileForm.routeName: (context) => healthProfileForm(),
           childrenhealthProfile.routeName: (context) => childrenhealthProfile(),
         });
   }

@@ -139,13 +139,12 @@ class _dashBoardState extends State<dashBoard> {
                         title: 'Google Map',
                         image:
                             'https://th.bing.com/th/id/OIP.H_KBRkqdebToJdAGo0zK6gHaHH?pid=ImgDet&rs=1',
-                        routeName: googlemapProfile.routeName)
-                    ///////////////////////////////////////
-                    // cardmethod(
-                    //     title: 'Health Profile',
-                    //     image:
-                    //         'https://th.bing.com/th/id/R.6d92929fa0f6af19444fb74f495bd3f6?rik=eVkadmpAKbnnJQ&riu=http%3a%2f%2fastrologer.swayamvaralaya.com%2fwp-content%2fuploads%2f2012%2f08%2fhealth1.jpg&ehk=BRlD7AaHMIK1Ftwpqwqkh6Ze5lj4RyDBUeyqmghogpQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-                    //     routeName: healthProfile.routeName),
+                        routeName: googlemapProfile.routeName),
+                    cardmethod(
+                        title: 'Health Profile',
+                        image:
+                            'https://th.bing.com/th/id/R.6d92929fa0f6af19444fb74f495bd3f6?rik=eVkadmpAKbnnJQ&riu=http%3a%2f%2fastrologer.swayamvaralaya.com%2fwp-content%2fuploads%2f2012%2f08%2fhealth1.jpg&ehk=BRlD7AaHMIK1Ftwpqwqkh6Ze5lj4RyDBUeyqmghogpQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+                        routeName: healthProfileForm.routeName),
                   ]),
             ),
           ]),
