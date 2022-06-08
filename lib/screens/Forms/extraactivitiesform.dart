@@ -14,13 +14,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
   final professionalstatus = TextEditingController();
 
   final durationofactivities = TextEditingController();
-  bool value = false;
-  final notification = [
-    CheckBoxState(
-      title: 'Yes',
-    ),
-    CheckBoxState(title: 'No'),
-  ];
+  bool _checktraining = false;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +76,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
                 'Is Taking Training?',
                 style: TextStyle(fontSize: 20),
               ),
-              ...notification.map(buildSingleCheckbox).toList(),
+              ...buildTraining(),
               SizedBox(
                 height: 20,
               ),
@@ -160,10 +154,26 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
     ));
   }
 
-  Widget buildSingleCheckbox(CheckBoxState checkbox) => CheckboxListTile(
+  List<Widget> buildTraining() {
+    List<Widget> widgetss = [
+      CheckboxListTile(
         activeColor: Colors.green,
-        value: checkbox.value,
-        title: Text(checkbox.title),
-        onChanged: (value) => setState((() => checkbox.value = value!)),
-      );
+        value: _checktraining,
+        title: Text('Yes'),
+        onChanged: (value) => setState(
+          (() => _checktraining = true),
+        ),
+      ),
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: !_checktraining,
+        title: Text('No'),
+        onChanged: (value) => setState(
+          (() => _checktraining = false),
+        ),
+      ),
+    ];
+
+    return widgetss;
+  }
 }

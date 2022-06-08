@@ -29,9 +29,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter(); //hive initalize
-  // Hive.registerAdapter(TransistionAdapter()); // hive register
-  // // await Hive.openBox<Transistion>('transistion'); //hive open box
-  // await Hive.openBox<Transistion>('tempTrans');
+  Hive.registerAdapter(TransistionAdapter()); // hive register
+  //await Hive.openBox<Transistion>('transistion'); //hive open box
+  await Hive.openBox<Transistion>('tempTrans');
   runApp(MyApp());
 }
 
@@ -40,17 +40,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home:
-            //healthProfileForm(),
-            //childrenhealthProfile(),
-            //personalForm(),
-            //transistionForm(),
-            //foodconsumptionProfile(),
-            // appearanceProfile(),
-            //addressForm(),
-            //  dashBoard(),
+        home: transistionForm(),
+        //healthProfileForm(),
+        //childrenhealthProfile(),
+        //personalForm(),
+        //transistionForm(),
+        //foodconsumptionProfile(),
+        // appearanceProfile(),
+        //addressForm(),
+        //  dashBoard(),
 
-            MyHomePage(),
+        // MyHomePage(),
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),

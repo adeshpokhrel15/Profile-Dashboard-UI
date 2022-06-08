@@ -13,13 +13,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
   final skincolor = TextEditingController();
 
   final handicapedid = TextEditingController();
-  bool value = false;
-  final notification = [
-    CheckBoxState(
-      title: 'Yes',
-    ),
-    CheckBoxState(title: 'No'),
-  ];
+  bool _checkHandicapped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +75,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
                 'Is Handicapped?',
                 style: TextStyle(fontSize: 20),
               ),
-              ...notification.map(buildSingleCheckbox).toList(),
+              ...buildHandicapped(),
               SizedBox(
                 height: 20,
               ),
@@ -137,10 +131,26 @@ class _appearenceProfileState extends State<appearenceProfile> {
     ));
   }
 
-  Widget buildSingleCheckbox(CheckBoxState checkbox) => CheckboxListTile(
+  List<Widget> buildHandicapped() {
+    List<Widget> widgetss = [
+      CheckboxListTile(
         activeColor: Colors.green,
-        value: checkbox.value,
-        title: Text(checkbox.title),
-        onChanged: (value) => setState((() => checkbox.value = value!)),
-      );
+        value: _checkHandicapped,
+        title: Text('Yes'),
+        onChanged: (value) => setState(
+          (() => _checkHandicapped = true),
+        ),
+      ),
+      CheckboxListTile(
+        activeColor: Colors.green,
+        value: !_checkHandicapped,
+        title: Text('No'),
+        onChanged: (value) => setState(
+          (() => _checkHandicapped = false),
+        ),
+      ),
+    ];
+
+    return widgetss;
+  }
 }

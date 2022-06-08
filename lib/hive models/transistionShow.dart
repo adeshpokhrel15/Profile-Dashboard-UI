@@ -1,29 +1,27 @@
-// import 'package:flutter/material.dart';
-// import 'package:hive/hive.dart';
-// import 'package:papro/hive%20models/transistionmodels.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:papro/hive%20models/transistionmodels.dart';
 
-// class tranisistionshow extends StatefulWidget {
-//   @override
-//   State<tranisistionshow> createState() => _tranisistionshowState();
-// }
+class transistionShow extends StatelessWidget {
+  static const routeName = 'transistionShow-form';
 
-// class _tranisistionshowState extends State<tranisistionshow> {
-//   initState() {
-//     Box<Transistion> box = Hive.box<Transistion>('tempTrans');
-//     List<Transistion> transe = box.values.toList();
-//     // print(transe.length);
-//     // print(transe[0].name);
-//     // print(transe[0].wardNo);
-//   }
+  initState() {
+    Box<Transistion> box = Hive.box<Transistion>('tempTrans');
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('TransitionShow'),
-//       ),
-//     );
-//   }
-// }
+    List<Transistion> transe = box.values.toList();
+    print(transe.length);
+    print(transe[0].name);
+    print(transe[0].wardNo);
+  }
 
-// class Box {}
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Scaffold(
+      body: Center(
+        child: Text('transistion Show'),
+      ),
+    ));
+  }
+}
