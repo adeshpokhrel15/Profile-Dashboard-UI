@@ -4,7 +4,7 @@ class Form extends HiveObject {
   String? fullName;
   int? age;
   String? gender;
-  int? dob;
+  String? dob;
   int? handicappedid;
   int? mobilenumber;
   late String? email;
@@ -44,19 +44,19 @@ class Form extends HiveObject {
   String? incomesource;
   String? incomesourceman;
   String? expensecategory;
-  String? totalexpense;
+  double? totalexpense;
   bool? isbalanceddiet;
   String? foodconsumptiontiming;
   String? regularmealdescription;
-  String? isorganic;
+  bool? isorganic;
   String? Houseaddress;
   int? Blocknumber;
   String? Streetname;
   int? Housenumber;
   String? toilettypeid;
   int? citizenshipnumber;
-  int? issueddate;
-  int? issuedat;
+  String? issueddate;
+  String? issuedat;
   String? verifiedby;
   String? businessorg;
   String? businesstypeid;
@@ -73,7 +73,7 @@ class Form extends HiveObject {
   String? dresscondition;
   String? childenschoolschemeid;
   String? skincolor;
-  String? ishandicap;
+  bool? ishandicap;
   String? handicappedtypeid;
   String? name;
   String? childrengender;
@@ -113,7 +113,7 @@ class Form extends HiveObject {
   String? latitude;
   String? longitude;
 
-  Form(
+  Form({
     this.fullName,
     this.age,
     this.gender,
@@ -225,5 +225,118 @@ class Form extends HiveObject {
     this.geneticdiseasedescription,
     this.latitude,
     this.longitude,
-  );
+  });
+
+  Form.intState()
+      : fullName = '',
+        age = 0,
+        gender = '',
+        dob = '',
+        handicappedid = 0,
+        mobilenumber = 0,
+        email = '',
+        pannumber = 0,
+        bloodgroup = '',
+        tempProv = '',
+        tempdistrict = '',
+        tempMuni = '',
+        tempward = 0,
+        tempstreettol = '',
+        tempblockno = 0,
+        permProv = '',
+        permMuni = '',
+        permpward = 0,
+        permstreettol = '',
+        permblockno = 0,
+        permdistrict = '',
+        fatherdetails = '',
+        motherdetails = '',
+        spousename = '',
+        grandfathername = '',
+        grandmothername = '',
+        sonname = '',
+        daughtername = '',
+        totalson = 0,
+        totaldaughter = 0,
+        jobtype = '',
+        joborganization = '',
+        organizationaddress = '',
+        annualincome = 0,
+        designation = '',
+        nationalismandreligion = '',
+        nationality = '',
+        religion = '',
+        ethnicgroup = '',
+        totalmonthlyincome = 0,
+        incomesource = '',
+        incomesourceman = '',
+        expensecategory = '',
+        totalexpense = 0,
+        isbalanceddiet = false,
+        foodconsumptiontiming = '',
+        regularmealdescription = '',
+        isorganic = false,
+        Houseaddress = '',
+        Blocknumber = 0,
+        Streetname = '',
+        Housenumber = 0,
+        toilettypeid = '',
+        citizenshipnumber = 0,
+        issueddate = '',
+        issuedat = '',
+        verifiedby = '',
+        businessorg = '',
+        businesstypeid = '',
+        orgname = '',
+        totalinvestment = 0,
+        annualincomeorg = 0,
+        annualxpense = 0,
+        totalnostaff = 0,
+        businessarea = '',
+        businessproduct = '',
+        schoolname = '',
+        schooltypeid = '',
+        dresscode = '',
+        dresscondition = '',
+        childenschoolschemeid = '',
+        skincolor = '',
+        ishandicap = false,
+        handicappedtypeid = '',
+        name = '',
+        childrengender = '',
+        familydetailid = '',
+        childrendob = '',
+        interestedfieldid = '',
+        istakingtraining = false,
+        professionalstatus = '',
+        durationofactivities = '',
+        childrenbloodgroup = '',
+        childrenbirthplace = '',
+        chilrenbirthweight = 0,
+        childrenbirthcondition = '',
+        childrenisBCGvaccinated = false,
+        childrenisDPTHEPBvaccinated = false,
+        childrenisOPVvaccinated = false,
+        childrenisPCVvaccinated = false,
+        childrenisIPVvaccinated = false,
+        childrenisMRvaccinated = false,
+        childrenisJEvaccinated = false,
+        childrenisTDvaccinated = false,
+        childrenisgeneticdiseaseissue = false,
+        childrengeneticdiseasedescription = '',
+        childreniscovidvaccinated = false,
+        childrenvaccinedetails = '',
+        childrenvacinedose = '',
+        healthbloodgroup = '',
+        birthplace = '',
+        birthweight = 0,
+        birthcondition = '',
+        isbelow5vaccinated = false,
+        iscovidvaccinated = false,
+        vaccinedetails = '',
+        vacinedose = '',
+        isgeneticdiseaseissue = false,
+        geneticdiseasedescription = '',
+        latitude = '',
+        longitude = '';
 }
