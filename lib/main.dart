@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:papro/models/formModel.dart';
@@ -25,6 +26,7 @@ import 'package:papro/screens/dashBoard.dart';
 import 'package:papro/screens/profile.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+final boxB = Provider<List<formModel>>((ref) => []);
 late Box box;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
