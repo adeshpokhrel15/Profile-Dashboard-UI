@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:papro/hive%20models/pages/transistionspage.dart';
-import 'package:papro/hive%20models/transistionmodels.dart';
+import 'package:papro/models/formModel.dart';
+
 import 'package:papro/screens/Forms/addressform.dart';
 import 'package:papro/screens/Forms/appearenceform.dart';
 import 'package:papro/screens/Forms/childrenhealth.dart';
@@ -25,13 +25,14 @@ import 'package:papro/screens/dashBoard.dart';
 import 'package:papro/screens/profile.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+late Box box;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter(); //hive initalize
-  Hive.registerAdapter(TransistionAdapter()); // hive register
-  //await Hive.openBox<Transistion>('transistion'); //hive open box
-  await Hive.openBox<Transistion>('tempTrans');
+  Hive.registerAdapter(FormAdapter()); // hive register
+  box = await Hive.openBox<formModel>('formmodel'); //hive open box
+  // await Hive.openBox<Transistion>('tempTrans');
   runApp(MyApp());
 }
 
@@ -40,17 +41,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: transistionForm(),
-        //healthProfileForm(),
-        //childrenhealthProfile(),
-        //personalForm(),
-        //transistionForm(),
-        //foodconsumptionProfile(),
-        // appearanceProfile(),
-        //addressForm(),
-        //  dashBoard(),
+        home:
+            //transistionShow(),
 
-        // MyHomePage(),
+            //healthProfileForm(),
+            //childrenhealthProfile(),
+            //personalForm(),
+            //transistionForm(),
+            //foodconsumptionProfile(),
+            // appearanceProfile(),
+            //addressForm(),
+            //  dashBoard(),
+
+            MyHomePage(),
         routes: {
           personalForm.routeName: (context) => personalForm(),
           addressForm.routeName: (context) => addressForm(),
