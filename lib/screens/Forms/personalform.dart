@@ -57,7 +57,7 @@ class _personalFormState extends State<personalForm> {
 
   final ageController = TextEditingController();
 
-  final genderController = TextEditingController();
+  //final genderController = TextEditingController();
 
   final dobController = TextEditingController();
 
@@ -482,6 +482,16 @@ class _personalFormState extends State<personalForm> {
                                 _form.currentState!.save();
                                 _form.currentState!.validate();
                                 FocusScope.of(context).unfocus();
+                                final personalForm = {
+                                  'name': nameController.text.trim(),
+                                  'email': mailController.text.trim(),
+                                  'mobile': mobileController.text.trim(),
+                                  'pan': panController.text.trim(),
+                                  'blood': bloods[ind],
+                                  'date': items[index],
+                                  'age': ageController.text.trim(),
+                                  'handicappedid': htiController.text.trim(),
+                                };
                               },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(22.0)),
