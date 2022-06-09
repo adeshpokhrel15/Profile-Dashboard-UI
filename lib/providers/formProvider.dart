@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:papro/main.dart';
 import 'package:papro/models/formModel.dart';
+
+final formModelProvider = StateNotifierProvider<FormProvider, List<formModel>>(
+    (ref) => FormProvider(ref: ref));
 
 class FormProvider extends StateNotifier<List<formModel>> {
   FormProvider({required this.ref}) : super(ref.read(boxB));
@@ -116,6 +120,21 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.isbelowvaccinated ?? useform.isbelowvaccinated;
       user.latitude = user.latitude ?? useform.latitude;
       user.longitude = user.longitude ?? useform.longitude;
+      user.save();
+      state = [
+        for (final element in state)
+          if (element == useform) useform else element
+      ];
     }
+  }
+
+  void clearAll() {
+    Hive.box<formModel>('FormModel').clear();
+  }
+
+  @override
+  void dispose() {
+    Hive.box('FormModel').close();
+    super.dispose();
   }
 }
