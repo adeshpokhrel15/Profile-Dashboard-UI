@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
+import 'package:papro/screens/google_map.dart';
+import 'package:papro/screens/location_check.dart';
 
 class googlemapProfile extends StatefulWidget {
   static const routeName = "googlemap-form";
+
   @override
   State<googlemapProfile> createState() => _googlemapProfileState();
 }
 
 class _googlemapProfileState extends State<googlemapProfile> {
+  late LocationPermission permission;
+  Position? position;
   final _form = GlobalKey<FormState>();
 
   final longitude = TextEditingController();
@@ -79,6 +86,36 @@ class _googlemapProfileState extends State<googlemapProfile> {
               ),
               SizedBox(
                 height: 20,
+              ),
+              Container(
+                child: ElevatedButton(
+                    onPressed: () async {
+                      permission = await Geolocator.requestPermission();
+                      if (permission == LocationPermission.denied) {
+                        permission = await Geolocator.requestPermission();
+                      } else if (permission ==
+                          LocationPermission.deniedForever) {
+                        await Geolocator.openAppSettings();
+                      }
+                      if (permission == LocationPermission.whileInUse ||
+                          permission == LocationPermission.always) {
+                        position = await Geolocator.getCurrentPosition();
+                      }
+
+                      if (position != null) {
+                        // List<Placemark> placemarks = await placemarkFromCoordinates(position!.latitude, position!.longitude);
+                        // print(placemarks);
+
+                        Get.to(
+                            () => MapSample(
+                                position!.latitude, position!.longitude),
+                            transition: Transition.leftToRight);
+                      }
+                    },
+                    child: Text('Open Map')),
+              ),
+              SizedBox(
+                height: 60,
               ),
               Container(
                 height: 50,

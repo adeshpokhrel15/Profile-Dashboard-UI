@@ -27,7 +27,7 @@ class formModel extends HiveObject {
   String? email;
 
   @HiveField(7)
-  int? pannumber;
+  String? pannumber;
 
   @HiveField(8)
   String? bloodgroup;

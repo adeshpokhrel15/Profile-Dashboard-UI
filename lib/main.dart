@@ -25,17 +25,23 @@ import 'package:papro/screens/buttomNavigationbar.dart';
 import 'package:papro/screens/dashBoard.dart';
 import 'package:papro/screens/profile.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:papro/screens/storage.dart';
 
 final boxB = Provider<List<formModel>>((ref) => []);
-late Box box;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter(); //hive initalize
   Hive.registerAdapter(FormAdapter()); // hive register
-  box = await Hive.openBox<formModel>('formmodel'); //hive open box
+  final box = await Hive.openBox<formModel>('FormModel'); //hive open box
   // await Hive.openBox<Transistion>('tempTrans');
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      overrides: [boxB.overrideWithValue(box.values.toList())],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -44,6 +50,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home:
+            //storage(),
             //transistionShow(),
 
             //healthProfileForm(),

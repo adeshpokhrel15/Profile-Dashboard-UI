@@ -24,7 +24,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       handicappedid: fields[4] as int?,
       mobilenumber: fields[5] as int?,
       email: fields[6] as String?,
-      pannumber: fields[7] as int?,
+      pannumber: fields[7] as String?,
       bloodgroup: fields[8] as String?,
       tempProv: fields[9] as String?,
       tempdistrict: fields[10] as String?,
