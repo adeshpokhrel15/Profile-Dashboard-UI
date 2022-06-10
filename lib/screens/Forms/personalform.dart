@@ -9,21 +9,6 @@ import 'package:papro/providers/formProvider.dart';
 
 class personalForm extends StatefulWidget {
   static const routeName = 'personal-form';
-  final nameController = TextEditingController();
-
-  final mailController = TextEditingController();
-
-  final ageController = TextEditingController();
-
-  final genderController = TextEditingController();
-
-  final dobController = TextEditingController();
-
-  final htiController = TextEditingController();
-
-  final mobileController = TextEditingController();
-
-  final panController = TextEditingController();
 
   @override
   State<personalForm> createState() => _personalFormState();
@@ -82,8 +67,6 @@ class _personalFormState extends State<personalForm> {
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, child) {
-      //   final details = ref.watch(formModelProvider);
-
       return SafeArea(
           child: Scaffold(
               appBar: AppBar(
@@ -171,7 +154,7 @@ class _personalFormState extends State<personalForm> {
                                     Icons.email,
                                     color: Colors.orange,
                                   ),
-                                  hintText: "test@gmail.com"),
+                                  hintText: "Test@gmail.com"),
                             ),
                             SizedBox(
                               height: 20,
@@ -489,24 +472,22 @@ class _personalFormState extends State<personalForm> {
                                 onPressed: () async {
                                   _form.currentState!.save();
                                   _form.currentState!.validate();
-                                  print(bloods[ind]);
 
-                                  print(panController);
                                   FocusScope.of(context).unfocus();
                                   final personalForm = formModel(
-                                    name: nameController.text.trim(),
-                                    email: mailController.text.trim(),
-                                    pannumber: panController.text.trim(),
-                                    mobilenumber:
-                                        int.parse(mobileController.text.trim()),
+                                      fullName: nameController.text.trim(),
+                                      email: mailController.text.trim(),
+                                      pannumber: panController.text.trim(),
+                                      mobilenumber: int.parse(
+                                          mobileController.text.trim()),
+                                      age: int.parse(ageController.text.trim()),
+                                      handicappedidpersonal:
+                                          int.parse(htiController.text.trim()));
+                                  blood:
+                                  bloods[ind];
+                                  gender:
+                                  items[index];
 
-                                    // mobile: mobileController.text.trim(),
-                                    // pan: panController.text.trim(),
-                                    // blood: bloods[ind],
-                                    // date: items[index],
-                                    // age: ageController.text.trim(),
-                                    // handicappedid: htiController.text.trim(),
-                                  );
                                   final response = ref
                                       .read(formModelProvider.notifier)
                                       .addForm(personalForm);

@@ -17,36 +17,51 @@ class storage extends StatelessWidget {
               title: Text('Draft'),
             ),
             body: Consumer(builder: ((context, ref, child) {
-              // final formdetails = ref.watch(formModelProvider).add(
-              //       formModel(
-              //           fullName: '',
-              //           email: '',
-              //           age: 0,
-              //           handicappedid: 0,
-              //           mobilenumber: 0,
-              //           pannumber: 0),
-              //     );
               final formdetails = ref.watch(formModelProvider);
-              return Container(
-                child: Column(children: [
-                  Text('hello'),
-                  Text(formdetails[0].pannumber!)
-//                  Text(formdetails[0].email!),
-                  // Text(formdetails[0].email!),
-                  // Expanded(
-                  //     child: ListView(
-                  //   shrinkWrap: true,
-                  //   children: formdetails.map((e) {
-                  //     print(formdetails.length);
-                  //     return Container(
-                  //         child: Row(children: [
-                  //       Text('helllo'),
-                  //       Text(0.toString()),
-                  //     ]));
-                  //   })
-                  // ))
-                ]),
+              return ListView(
+                children: [
+                  Center(
+                    child: Text(
+                      'Personal Form',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      newMethod(formdetails,
+                          title: 'Age', details: '${formdetails[0].age!}'),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
               );
             }))));
+  }
+
+  Row newMethod(List<formModel> formdetails,
+      {required String title, required dynamic details}) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Text(
+        title,
+        //'Age',
+        style: TextStyle(fontSize: 15, color: Colors.black),
+      ),
+      Spacer(),
+      Text(
+        details,
+        // formdetails[0].fullName!,
+        //'${formdetails[0].age!}',
+        style: TextStyle(fontSize: 13, color: Colors.black),
+      ),
+      SizedBox(
+        height: 30,
+      ),
+    ]);
   }
 }

@@ -15,10 +15,10 @@ class formModel extends HiveObject {
   String? gender;
 
   @HiveField(3)
-  String? dob;
+  String? dateofbirthpersonal;
 
   @HiveField(4)
-  int? handicappedid;
+  int? handicappedidpersonal;
 
   @HiveField(5)
   int? mobilenumber;
@@ -342,8 +342,8 @@ class formModel extends HiveObject {
     this.fullName,
     this.age,
     this.gender,
-    this.dob,
-    this.handicappedid,
+    this.dateofbirthpersonal,
+    this.handicappedidpersonal,
     this.mobilenumber,
     this.email,
     this.pannumber,

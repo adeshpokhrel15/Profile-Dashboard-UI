@@ -20,8 +20,8 @@ class FormAdapter extends TypeAdapter<formModel> {
       fullName: fields[0] as String?,
       age: fields[1] as int?,
       gender: fields[2] as String?,
-      dob: fields[3] as String?,
-      handicappedid: fields[4] as int?,
+      dateofbirthpersonal: fields[3] as String?,
+      handicappedidpersonal: fields[4] as int?,
       mobilenumber: fields[5] as int?,
       email: fields[6] as String?,
       pannumber: fields[7] as String?,
@@ -142,9 +142,9 @@ class FormAdapter extends TypeAdapter<formModel> {
       ..writeByte(2)
       ..write(obj.gender)
       ..writeByte(3)
-      ..write(obj.dob)
+      ..write(obj.dateofbirthpersonal)
       ..writeByte(4)
-      ..write(obj.handicappedid)
+      ..write(obj.handicappedidpersonal)
       ..writeByte(5)
       ..write(obj.mobilenumber)
       ..writeByte(6)
