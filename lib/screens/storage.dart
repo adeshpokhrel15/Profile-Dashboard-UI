@@ -187,6 +187,73 @@ class storage extends StatelessWidget {
                           details: formdetails[0].ethnicgroup!),
                     ]),
                   ),
+                  Center(
+                    child: Text(
+                      'Expenses Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      FormCallMethod(formdetails,
+                          title: 'Total Month Income',
+                          details: formdetails[0].totalmonthlyincome!),
+                      FormCallMethod(formdetails,
+                          title: 'Income Source',
+                          details: formdetails[0].incomesource!),
+                      FormCallMethod(formdetails,
+                          title: 'Income Source Mainly',
+                          details: formdetails[0].incomesourceman!),
+                      FormCallMethod(formdetails,
+                          title: 'Expense Category  ',
+                          details: formdetails[0].expensecategory),
+                      FormCallMethod(formdetails,
+                          title: 'Total Expense',
+                          details: formdetails[0].totalexpense!),
+                    ]),
+                  ),
+                  Center(
+                    child: Text(
+                      'Food Consumption Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      'House Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      FormCallMethod(formdetails,
+                          title: 'Total Month Income',
+                          details: formdetails[0].totalmonthlyincome!),
+                      FormCallMethod(formdetails,
+                          title: 'Income Source',
+                          details: formdetails[0].incomesource!),
+                      FormCallMethod(formdetails,
+                          title: 'Income Source Mainly',
+                          details: formdetails[0].incomesourceman!),
+                      FormCallMethod(formdetails,
+                          title: 'Expense Category  ',
+                          details: formdetails[0].expensecategory),
+                      FormCallMethod(formdetails,
+                          title: 'Total Expense',
+                          details: formdetails[0].totalexpense!),
+                    ]),
+                  ),
                 ],
               );
             }))));
