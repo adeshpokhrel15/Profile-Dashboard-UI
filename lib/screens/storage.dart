@@ -292,6 +292,29 @@ class storage extends StatelessWidget {
                           details: formdetails[0].childenschoolschemeid!),
                     ]),
                   ),
+                  Center(
+                    child: Text(
+                      'School Profile',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      FormCallMethod(formdetails,
+                          title: 'Skin Color',
+                          details: formdetails[0].skincolor!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].schooltypeid!),
+                      FormCallMethod(formdetails,
+                          title: 'Handicapped Type Id',
+                          details: formdetails[0].handicappedtypeid!),
+                    ]),
+                  ),
                 ],
               );
             }))));
