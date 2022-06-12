@@ -162,6 +162,31 @@ class storage extends StatelessWidget {
                           details: formdetails[0].designation!),
                     ]),
                   ),
+                  Center(
+                    child: Text(
+                      'Etencities Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      FormCallMethod(formdetails,
+                          title: 'Nationalism or Religion',
+                          details: formdetails[0].nationalismandreligion!),
+                      FormCallMethod(formdetails,
+                          title: 'Nationality',
+                          details: formdetails[0].nationality!),
+                      FormCallMethod(formdetails,
+                          title: 'Religion', details: formdetails[0].religion!),
+                      FormCallMethod(formdetails,
+                          title: 'Ethnic Group',
+                          details: formdetails[0].ethnicgroup!),
+                    ]),
+                  ),
                 ],
               );
             }))));
