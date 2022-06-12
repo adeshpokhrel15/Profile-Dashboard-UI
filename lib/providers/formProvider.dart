@@ -14,7 +14,7 @@ class FormProvider extends StateNotifier<List<formModel>> {
   void addForm(formModel useform) {
     if (state.isEmpty) {
       final useForm = formModel(
-        fullName: useform.fullName,
+        fullNamepersonal: useform.fullNamepersonal,
         email: useform.email,
         age: useform.age,
         handicappedidpersonal: useform.handicappedidpersonal,

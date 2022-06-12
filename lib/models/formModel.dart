@@ -6,7 +6,7 @@ part 'formModel.g.dart';
 @HiveType(typeId: 0)
 class formModel extends HiveObject {
   @HiveField(0)
-  String? fullName;
+  String? fullNamepersonal;
 
   @HiveField(1)
   int? age;
@@ -339,7 +339,7 @@ class formModel extends HiveObject {
   String? longitude;
 
   formModel({
-    this.fullName,
+    this.fullNamepersonal,
     this.age,
     this.gender,
     this.dateofbirthpersonal,

@@ -17,7 +17,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return formModel(
-      fullName: fields[0] as String?,
+      fullNamepersonal: fields[0] as String?,
       age: fields[1] as int?,
       gender: fields[2] as String?,
       dateofbirthpersonal: fields[3] as String?,
@@ -136,7 +136,7 @@ class FormAdapter extends TypeAdapter<formModel> {
     writer
       ..writeByte(111)
       ..writeByte(0)
-      ..write(obj.fullName)
+      ..write(obj.fullNamepersonal)
       ..writeByte(1)
       ..write(obj.age)
       ..writeByte(2)

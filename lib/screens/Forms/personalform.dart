@@ -475,7 +475,8 @@ class _personalFormState extends State<personalForm> {
 
                                   FocusScope.of(context).unfocus();
                                   final personalForm = formModel(
-                                      fullName: nameController.text.trim(),
+                                      fullNamepersonal:
+                                          nameController.text.trim(),
                                       email: mailController.text.trim(),
                                       pannumber: panController.text.trim(),
                                       mobilenumber: int.parse(
@@ -483,10 +484,10 @@ class _personalFormState extends State<personalForm> {
                                       age: int.parse(ageController.text.trim()),
                                       handicappedidpersonal:
                                           int.parse(htiController.text.trim()));
-                                  blood:
-                                  bloods[ind];
-                                  gender:
-                                  items[index];
+                                  // blood:
+                                  // bloods[ind];
+                                  // gender:
+                                  // items[index];
 
                                   final response = ref
                                       .read(formModelProvider.notifier)
