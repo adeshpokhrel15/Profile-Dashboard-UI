@@ -272,6 +272,23 @@ class businessprofile extends StatelessWidget {
                                     _form.currentState!.save();
                                     _form.currentState!.validate();
                                     FocusScope.of(context).unfocus();
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                              actions: [
+                                                TextButton(
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: const Text('OK'))
+                                              ],
+                                              title: const Text('Success'),
+                                              contentPadding:
+                                                  const EdgeInsets.all(20.0),
+                                              content: const Text(
+                                                  'Addedd sucessfully in Draft'),
+                                            ));
                                     final businessprofileForm = formModel(
                                       businessorg: businessorg.text.trim(),
                                       businesstypeid:

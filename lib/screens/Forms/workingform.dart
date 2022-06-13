@@ -191,6 +191,23 @@ class _workingformState extends State<workingform> {
                                     _form.currentState!.save();
                                     _form.currentState!.validate();
                                     FocusScope.of(context).unfocus();
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                              actions: [
+                                                TextButton(
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: const Text('OK'))
+                                              ],
+                                              title: const Text('Success'),
+                                              contentPadding:
+                                                  const EdgeInsets.all(20.0),
+                                              content: const Text(
+                                                  'Addedd sucessfully in Draft'),
+                                            ));
                                     final workingForm = formModel(
                                         jobtype: jobtype.text.trim(),
                                         joborganization:
