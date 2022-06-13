@@ -662,6 +662,19 @@ class storage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
+                  Container(
+                    height: 50,
+                    width: double.infinity,
+                    child: MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(22.0)),
+                      elevation: 5.0,
+                      child: Text('Submit'),
+                      color: Color(0xFF00a2e8),
+                      textColor: Colors.black,
+                    ),
+                  ),
                 ],
               );
             }))));
@@ -683,19 +696,6 @@ class storage extends StatelessWidget {
       ),
       SizedBox(
         height: 30,
-      ),
-      Container(
-        height: 50,
-        width: double.infinity,
-        child: MaterialButton(
-          onPressed: () {},
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.0)),
-          elevation: 5.0,
-          child: Text('Submit'),
-          color: Color(0xFF00a2e8),
-          textColor: Colors.black,
-        ),
       ),
     ]);
   }
