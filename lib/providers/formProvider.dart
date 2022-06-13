@@ -46,6 +46,9 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.permMuni = user.permMuni ?? useform.permMuni;
       user.permstreettol = user.permstreettol ?? useform.permstreettol;
       user.permpward = user.permpward ?? useform.permpward;
+      user.permblocknoaddress =
+          user.permblocknoaddress ?? useform.permblocknoaddress;
+
       user.fatherdetails = user.fatherdetails ?? useform.fatherdetails;
       user.motherdetails = user.motherdetails ?? useform.motherdetails;
       user.spousename = user.spousename ?? useform.spousename;
@@ -55,48 +58,64 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.daughtername = user.daughtername ?? useform.daughtername;
       user.totalson = user.totalson ?? useform.totalson;
       user.totaldaughter = user.totaldaughter ?? useform.totaldaughter;
+
       user.jobtype = user.jobtype ?? useform.jobtype;
       user.joborganization = user.joborganization ?? useform.joborganization;
       user.organizationaddress =
           user.organizationaddress ?? useform.organizationaddress;
       user.annualincome = user.annualincome ?? useform.annualincome;
       user.designation = user.designation ?? useform.designation;
+
       user.nationalismandreligion =
           user.nationalismandreligion ?? useform.nationalismandreligion;
       user.nationality = user.nationality ?? useform.nationality;
       user.religion = user.religion ?? useform.religion;
       user.ethnicgroup = user.ethnicgroup ?? useform.ethnicgroup;
+
       user.totalmonthlyincome =
           user.totalmonthlyincome ?? useform.totalmonthlyincome;
       user.incomesource = user.incomesource ?? useform.incomesource;
       user.incomesourceman = user.incomesourceman ?? useform.incomesourceman;
       user.expensecategory = user.expensecategory ?? useform.expensecategory;
       user.totalexpense = user.totalexpense ?? useform.totalexpense;
+
       user.isbalanceddiet = user.isbalanceddiet ?? useform.isbalanceddiet;
       user.foodconsumptiontiming =
           user.foodconsumptiontiming ?? useform.foodconsumptiontiming;
       user.regularmealdescription =
           user.regularmealdescription ?? useform.regularmealdescription;
       user.isorganic = user.isorganic ?? useform.isorganic;
+
       user.Houseaddress = user.Houseaddress ?? useform.Houseaddress;
       user.Blocknumber = user.Blocknumber ?? useform.Blocknumber;
       user.Streetname = user.Streetname ?? useform.Streetname;
       user.Housenumber = user.Housenumber ?? useform.Housenumber;
       user.toilettypeid = user.toilettypeid ?? useform.toilettypeid;
+
       user.citizenshipnumber =
           user.citizenshipnumber ?? useform.citizenshipnumber;
       user.issueddate = user.issueddate ?? useform.issueddate;
       user.issuedat = user.issuedat ?? useform.issuedat;
       user.verifiedby = user.verifiedby ?? useform.verifiedby;
+
       user.businessorg = user.businessorg ?? useform.businessorg;
       user.businesstypeid = user.businesstypeid ?? useform.businesstypeid;
-      user.businessorg = user.businessorg ?? useform.businessorg;
+      user.orgname = user.orgname ?? useform.orgname;
       user.totalinvestment = user.totalinvestment ?? useform.totalinvestment;
-      user.annualincome = user.annualincome ?? useform.annualincome;
+      user.annualincomeorg = user.annualincomeorg ?? useform.annualincomeorg;
       user.annualxpense = user.annualxpense ?? useform.annualxpense;
       user.totalnostaff = user.totalnostaff ?? useform.totalnostaff;
       user.businessarea = user.businessarea ?? useform.businessarea;
       user.businessproduct = user.businessproduct ?? useform.businessproduct;
+
+      user.interestedfieldid =
+          user.interestedfieldid ?? useform.interestedfieldid;
+      user.istakingtraining = user.istakingtraining ?? useform.istakingtraining;
+      user.professionalstatus =
+          user.professionalstatus ?? useform.professionalstatus;
+      user.durationofactivities =
+          user.durationofactivities ?? useform.durationofactivities;
+
       user.schoolname = user.schoolname ?? useform.schoolname;
       user.schooltypeid = user.schooltypeid ?? useform.schooltypeid;
       user.schooltypeid = user.schooltypeid ?? useform.schooltypeid;
@@ -104,10 +123,12 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.dresscondition = user.dresscondition ?? useform.dresscondition;
       user.childenschoolschemeid =
           user.childenschoolschemeid ?? useform.childenschoolschemeid;
+
       user.skincolor = user.skincolor ?? useform.skincolor;
       user.ishandicap = user.ishandicap ?? useform.ishandicap;
       user.handicappedtypeid =
           user.handicappedtypeid ?? useform.handicappedtypeid;
+
       user.name = user.name ?? useform.name;
       user.gender = user.gender ?? useform.gender;
       user.familydetailid = user.familydetailid ?? useform.familydetailid;

@@ -50,7 +50,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       jobtype: fields[30] as String?,
       joborganization: fields[31] as String?,
       organizationaddress: fields[32] as String?,
-      annualincome: fields[33] as int?,
+      annualincome: fields[33] as double?,
       designation: fields[34] as String?,
       nationalismandreligion: fields[35] as String?,
       nationality: fields[36] as String?,

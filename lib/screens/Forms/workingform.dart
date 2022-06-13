@@ -215,7 +215,7 @@ class _workingformState extends State<workingform> {
                                         organizationaddress:
                                             organizationaddress.text.trim(),
                                         designation: designation.text.trim(),
-                                        annualincome: int.parse(
+                                        annualincome: double.parse(
                                             annualincome.text.trim()));
                                     final response = ref
                                         .read(formModelProvider.notifier)

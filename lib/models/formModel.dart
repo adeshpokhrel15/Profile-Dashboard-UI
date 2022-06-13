@@ -105,7 +105,7 @@ class formModel extends HiveObject {
   String? organizationaddress;
 
   @HiveField(33)
-  int? annualincome;
+  double? annualincome;
 
   @HiveField(34)
   String? designation;

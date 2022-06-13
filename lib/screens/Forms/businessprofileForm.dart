@@ -8,21 +8,13 @@ class businessprofile extends StatelessWidget {
   final _form = GlobalKey<FormState>();
 
   final businessorg = TextEditingController();
-
   final businesstypeid = TextEditingController();
-
   final orgname = TextEditingController();
-
   final totalinvestment = TextEditingController();
-
-  final annualincome = TextEditingController();
-
   final annualexpense = TextEditingController();
-
+  final annualincomeorg = TextEditingController();
   final totalnostaff = TextEditingController();
-
   final businessarea = TextEditingController();
-
   final businessproduct = TextEditingController();
 
   @override
@@ -170,7 +162,7 @@ class businessprofile extends StatelessWidget {
                                   return null;
                                 },
                                 keyboardType: TextInputType.emailAddress,
-                                controller: annualincome,
+                                controller: annualincomeorg,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
@@ -181,6 +173,32 @@ class businessprofile extends StatelessWidget {
                                     color: Colors.blue,
                                   ),
                                   hintText: "Annual income",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: annualexpense,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Annual Expenses required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Annual Expenses',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Annual Expenses',
                                 ),
                               ),
                               SizedBox(
@@ -297,9 +315,10 @@ class businessprofile extends StatelessWidget {
                                       totalinvestment: int.parse(
                                         totalinvestment.text.trim(),
                                       ),
-                                      annualincome: int.parse(
-                                        annualincome.text.trim(),
-                                      ),
+                                      annualxpense: double.parse(
+                                          annualexpense.text.trim()),
+                                      annualincomeorg: int.parse(
+                                          annualincomeorg.text.trim()),
                                       totalnostaff: int.parse(
                                         totalnostaff.text.trim(),
                                       ),

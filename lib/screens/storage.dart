@@ -36,22 +36,22 @@ class storage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(children: [
-                      FormCallMethod(formdetails,
-                          title: 'Full Name',
-                          details: formdetails[0].fullNamepersonal!),
-                      FormCallMethod(formdetails,
-                          title: 'Email', details: formdetails[0].email!),
-                      FormCallMethod(formdetails,
-                          title: 'Age', details: '${formdetails[0].age!}'),
-                      FormCallMethod(formdetails,
-                          title: 'Handicapped Type Id',
-                          details: '${formdetails[0].handicappedidpersonal!}'),
-                      FormCallMethod(formdetails,
-                          title: 'Mobile Number',
-                          details: '${formdetails[0].mobilenumber!}'),
-                      FormCallMethod(formdetails,
-                          title: 'Pan Number',
-                          details: formdetails[0].pannumber!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Full Name',
+                      //     details: formdetails[0].fullNamepersonal!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Email', details: formdetails[0].email!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Age', details: '${formdetails[0].age!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Handicapped Type Id',
+                      //     details: '${formdetails[0].handicappedidpersonal!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Mobile Number',
+                      //     details: '${formdetails[0].mobilenumber!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Pan Number',
+                      //     details: formdetails[0].pannumber!),
                     ]),
                   ),
                   Center(
@@ -159,11 +159,11 @@ class storage extends StatelessWidget {
                       //     title: 'Organization Address',
                       //     details: formdetails[0].organizationaddress!),
                       // FormCallMethod(formdetails,
-                      //     title: 'Annual Income',
-                      //     details: formdetails[0].annualincome!),
-                      // FormCallMethod(formdetails,
                       //     title: 'Designation',
                       //     details: formdetails[0].designation!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Annual Income',
+                      //     details: '${formdetails[0].annualincome!}'),
                     ]),
                   ),
                   Center(
@@ -205,7 +205,7 @@ class storage extends StatelessWidget {
                     child: Column(children: [
                       // FormCallMethod(formdetails,
                       //     title: 'Total Month Income',
-                      //     details: formdetails[0].totalmonthlyincome!),
+                      //     details: '${formdetails[0].totalmonthlyincome!}'),
                       // FormCallMethod(formdetails,
                       //     title: 'Income Source',
                       //     details: formdetails[0].incomesource!),
@@ -217,7 +217,7 @@ class storage extends StatelessWidget {
                       //     details: formdetails[0].expensecategory),
                       // FormCallMethod(formdetails,
                       //     title: 'Total Expense',
-                      //     details: formdetails[0].totalexpense!),
+                      //     details: '${formdetails[0].totalexpense!}'),
                     ]),
                   ),
                   Center(
@@ -228,6 +228,28 @@ class storage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: Colors.green),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      FormCallMethod(formdetails,
+                          title: 'Food Consumption Timing',
+                          details: formdetails[0].foodconsumptiontiming!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      FormCallMethod(
+                        formdetails,
+                        title: 'Regular Meal Description',
+                        details: formdetails[0].regularmealdescription!,
+                      ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Center(
                     child: Text(
@@ -246,13 +268,13 @@ class storage extends StatelessWidget {
                       //     details: formdetails[0].Houseaddress!),
                       // FormCallMethod(formdetails,
                       //     title: 'Block Number',
-                      //     details: formdetails[0].Blocknumber!),
+                      //     details: '${formdetails[0].Blocknumber!}'),
                       // FormCallMethod(formdetails,
                       //     title: 'Street Name',
                       //     details: formdetails[0].Streetname!),
                       // FormCallMethod(formdetails,
                       //     title: 'House Number',
-                      //     details: formdetails[0].Housenumber!),
+                      //     details: '${formdetails[0].Housenumber!}'),
                       // FormCallMethod(formdetails,
                       //     title: 'Total Type Id',
                       //     details: formdetails[0].toilettypeid!),
@@ -266,6 +288,47 @@ class storage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: Colors.green),
                     ),
+                  ),
+                  Center(
+                    child: Text(
+                      'Business Profile',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Business Org',
+                      //     details: formdetails[0].businessorg!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Business Type Id',
+                      //     details: '${formdetails[0].businesstypeid!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Organization Name',
+                      //     details: formdetails[0].orgname!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Total Investment',
+                      //     details: '${formdetails[0].totalinvestment!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Annual Income',
+                      //     details: '${formdetails[0].annualincomeorg!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Annual Expenses',
+                      //     details: '${formdetails[0].annualxpense!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Total No. of Staff',
+                      //     details: '${formdetails[0].totalnostaff!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Business Area',
+                      //     details: formdetails[0].businessarea!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Business Product',
+                      //     details: formdetails[0].businessproduct!),
+                    ]),
                   ),
                   Center(
                     child: Text(
@@ -298,7 +361,74 @@ class storage extends StatelessWidget {
                   ),
                   Center(
                     child: Text(
-                      'School Profile',
+                      'Apperence Profile',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Skin Color',
+                      //     details: formdetails[0].skincolor!),
+                      // // FormCallMethod(formdetails,
+                      // //     title: 'Is Handicap?',
+                      // //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(
+                      //   formdetails,
+                      //   title: 'Handicapped Type Id',
+                      //   details: formdetails[0].handicappedtypeid!,
+                      // ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Citizenship Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Citezenship Number',
+                      //     details: '${formdetails[0].citizenshipnumber!}'),
+                      // // FormCallMethod(formdetails,
+                      // //     title: 'Is Handicap?',
+                      // //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(
+                      //   formdetails,
+                      //   title: 'Issued Place',
+                      //   details: formdetails[0].issuedat!,
+                      // ),
+                      // // FormCallMethod(
+                      // //   formdetails,
+                      // //   title: 'Issued Date',
+                      // //   details: formdetails[0].handicappedtypeid!,
+                      // // ),
+
+                      // FormCallMethod(
+                      //   formdetails,
+                      //   title: 'Verified by',
+                      //   details: formdetails[0].verifiedby!,
+                      // ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Extra Cariculum Activities',
                       style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -309,17 +439,135 @@ class storage extends StatelessWidget {
                     padding: const EdgeInsets.all(40.0),
                     child: Column(children: [
                       FormCallMethod(formdetails,
-                          title: 'Skin Color',
-                          details: formdetails[0].skincolor!),
+                          title: 'Interested Field',
+                          details: formdetails[0].interestedfieldid!),
                       // FormCallMethod(formdetails,
                       //     title: 'Is Handicap?',
                       //     details: formdetails[0].ishandicap!),
+                      FormCallMethod(formdetails,
+                          title: 'Professional Status',
+                          details: formdetails[0].professionalstatus!),
                       FormCallMethod(
                         formdetails,
-                        title: 'Handicapped Type Id',
-                        details: formdetails[0].handicappedtypeid!,
+                        title: 'Duration Of Activities',
+                        details: formdetails[0].durationofactivities!,
                       ),
                     ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  // Center(
+                  //   child: Text(
+                  //     'Apperence Profile',
+                  //     style: TextStyle(
+                  //         fontSize: 28,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Colors.green),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(40.0),
+                  //   child: Column(children: [
+                  //     FormCallMethod(formdetails,
+                  //         title: 'Skin Color',
+                  //         details: formdetails[0].skincolor!),
+                  //     // FormCallMethod(formdetails,
+                  //     //     title: 'Is Handicap?',
+                  //     //     details: formdetails[0].ishandicap!),
+                  //     FormCallMethod(
+                  //       formdetails,
+                  //       title: 'Handicapped Type Id',
+                  //       details: formdetails[0].handicappedtypeid!,
+                  //     ),
+                  //   ]),
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     'Apperence Profile',
+                  //     style: TextStyle(
+                  //         fontSize: 28,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Colors.green),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(40.0),
+                  //   child: Column(children: [
+                  //     FormCallMethod(formdetails,
+                  //         title: 'Skin Color',
+                  //         details: formdetails[0].skincolor!),
+                  //     // FormCallMethod(formdetails,
+                  //     //     title: 'Is Handicap?',
+                  //     //     details: formdetails[0].ishandicap!),
+                  //     FormCallMethod(
+                  //       formdetails,
+                  //       title: 'Handicapped Type Id',
+                  //       details: formdetails[0].handicappedtypeid!,
+                  //     ),
+                  //   ]),
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     'Apperence Profile',
+                  //     style: TextStyle(
+                  //         fontSize: 28,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Colors.green),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(40.0),
+                  //   child: Column(children: [
+                  //     FormCallMethod(formdetails,
+                  //         title: 'Skin Color',
+                  //         details: formdetails[0].skincolor!),
+                  //     // FormCallMethod(formdetails,
+                  //     //     title: 'Is Handicap?',
+                  //     //     details: formdetails[0].ishandicap!),
+                  //     FormCallMethod(
+                  //       formdetails,
+                  //       title: 'Handicapped Type Id',
+                  //       details: formdetails[0].handicappedtypeid!,
+                  //     ),
+                  //   ]),
+                  // ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     'Apperence Profile',
+                  //     style: TextStyle(
+                  //         fontSize: 28,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Colors.green),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(40.0),
+                  //   child: Column(children: [
+                  //     FormCallMethod(formdetails,
+                  //         title: 'Skin Color',
+                  //         details: formdetails[0].skincolor!),
+                  //     // FormCallMethod(formdetails,
+                  //     //     title: 'Is Handicap?',
+                  //     //     details: formdetails[0].ishandicap!),
+                  //     FormCallMethod(
+                  //       formdetails,
+                  //       title: 'Handicapped Type Id',
+                  //       details: formdetails[0].handicappedtypeid!,
+                  //     ),
+                  //   ]),
+                  // ),
+                  SizedBox(
+                    height: 20,
                   ),
                 ],
               );
@@ -338,13 +586,6 @@ class storage extends StatelessWidget {
       Spacer(),
       Text(
         details,
-        style: TextStyle(fontSize: 13, color: Colors.black),
-      ),
-      SizedBox(
-        height: 30,
-      ),
-      Text(
-        isHandicap ? 'Yes' : 'No',
         style: TextStyle(fontSize: 13, color: Colors.black),
       ),
       SizedBox(
