@@ -158,26 +158,15 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.geneticdiseasedescription ?? useform.geneticdiseasedescription;
       user.vaccinedetails = user.vaccinedetails ?? useform.vaccinedetails;
       user.vacinedose = user.vacinedose ?? useform.vacinedose;
-      user.isbelowvaccinated =
-          user.isbelowvaccinated ?? useform.isbelowvaccinated;
 
       user.latitude = user.latitude ?? useform.latitude;
       user.longitude = user.longitude ?? useform.longitude;
+
       user.save();
       state = [
         for (final element in state)
           if (element == useform) useform else element
       ];
-      // print(user.skincolor);
-      // print(user.ishandicap);
-      // print(user.handicappedtypeid);
-
-      // Hive.box<formModel>('FormModel').add(user);
-      // box.add(formModel(
-      //   skincolor: user.skincolor,
-      //   ishandicap: user.ishandicap,
-      //   handicappedtypeid: user.handicappedtypeid,
-      // ));
     }
   }
 

@@ -17,6 +17,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
 
   final handicapedid = TextEditingController();
   bool _checkHandicapped = false;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +76,31 @@ class _appearenceProfileState extends State<appearenceProfile> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  'Is Handicapped?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildHandicapped(),
-                SizedBox(
-                  height: 20,
+                // Text(
+                //   'Is Handicapped?',
+                //   style: TextStyle(fontSize: 20),
+                // ),
+                // ...buildHandicapped(),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Handicapped?",
+                      style: TextStyle(color: Colors.orange),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: isChecked,
+                      onChanged: (value) {
+                        setState(() {
+                          isChecked = !isChecked;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
                 SizedBox(
                   height: 20,
@@ -137,7 +156,7 @@ class _appearenceProfileState extends State<appearenceProfile> {
                       final appearenceprofileForm = formModel(
                         skincolor: skincolor.text.trim(),
                         handicappedtypeid: handicapedid.text.trim(),
-                        ishandicap: _checkHandicapped,
+                        ishandicap: isChecked,
                       );
                       final response = ref
                           .read(formModelProvider.notifier)
@@ -159,26 +178,26 @@ class _appearenceProfileState extends State<appearenceProfile> {
     });
   }
 
-  List<Widget> buildHandicapped() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkHandicapped,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkHandicapped = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkHandicapped,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkHandicapped = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildHandicapped() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkHandicapped,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkHandicapped = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkHandicapped,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkHandicapped = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 }
