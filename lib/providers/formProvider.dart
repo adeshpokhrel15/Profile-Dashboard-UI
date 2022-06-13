@@ -11,7 +11,8 @@ class FormProvider extends StateNotifier<List<formModel>> {
   FormProvider({required this.ref}) : super(ref.read(boxB));
   StateNotifierProviderRef ref;
 
-  void addForm(formModel useform) {
+  void addForm(formModel useform) async {
+    final box = await Hive.openBox<formModel>('FormModel');
     if (state.isEmpty) {
       final useForm = formModel(
         fullNamepersonal: useform.fullNamepersonal,
@@ -21,7 +22,16 @@ class FormProvider extends StateNotifier<List<formModel>> {
         mobilenumber: useform.mobilenumber,
         pannumber: useform.pannumber,
       );
-      Hive.box<formModel>('FormModel').add(useForm);
+      // Hive.box<formModel>('FormModel').add(useForm);
+      // box.add(useForm);
+      box.add(formModel(
+        fullNamepersonal: useform.fullNamepersonal,
+        email: useform.email,
+        age: useform.age,
+        handicappedidpersonal: useform.handicappedidpersonal,
+        mobilenumber: useform.mobilenumber,
+        pannumber: useform.pannumber,
+      ));
       state = [...state, useForm];
     } else {
       final user = state[0];
@@ -125,6 +135,16 @@ class FormProvider extends StateNotifier<List<formModel>> {
         for (final element in state)
           if (element == useform) useform else element
       ];
+      // print(user.skincolor);
+      // print(user.ishandicap);
+      // print(user.handicappedtypeid);
+
+      // Hive.box<formModel>('FormModel').add(user);
+      // box.add(formModel(
+      //   skincolor: user.skincolor,
+      //   ishandicap: user.ishandicap,
+      //   handicappedtypeid: user.handicappedtypeid,
+      // ));
     }
   }
 

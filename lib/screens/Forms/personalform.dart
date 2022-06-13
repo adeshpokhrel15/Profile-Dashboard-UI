@@ -236,7 +236,7 @@ class _personalFormState extends State<personalForm> {
                                 }
                                 return null;
                               },
-                              keyboardType: TextInputType.emailAddress,
+                              keyboardType: TextInputType.phone,
                               controller: ageController,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(

@@ -37,7 +37,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       permMuni: fields[17] as String?,
       permpward: fields[18] as int?,
       permstreettol: fields[19] as String?,
-      permblockno: fields[20] as int?,
+      permblocknoaddress: fields[20] as int?,
       fatherdetails: fields[21] as String?,
       motherdetails: fields[22] as String?,
       spousename: fields[23] as String?,
@@ -176,7 +176,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       ..writeByte(19)
       ..write(obj.permstreettol)
       ..writeByte(20)
-      ..write(obj.permblockno)
+      ..write(obj.permblocknoaddress)
       ..writeByte(21)
       ..write(obj.fatherdetails)
       ..writeByte(22)

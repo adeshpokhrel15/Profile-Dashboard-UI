@@ -35,8 +35,8 @@ class _addressFormState extends State<addressForm> {
   final permWard = TextEditingController();
 
   final permTol = TextEditingController();
+  final permBnoadd = TextEditingController();
 
-  final permBno = TextEditingController();
   final tempward = TextEditingController();
   final permward = TextEditingController();
   int ind = 0;
@@ -496,7 +496,7 @@ class _addressFormState extends State<addressForm> {
                                     return null;
                                   },
                                   keyboardType: TextInputType.emailAddress,
-                                  controller: permBno,
+                                  controller: permBnoadd,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(30),
@@ -511,9 +511,6 @@ class _addressFormState extends State<addressForm> {
                                 ),
                                 SizedBox(
                                   height: 40,
-                                ),
-                                SizedBox(
-                                  height: 20,
                                 ),
                               ],
                             ),
@@ -535,7 +532,8 @@ class _addressFormState extends State<addressForm> {
                                     permMuni: permMunci.text.trim(),
                                     permdistrict: permDist.text.trim(),
                                     permstreettol: permTol.text.trim(),
-                                    permblockno: int.parse(permBno.text.trim()),
+                                    permblocknoaddress:
+                                        int.parse(permBnoadd.text.trim()),
                                   );
                                   final response = ref
                                       .read(formModelProvider.notifier)

@@ -66,7 +66,7 @@ class formModel extends HiveObject {
   String? permstreettol;
 
   @HiveField(20)
-  int? permblockno;
+  int? permblocknoaddress;
 
   @HiveField(21)
   String? fatherdetails;
@@ -359,7 +359,7 @@ class formModel extends HiveObject {
     this.permMuni,
     this.permpward,
     this.permstreettol,
-    this.permblockno,
+    this.permblocknoaddress,
     this.fatherdetails,
     this.motherdetails,
     this.spousename,
