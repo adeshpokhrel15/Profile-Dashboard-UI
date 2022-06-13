@@ -438,134 +438,227 @@ class storage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Interested Field',
+                      //     details: formdetails[0].interestedfieldid!),
+                      // // FormCallMethod(formdetails,
+                      // //     title: 'Is Handicap?',
+                      // //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Professional Status',
+                      //     details: formdetails[0].professionalstatus!),
+                      // FormCallMethod(
+                      //   formdetails,
+                      //   title: 'Duration Of Activities',
+                      //   details: formdetails[0].durationofactivities!,
+                      // ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Children Details',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
                       FormCallMethod(formdetails,
-                          title: 'Interested Field',
-                          details: formdetails[0].interestedfieldid!),
+                          title: 'Children Name',
+                          details: formdetails[0].name!),
                       // FormCallMethod(formdetails,
                       //     title: 'Is Handicap?',
                       //     details: formdetails[0].ishandicap!),
-                      FormCallMethod(formdetails,
-                          title: 'Professional Status',
-                          details: formdetails[0].professionalstatus!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
                       FormCallMethod(
                         formdetails,
-                        title: 'Duration Of Activities',
-                        details: formdetails[0].durationofactivities!,
+                        title: 'Family Detail Id',
+                        details: formdetails[0].familydetailid!,
                       ),
                     ]),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  // Center(
-                  //   child: Text(
-                  //     'Apperence Profile',
-                  //     style: TextStyle(
-                  //         fontSize: 28,
-                  //         fontWeight: FontWeight.bold,
-                  //         color: Colors.green),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(40.0),
-                  //   child: Column(children: [
-                  //     FormCallMethod(formdetails,
-                  //         title: 'Skin Color',
-                  //         details: formdetails[0].skincolor!),
-                  //     // FormCallMethod(formdetails,
-                  //     //     title: 'Is Handicap?',
-                  //     //     details: formdetails[0].ishandicap!),
-                  //     FormCallMethod(
-                  //       formdetails,
-                  //       title: 'Handicapped Type Id',
-                  //       details: formdetails[0].handicappedtypeid!,
-                  //     ),
-                  //   ]),
-                  // ),
-                  // SizedBox(
-                  //   height: 20,
-                  // ),
-                  // Center(
-                  //   child: Text(
-                  //     'Apperence Profile',
-                  //     style: TextStyle(
-                  //         fontSize: 28,
-                  //         fontWeight: FontWeight.bold,
-                  //         color: Colors.green),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(40.0),
-                  //   child: Column(children: [
-                  //     FormCallMethod(formdetails,
-                  //         title: 'Skin Color',
-                  //         details: formdetails[0].skincolor!),
-                  //     // FormCallMethod(formdetails,
-                  //     //     title: 'Is Handicap?',
-                  //     //     details: formdetails[0].ishandicap!),
-                  //     FormCallMethod(
-                  //       formdetails,
-                  //       title: 'Handicapped Type Id',
-                  //       details: formdetails[0].handicappedtypeid!,
-                  //     ),
-                  //   ]),
-                  // ),
-                  // SizedBox(
-                  //   height: 20,
-                  // ),
-                  // Center(
-                  //   child: Text(
-                  //     'Apperence Profile',
-                  //     style: TextStyle(
-                  //         fontSize: 28,
-                  //         fontWeight: FontWeight.bold,
-                  //         color: Colors.green),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(40.0),
-                  //   child: Column(children: [
-                  //     FormCallMethod(formdetails,
-                  //         title: 'Skin Color',
-                  //         details: formdetails[0].skincolor!),
-                  //     // FormCallMethod(formdetails,
-                  //     //     title: 'Is Handicap?',
-                  //     //     details: formdetails[0].ishandicap!),
-                  //     FormCallMethod(
-                  //       formdetails,
-                  //       title: 'Handicapped Type Id',
-                  //       details: formdetails[0].handicappedtypeid!,
-                  //     ),
-                  //   ]),
-                  // ),
-                  // SizedBox(
-                  //   height: 20,
-                  // ),
-                  // Center(
-                  //   child: Text(
-                  //     'Apperence Profile',
-                  //     style: TextStyle(
-                  //         fontSize: 28,
-                  //         fontWeight: FontWeight.bold,
-                  //         color: Colors.green),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(40.0),
-                  //   child: Column(children: [
-                  //     FormCallMethod(formdetails,
-                  //         title: 'Skin Color',
-                  //         details: formdetails[0].skincolor!),
-                  //     // FormCallMethod(formdetails,
-                  //     //     title: 'Is Handicap?',
-                  //     //     details: formdetails[0].ishandicap!),
-                  //     FormCallMethod(
-                  //       formdetails,
-                  //       title: 'Handicapped Type Id',
-                  //       details: formdetails[0].handicappedtypeid!,
-                  //     ),
-                  //   ]),
-                  // ),
+                  Center(
+                    child: Text(
+                      'Children Health',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Blood Group',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Birth Place',
+                      //     details: formdetails[0].childrenbirthplace!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Birth Weight',
+                      //     details: '${formdetails[0].chilrenbirthweight!}'),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Birth Conditions',
+                      //     details: formdetails[0].childrenbirthcondition!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+
+                      // FormCallMethod(formdetails,
+                      //     title: 'Genetic Disease Descrption',
+                      //     details: formdetails[0]
+                      //         .childrengeneticdiseasedescription!),
+                      // // FormCallMethod(formdetails,
+                      // //     title: 'Is Handicap?',
+                      // //     details: formdetails[0].ishandicap!),
+
+                      // FormCallMethod(formdetails,
+                      //     title: 'Vaccine Details',
+                      //     details: formdetails[0].childrenvaccinedetails!),
+                      // FormCallMethod(
+                      //   formdetails,
+                      //   title: 'Vaccine Dose',
+                      //   details: formdetails[0].childrenvacinedose!,
+                      // ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Health Profile',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      // FormCallMethod(formdetails,
+                      //     title: 'Blood Group',
+                      //     details: formdetails[0].ishandicap!),
+                      FormCallMethod(formdetails,
+                          title: 'Birth Place',
+                          details: formdetails[0].birthplace!),
+                      FormCallMethod(formdetails,
+                          title: 'Birth Weight',
+                          details: '${formdetails[0].birthweight!}'),
+                      FormCallMethod(formdetails,
+                          title: 'Birth Conditions',
+                          details: formdetails[0].birthcondition!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+
+                      FormCallMethod(formdetails,
+                          title: 'Genetic Disease Descrption',
+                          details: formdetails[0].geneticdiseasedescription!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+
+                      FormCallMethod(formdetails,
+                          title: 'Vaccine Details',
+                          details: formdetails[0].vaccinedetails!),
+                      FormCallMethod(
+                        formdetails,
+                        title: 'Vaccine Dose',
+                        details: formdetails[0].vacinedose!,
+                      ),
+                    ]),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Google Map',
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Column(children: [
+                      FormCallMethod(formdetails,
+                          title: 'Latitude', details: formdetails[0].latitude!),
+                      // FormCallMethod(formdetails,
+                      //     title: 'Is Handicap?',
+                      //     details: formdetails[0].ishandicap!),
+                      FormCallMethod(
+                        formdetails,
+                        title: 'Longtitude',
+                        details: formdetails[0].longitude!,
+                      ),
+                    ]),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -590,6 +683,19 @@ class storage extends StatelessWidget {
       ),
       SizedBox(
         height: 30,
+      ),
+      Container(
+        height: 50,
+        width: double.infinity,
+        child: MaterialButton(
+          onPressed: () {},
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.0)),
+          elevation: 5.0,
+          child: Text('Submit'),
+          color: Color(0xFF00a2e8),
+          textColor: Colors.black,
+        ),
       ),
     ]);
   }

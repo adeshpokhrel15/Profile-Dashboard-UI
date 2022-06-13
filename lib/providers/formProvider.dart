@@ -132,23 +132,35 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.name = user.name ?? useform.name;
       user.gender = user.gender ?? useform.gender;
       user.familydetailid = user.familydetailid ?? useform.familydetailid;
+
+      user.childrenbirthplace =
+          user.childrenbirthplace ?? useform.childrenbirthplace;
+      user.chilrenbirthweight =
+          user.chilrenbirthweight ?? useform.chilrenbirthweight;
+      user.childrenbirthcondition =
+          user.childrenbirthcondition ?? useform.childrenbirthcondition;
       user.bloodgroup = user.bloodgroup ?? useform.bloodgroup;
-      user.birthplace = user.birthplace ?? useform.birthplace;
-      user.birthweight = user.birthweight ?? useform.birthweight;
-      user.birthcondition = user.birthcondition ?? useform.birthcondition;
-      user.isgeneticdiseaseissue =
-          user.isgeneticdiseaseissue ?? useform.isgeneticdiseaseissue;
-      user.geneticdiseasedescription =
-          user.geneticdiseasedescription ?? useform.geneticdiseasedescription;
+      user.childrengeneticdiseasedescription =
+          user.childrengeneticdiseasedescription ??
+              useform.childrengeneticdiseasedescription;
+      user.childrenvaccinedetails =
+          user.childrenvaccinedetails ?? useform.childrenvaccinedetails;
+      user.childrenvacinedose =
+          user.childrenvacinedose ?? useform.childrenvacinedose;
       user.iscovidvaccinated =
           user.iscovidvaccinated ?? useform.iscovidvaccinated;
-      user.vaccinedetails = user.vaccinedetails ?? useform.vaccinedetails;
-      user.vacinedose = user.vacinedose ?? useform.vacinedose;
+
       user.healthbloodgroup = user.healthbloodgroup ?? useform.healthbloodgroup;
       user.birthplace = user.birthplace ?? useform.birthplace;
       user.birthweight = user.birthweight ?? useform.birthweight;
+      user.birthcondition = user.birthcondition ?? useform.birthcondition;
+      user.geneticdiseasedescription =
+          user.geneticdiseasedescription ?? useform.geneticdiseasedescription;
+      user.vaccinedetails = user.vaccinedetails ?? useform.vaccinedetails;
+      user.vacinedose = user.vacinedose ?? useform.vacinedose;
       user.isbelowvaccinated =
           user.isbelowvaccinated ?? useform.isbelowvaccinated;
+
       user.latitude = user.latitude ?? useform.latitude;
       user.longitude = user.longitude ?? useform.longitude;
       user.save();
