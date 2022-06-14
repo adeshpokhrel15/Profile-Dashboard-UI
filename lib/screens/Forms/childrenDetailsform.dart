@@ -281,6 +281,8 @@ class _childrendetailsFormState extends State<childrendetailsForm> {
                                   final childrenDetails = formModel(
                                     name: name.text.trim(),
                                     familydetailid: familydetailid.text.trim(),
+                                    childrengender: items[index].trim(),
+                                    childrendob: dobcontroller.text.trim(),
                                   );
                                   final response = ref
                                       .read(formModelProvider.notifier)

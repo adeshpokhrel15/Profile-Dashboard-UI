@@ -130,8 +130,9 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.handicappedtypeid ?? useform.handicappedtypeid;
 
       user.name = user.name ?? useform.name;
-      user.gender = user.gender ?? useform.gender;
+      user.childrengender = user.childrengender ?? useform.childrengender;
       user.familydetailid = user.familydetailid ?? useform.familydetailid;
+      user.childrendob = user.childrendob ?? useform.childrendob;
 
       user.childrenbirthplace =
           user.childrenbirthplace ?? useform.childrenbirthplace;
