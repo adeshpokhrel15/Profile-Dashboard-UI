@@ -76,20 +76,12 @@ class _appearenceProfileState extends State<appearenceProfile> {
                 SizedBox(
                   height: 10,
                 ),
-                // Text(
-                //   'Is Handicapped?',
-                //   style: TextStyle(fontSize: 20),
-                // ),
-                // ...buildHandicapped(),
-                // SizedBox(
-                //   height: 20,
-                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Is Handicapped?",
-                      style: TextStyle(color: Colors.orange),
+                      style: TextStyle(color: Colors.black),
                     ),
                     Spacer(),
                     Checkbox(

@@ -232,20 +232,20 @@ class storage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(children: [
-                      // FormCallMethod(formdetails,
-                      //     title: 'Is Handicap?',
-                      //     details: formdetails[0].ishandicap!),
-                      // FormCallMethod(formdetails,
-                      //     title: 'Food Consumption Timing',
-                      //     details: formdetails[0].foodconsumptiontiming!),
-                      // // FormCallMethod(formdetails,
-                      // //     title: 'Is Handicap?',
-                      // //     details: formdetails[0].ishandicap!),
-                      // FormCallMethod(
-                      //   formdetails,
-                      //   title: 'Regular Meal Description',
-                      //   details: formdetails[0].regularmealdescription!,
-                      // ),
+                      FormCallMethod(formdetails,
+                          title: 'Is Organic?',
+                          details: '${formdetails[0].isorganic!}'),
+                      FormCallMethod(formdetails,
+                          title: 'Food Consumption Timing',
+                          details: formdetails[0].foodconsumptiontiming!),
+                      FormCallMethod(formdetails,
+                          title: 'Is Balanced Diet?',
+                          details: '${formdetails[0].isbalanceddiet!}'),
+                      FormCallMethod(
+                        formdetails,
+                        title: 'Regular Meal Description',
+                        details: formdetails[0].regularmealdescription!,
+                      ),
                     ]),
                   ),
                   SizedBox(
@@ -279,15 +279,6 @@ class storage extends StatelessWidget {
                       //     title: 'Total Type Id',
                       //     details: formdetails[0].toilettypeid!),
                     ]),
-                  ),
-                  Center(
-                    child: Text(
-                      'Citizenship Details',
-                      style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
                   ),
                   Center(
                     child: Text(

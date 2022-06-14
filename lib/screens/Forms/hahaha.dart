@@ -1,66 +1,185 @@
-import 'package:flutter/material.dart';
+// /*
+// Name: Nadia Ferdoush
+// Date: 07/12/19
+// Copyright: © 2019, Nadia Ferdoush. All rights reserved.
+// */
 
-//importing material design library
+// import 'package:flutter/material.dart';
+// import 'package:grouped_checkbox/grouped_checkbox.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
+// class MyHomePageabc extends StatefulWidget {
+//   @override
+//   _MyHomePageabcState createState() => _MyHomePageabcState();
+// }
 
-class _HomePageState extends State<HomePage> {
-  bool isChecked = false;
+// class _MyHomePageabcState extends State<MyHomePageabc> {
+//   List<String> allItemList = ['Yes', 'No'];
 
-  @override
-//App widget tree
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('GeeksforGeeks'),
-              backgroundColor: Colors.greenAccent[400],
-              leading: IconButton(
-                icon: Icon(Icons.menu),
-                tooltip: 'Menu',
-                onPressed: () {},
-              ), //IconButton
-            ), //AppBar
-            body: Center(
-                /** Card Widget **/
-                child: Card(
-                    child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: SizedBox(
-                            width: 430,
-                            height: 700,
-                            child: Column(children: [
-                              Text(
-                                'Algorithms',
-                                style: TextStyle(
-                                    color: Colors.greenAccent[400],
-                                    fontSize: 30), //TextStyle
-                              ), //Text
-                              SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Remember Me",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Checkbox(
-                                    value: isChecked,
-                                    onChanged: (value) {
-                                      isChecked = !isChecked;
-                                      setState(() {});
-                                    },
-                                  ) //Row
-                                ],
-                              ), //Column
-                              //SizedBox
-                              //Padding
-                              //Card
-                              //Center//Center
-                              //Scaffold
-                            ]))))))); //MaterialApp
-  }
-}
+//   static List<String> checkedItemList = [];
+
+//   List<String> selectedItemList = checkedItemList ?? [];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: <Widget>[
+//             // Padding(
+//             //   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+//             //   child: Text(
+//             //     'VERTICAL ORIENTATION EXAMPLE',
+//             //     style: TextStyle(color: Colors.blue, fontSize: 15.0),
+//             //   ),
+//             // ),
+//             // GroupedCheckbox(
+//             //   wrapSpacing: 10.0,
+//             //   wrapRunSpacing: 15.0,
+//             //   wrapTextDirection: TextDirection.ltr,
+//             //   wrapRunAlignment: WrapAlignment.center,
+//             //   wrapVerticalDirection: VerticalDirection.down,
+//             //   wrapAlignment: WrapAlignment.center,
+//             //   itemList: allItemList,
+//             //   checkedItemList: checkedItemList,
+//             //   disabled: ['Black'],
+//             //   onChanged: (itemList) {
+//             //     setState(() {
+//             //       selectedItemList = itemList;
+//             //       print('SELECTED ITEM LIST $itemList');
+//             //     });
+//             //   },
+//             //   orientation: CheckboxOrientation.VERTICAL,
+//             //   checkColor: Colors.purpleAccent,
+//             //   activeColor: Colors.lightBlue,
+//             // ),
+//             // SizedBox(
+//             //   height: 5.0,
+//             // ),
+//             // Padding(
+//             //   padding: const EdgeInsets.all(8.0),
+//             //   child: Row(
+//             //     children: <Widget>[
+//             //       Text(
+//             //         'Selected Items:',
+//             //         style: TextStyle(color: Colors.blue),
+//             //       ),
+//             //       SizedBox(width: 4.0),
+//             //       Expanded(
+//             //         child: Text('$selectedItemList'),
+//             //       )
+//             //     ],
+//             //   ),
+//             // ),
+//             Padding(
+//               padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+//               child: Divider(
+//                 height: 2.0,
+//               ),
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.only(bottom: 15.0),
+//               child: Text(
+//                 'HORIZONTAL ORIENTATION EXAMPLE',
+//                 style: TextStyle(color: Colors.blue, fontSize: 15.0),
+//               ),
+//             ),
+//             GroupedCheckbox(
+//               itemList: allItemList,
+//               checkedItemList: checkedItemList,
+//               disabled: ['Black'],
+//               onChanged: (itemList) {
+//                 setState(() {
+//                   selectedItemList = itemList;
+//                   print('SELECTED ITEM LIST $itemList');
+//                 });
+//               },
+//               orientation: CheckboxOrientation.HORIZONTAL,
+//               checkColor: Colors.purpleAccent,
+//               activeColor: Colors.lightBlue,
+//             ),
+//             SizedBox(
+//               height: 5.0,
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Row(
+//                 children: <Widget>[
+//                   Text(
+//                     'Selected Items:',
+//                     style: TextStyle(color: Colors.blue),
+//                   ),
+//                   SizedBox(width: 4.0),
+//                   Expanded(
+//                     child: Text('$selectedItemList'),
+//                   )
+//                 ],
+//               ),
+//             ),
+//             // Padding(
+//             //   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+//             //   child: Divider(
+//             //     height: 2.0,
+//             //   ),
+//             // ),
+//             // Padding(
+//             //   padding: const EdgeInsets.only(bottom: 15.0),
+//             //   child: Text(
+//             //     'WRAP EXAMPLE',
+//             //     style: TextStyle(color: Colors.blue, fontSize: 15.0),
+//             //   ),
+//             // ),
+//             // Container(
+//             //   decoration: BoxDecoration(
+//             //       border: Border.all(
+//             //         color: Colors.blue,
+//             //       ),
+//             //       borderRadius: BorderRadius.all(Radius.circular(8.0))),
+//             //   margin: EdgeInsets.only(left: 15.0, right: 15.0),
+//             //   height: MediaQuery.of(context).size.height / 4,
+//             //   width: MediaQuery.of(context).size.width,
+//             //   child: GroupedCheckbox(
+//             //     wrapSpacing: 10.0,
+//             //     wrapRunSpacing: 15.0,
+//             //     wrapTextDirection: TextDirection.ltr,
+//             //     wrapRunAlignment: WrapAlignment.center,
+//             //     wrapVerticalDirection: VerticalDirection.down,
+//             //     wrapAlignment: WrapAlignment.center,
+//             //     itemList: allItemList,
+//             //     checkedItemList: checkedItemList,
+//             //     disabled: ['Black'],
+//             //     onChanged: (itemList) {
+//             //       setState(() {
+//             //         selectedItemList = itemList;
+//             //         print('SELECTED ITEM LIST $itemList');
+//             //       });
+//             //     },
+//             //     orientation: CheckboxOrientation.WRAP,
+//             //     checkColor: Colors.purpleAccent,
+//             //     activeColor: Colors.lightBlue,
+//             //   ),
+//             // ),
+//             // SizedBox(height: 5.0),
+//             // Padding(
+//             //   padding: const EdgeInsets.all(8.0),
+//             //   child: Row(
+//             //     children: <Widget>[
+//             //       Text(
+//             //         'Selected Items:',
+//             //         style: TextStyle(color: Colors.blue),
+//             //       ),
+//             //       SizedBox(width: 4.0),
+//             //       Expanded(
+//             //         child: Text('$selectedItemList'),
+//             //       )
+//             //     ],
+//             //   ),
+//             // ),
+//             // SizedBox(
+//             //   height: 50.0,
+//             // ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

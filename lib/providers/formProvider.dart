@@ -84,7 +84,7 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.foodconsumptiontiming ?? useform.foodconsumptiontiming;
       user.regularmealdescription =
           user.regularmealdescription ?? useform.regularmealdescription;
-      user.isorganic = user.isorganic ?? useform.isorganic;
+      user.isorganic = useform.isorganic;
 
       user.Houseaddress = user.Houseaddress ?? useform.Houseaddress;
       user.Blocknumber = user.Blocknumber ?? useform.Blocknumber;
@@ -163,6 +163,7 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.longitude = user.longitude ?? useform.longitude;
 
       user.save();
+      useform.save();
       state = [
         for (final element in state)
           if (element == useform) useform else element
