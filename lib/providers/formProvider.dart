@@ -176,6 +176,12 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.geneticdiseasedescription ?? useform.geneticdiseasedescription;
       user.vaccinedetails = user.vaccinedetails ?? useform.vaccinedetails;
       user.vacinedose = user.vacinedose ?? useform.vacinedose;
+      user.isbelowvaccinated =
+          user.isbelowvaccinated ?? useform.isbelowvaccinated;
+      user.iscovidvaccinated =
+          user.iscovidvaccinated ?? useform.iscovidvaccinated;
+      user.isgeneticdiseaseissue =
+          user.isgeneticdiseaseissue ?? useform.isgeneticdiseaseissue;
 
       user.latitude = user.latitude ?? useform.latitude;
       user.longitude = user.longitude ?? useform.longitude;

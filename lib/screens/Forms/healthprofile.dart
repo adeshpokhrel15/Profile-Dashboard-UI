@@ -32,16 +32,9 @@ class _healthProfileFormState extends State<healthProfileForm> {
   final vaccinedetails = TextEditingController();
   final vaccinedoes = TextEditingController();
 
-  bool _checkBCGVaccinated = false;
-  bool _checkDPTHEPBVaccinated = false;
-  bool _checkOPVVaccinated = false;
-  bool _checkPCVVaccinated = false;
-  bool _checkIPVVaccinated = false;
-  bool _checkMRVaccinated = false;
-  bool _checkJEVaccinated = false;
-  bool _checkTDVaccinated = false;
-  bool _checkGeneticVaccinated = false;
-  bool _checkCovidVaccinated = false;
+  bool _checkisbelowVaccinated = false;
+  bool _checkiscoVVidVaccinated = false;
+  bool _checkisgeneticaccinated = false;
 
   @override
   Widget build(BuildContext context) {
@@ -201,75 +194,66 @@ class _healthProfileFormState extends State<healthProfileForm> {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is BCG Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Below 5 Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkisbelowVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkisbelowVaccinated = !_checkisbelowVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildBCG(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is DPT HEP_B Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Covid Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkiscoVVidVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkiscoVVidVaccinated = !_checkiscoVVidVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildDPTHEBV(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is OPV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Genetic Disease Issues?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkisgeneticaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkisgeneticaccinated = !_checkisgeneticaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildOPV(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is PCV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildPCV(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is IPV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildIPV(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is MR Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildMR(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is JE Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildJE(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is TD Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildTD(),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is Genetic Disease Issue?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildGenetics(),
                 SizedBox(
                   height: 20,
                 ),
@@ -289,14 +273,6 @@ class _healthProfileFormState extends State<healthProfileForm> {
                     hintText: 'Genetic disease description',
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Is Covid Vaccinated?',
-                  style: TextStyle(fontSize: 20),
-                ),
-                ...buildCovid(),
                 SizedBox(
                   height: 20,
                 ),
@@ -374,14 +350,16 @@ class _healthProfileFormState extends State<healthProfileForm> {
                       _form.currentState!.validate();
                       FocusScope.of(context).unfocus();
                       final healthProfile = formModel(
-                        birthplace: birthplace.text.trim(),
-                        birthweight: int.parse(birthweight.text.trim()),
-                        birthcondition: birthconditioins.text.trim(),
-                        geneticdiseasedescription:
-                            geneticdiseasedescrption.text.trim(),
-                        vaccinedetails: vaccinedetails.text.trim(),
-                        vacinedose: vaccinedoes.text.trim(),
-                      );
+                          birthplace: birthplace.text.trim(),
+                          birthweight: int.parse(birthweight.text.trim()),
+                          birthcondition: birthconditioins.text.trim(),
+                          geneticdiseasedescription:
+                              geneticdiseasedescrption.text.trim(),
+                          vaccinedetails: vaccinedetails.text.trim(),
+                          vacinedose: vaccinedoes.text.trim(),
+                          isbelowvaccinated: _checkisbelowVaccinated,
+                          iscovidvaccinated: _checkiscoVVidVaccinated,
+                          isgeneticdiseaseissue: _checkisgeneticaccinated);
                       final response = ref
                           .read(formModelProvider.notifier)
                           .addForm(healthProfile);
@@ -402,235 +380,189 @@ class _healthProfileFormState extends State<healthProfileForm> {
     });
   }
 
-  List<Widget> buildBCG() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkBCGVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkBCGVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkBCGVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkBCGVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildBCG() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkBCGVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkBCGVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkBCGVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkBCGVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildDPTHEBV() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkDPTHEPBVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkDPTHEPBVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkDPTHEPBVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkDPTHEPBVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildDPTHEBV() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkDPTHEPBVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkDPTHEPBVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkDPTHEPBVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkDPTHEPBVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildOPV() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkOPVVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkOPVVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkOPVVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkOPVVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildIPV() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkIPVVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkIPVVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkIPVVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkIPVVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildPCV() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkPCVVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkPCVVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkPCVVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkPCVVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildMR() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkMRVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkMRVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkMRVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkMRVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildIPV() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkIPVVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkIPVVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkIPVVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkIPVVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildJE() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkJEVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkJEVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkJEVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkJEVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildMR() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkMRVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkMRVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkMRVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkMRVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildTD() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkTDVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkTDVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkTDVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkTDVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildJE() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkJEVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkJEVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkJEVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkJEVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildGenetics() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkGeneticVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkGeneticVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkGeneticVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkGeneticVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
-  List<Widget> buildTD() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkTDVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkTDVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkTDVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkTDVaccinated = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildCovid() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checkCovidVaccinated,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkCovidVaccinated = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checkCovidVaccinated,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checkCovidVaccinated = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
-
-  List<Widget> buildGenetics() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkGeneticVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkGeneticVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkGeneticVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkGeneticVaccinated = false),
-        ),
-      ),
-    ];
-
-    return widgetss;
-  }
-
-  List<Widget> buildCovid() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checkCovidVaccinated,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checkCovidVaccinated = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checkCovidVaccinated,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checkCovidVaccinated = false),
-        ),
-      ),
-    ];
-
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 
   Widget buildbloodpicker() => SizedBox(
         height: 250,
