@@ -214,7 +214,7 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
                 SizedBox(
                   height: 20,
                 ),
-                Text('Mula'),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -233,46 +233,9 @@ class _foodconsumptionProfileState extends State<foodconsumptionProfile> {
                     ) //Row
                   ],
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     Text(
-                //       "Is Organic?",
-                //       style: TextStyle(color: Colors.orange),
-                //     ),
-                //     Spacer(),
-                //     Text('Yes'),
-                //     Checkbox(
-                //       value: checkOrganic,
-                //       onChanged: (value) {
-                //         checkOrganic = !checkOrganic;
-
-                //         setState(() {});
-                //       },
-                //     ),
-
-                //     Text('No'),
-                //     Checkbox(
-                //       value: !checkOrganic,
-                //       onChanged: (value) {
-                //         setState(() {
-                //           checkOrganic = !checkOrganic;
-                //         });
-                //       },
-                //     ) //Row
-                //   ],
-                // ),
                 SizedBox(
                   height: 20,
                 ),
-                // Text(
-                //   'Is Organic?',
-                //   style: TextStyle(fontSize: 20),
-                // ),
-                // ...buildorganic(),
-                // SizedBox(
-                //   height: 20,
-                // ),
                 Container(
                   height: 50,
                   width: 150,

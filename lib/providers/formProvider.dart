@@ -139,16 +139,34 @@ class FormProvider extends StateNotifier<List<formModel>> {
           user.chilrenbirthweight ?? useform.chilrenbirthweight;
       user.childrenbirthcondition =
           user.childrenbirthcondition ?? useform.childrenbirthcondition;
-      user.bloodgroup = user.bloodgroup ?? useform.bloodgroup;
-      user.childrengeneticdiseasedescription =
-          user.childrengeneticdiseasedescription ??
-              useform.childrengeneticdiseasedescription;
+      user.childrenbloodgroup =
+          user.childrenbloodgroup ?? useform.childrenbloodgroup;
       user.childrenvaccinedetails =
           user.childrenvaccinedetails ?? useform.childrenvaccinedetails;
       user.childrenvacinedose =
           user.childrenvacinedose ?? useform.childrenvacinedose;
+
+      user.childrengeneticdiseasedescription =
+          user.childrengeneticdiseasedescription ??
+              useform.childrengeneticdiseasedescription;
       user.iscovidvaccinated =
           user.iscovidvaccinated ?? useform.iscovidvaccinated;
+      user.childrenisBCGvaccinated =
+          user.childrenisBCGvaccinated ?? useform.childrenisBCGvaccinated;
+      user.childrenisOPVvaccinated =
+          user.childrenisOPVvaccinated ?? useform.childrenisOPVvaccinated;
+      user.childrenisDPTHEPBvaccinated = user.childrenisDPTHEPBvaccinated ??
+          useform.childrenisDPTHEPBvaccinated;
+      user.childrenisPCVvaccinated =
+          user.childrenisPCVvaccinated ?? useform.childrenisPCVvaccinated;
+      user.childrenisIPVvaccinated =
+          user.childrenisIPVvaccinated ?? useform.childrenisIPVvaccinated;
+      user.childrenisMRvaccinated =
+          user.childrenisMRvaccinated ?? useform.childrenisMRvaccinated;
+      user.childrenisJEvaccinated =
+          user.childrenisJEvaccinated ?? useform.childrenisJEvaccinated;
+      user.childrenisTDvaccinated =
+          user.childrenisTDvaccinated ?? useform.childrenisTDvaccinated;
 
       user.healthbloodgroup = user.healthbloodgroup ?? useform.healthbloodgroup;
       user.birthplace = user.birthplace ?? useform.birthplace;

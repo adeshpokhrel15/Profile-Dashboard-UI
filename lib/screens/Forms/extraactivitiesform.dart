@@ -17,7 +17,7 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
   final professionalstatus = TextEditingController();
 
   final durationofactivities = TextEditingController();
-  bool _checktraining = false;
+  bool checktraining = false;
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +76,24 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  'Is Taking Training?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Handicapped?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: checktraining,
+                      onChanged: (value) {
+                        setState(() {
+                          checktraining = !checktraining;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildTraining(),
                 SizedBox(
                   height: 20,
                 ),
@@ -158,10 +171,11 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
                       _form.currentState!.validate();
                       FocusScope.of(context).unfocus();
                       final extraForm = formModel(
-                          interestedfieldid: interestedfield.text.trim(),
-                          professionalstatus: professionalstatus.text.trim(),
-                          durationofactivities:
-                              durationofactivities.text.trim());
+                        interestedfieldid: interestedfield.text.trim(),
+                        professionalstatus: professionalstatus.text.trim(),
+                        durationofactivities: durationofactivities.text.trim(),
+                        istakingtraining: checktraining,
+                      );
 
                       final response = ref
                           .read(formModelProvider.notifier)
@@ -183,26 +197,26 @@ class _extraactivitiesProfileState extends State<extraactivitiesProfile> {
     });
   }
 
-  List<Widget> buildTraining() {
-    List<Widget> widgetss = [
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: _checktraining,
-        title: Text('Yes'),
-        onChanged: (value) => setState(
-          (() => _checktraining = true),
-        ),
-      ),
-      CheckboxListTile(
-        activeColor: Colors.green,
-        value: !_checktraining,
-        title: Text('No'),
-        onChanged: (value) => setState(
-          (() => _checktraining = false),
-        ),
-      ),
-    ];
+  // List<Widget> buildTraining() {
+  //   List<Widget> widgetss = [
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: _checktraining,
+  //       title: Text('Yes'),
+  //       onChanged: (value) => setState(
+  //         (() => _checktraining = true),
+  //       ),
+  //     ),
+  //     CheckboxListTile(
+  //       activeColor: Colors.green,
+  //       value: !_checktraining,
+  //       title: Text('No'),
+  //       onChanged: (value) => setState(
+  //         (() => _checktraining = false),
+  //       ),
+  //     ),
+  //   ];
 
-    return widgetss;
-  }
+  //   return widgetss;
+  // }
 }

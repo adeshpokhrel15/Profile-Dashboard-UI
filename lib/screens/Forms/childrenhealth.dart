@@ -201,75 +201,192 @@ class _childrenhealthProfileState extends State<childrenhealthProfile> {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is BCG Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is BCG Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkBCGVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkBCGVaccinated = !_checkBCGVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildBCG(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is DPT HEP_B Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is DPT H_EPB Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkDPTHEPBVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkDPTHEPBVaccinated = !_checkDPTHEPBVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildDPTHEBV(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is OPV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is OPV Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkOPVVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkOPVVaccinated = !_checkOPVVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildOPV(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is PCV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is PCV Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkPCVVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkPCVVaccinated = !_checkPCVVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildPCV(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is IPV Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is IPV Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkIPVVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkIPVVaccinated = !_checkIPVVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildIPV(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is MR Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is MR Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkMRVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkMRVaccinated = !_checkMRVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildMR(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is JE Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is JE Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkJEVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkJEVaccinated = !_checkJEVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildJE(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is TD Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is TD Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkTDVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkTDVaccinated = !_checkTDVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildTD(),
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is Genetic Disease Issue?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Genetic Disease Issues?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkGeneticVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkGeneticVaccinated = !_checkGeneticVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildGenetics(),
                 SizedBox(
                   height: 20,
                 ),
@@ -292,11 +409,24 @@ class _childrenhealthProfileState extends State<childrenhealthProfile> {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Is Covid Vaccinated?',
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Is Covid Vaccinated?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Spacer(),
+                    Checkbox(
+                      value: _checkCovidVaccinated,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkCovidVaccinated = !_checkCovidVaccinated;
+                        });
+                      },
+                    ) //Row
+                  ],
                 ),
-                ...buildCovid(),
                 SizedBox(
                   height: 20,
                 ),
@@ -381,6 +511,16 @@ class _childrenhealthProfileState extends State<childrenhealthProfile> {
                             geneticdiseasedescrption.text.trim(),
                         childrenvaccinedetails: vaccinedetails.text.trim(),
                         childrenvacinedose: vaccinedoes.text.trim(),
+                        childrenisBCGvaccinated: _checkBCGVaccinated,
+                        childrenisMRvaccinated: _checkMRVaccinated,
+                        childrenisJEvaccinated: _checkJEVaccinated,
+                        childrenisTDvaccinated: _checkTDVaccinated,
+                        childrenisgeneticdiseaseissue: _checkGeneticVaccinated,
+                        childreniscovidvaccinated: _checkCovidVaccinated,
+                        childrenisDPTHEPBvaccinated: _checkDPTHEPBVaccinated,
+                        childrenisOPVvaccinated: _checkOPVVaccinated,
+                        childrenisPCVvaccinated: _checkPCVVaccinated,
+                        childrenisIPVvaccinated: _checkIPVVaccinated,
                       );
                       final response = ref
                           .read(formModelProvider.notifier)
