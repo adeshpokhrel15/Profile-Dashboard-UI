@@ -16,6 +16,9 @@ class FormProvider extends StateNotifier<List<formModel>> {
     if (state.isEmpty) {
       final useForm = formModel(
         fullNamepersonal: useform.fullNamepersonal,
+        gender: useform.gender,
+        dateofbirthpersonal: useform.dateofbirthpersonal,
+        bloodgroup: useform.bloodgroup,
         email: useform.email,
         age: useform.age,
         handicappedidpersonal: useform.handicappedidpersonal,
@@ -24,14 +27,14 @@ class FormProvider extends StateNotifier<List<formModel>> {
       );
       // Hive.box<formModel>('FormModel').add(useForm);
       // box.add(useForm);
-      box.add(formModel(
-        fullNamepersonal: useform.fullNamepersonal,
-        email: useform.email,
-        age: useform.age,
-        handicappedidpersonal: useform.handicappedidpersonal,
-        mobilenumber: useform.mobilenumber,
-        pannumber: useform.pannumber,
-      ));
+      // box.add(formModel(
+      //   fullNamepersonal: useform.fullNamepersonal,
+      //   email: useform.email,
+      //   age: useform.age,
+      //   handicappedidpersonal: useform.handicappedidpersonal,
+      //   mobilenumber: useform.mobilenumber,
+      //   pannumber: useform.pannumber,
+      // ));
       state = [...state, useForm];
     } else {
       final user = state[0];

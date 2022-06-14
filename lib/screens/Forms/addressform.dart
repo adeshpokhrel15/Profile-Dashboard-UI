@@ -40,8 +40,32 @@ class _addressFormState extends State<addressForm> {
   final tempward = TextEditingController();
   final permward = TextEditingController();
   int ind = 0;
+  int index = 0;
 
-  final bloods = [
+  final tempwards = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+  ];
+
+  final permwards = [
     1,
     2,
     3,
@@ -239,7 +263,7 @@ class _addressFormState extends State<addressForm> {
                                             context: context,
                                             builder: (context) =>
                                                 CupertinoActionSheet(
-                                                  actions: [wardpicker()],
+                                                  actions: [tempwardpicker()],
                                                   cancelButton:
                                                       CupertinoActionSheetAction(
                                                     child: Text('Done'),
@@ -266,7 +290,7 @@ class _addressFormState extends State<addressForm> {
                                       ),
                                       child: Center(
                                         child: Text(
-                                          '${bloods[ind]}',
+                                          '${tempwards[ind]}',
                                           style: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
@@ -445,7 +469,7 @@ class _addressFormState extends State<addressForm> {
                                             context: context,
                                             builder: (context) =>
                                                 CupertinoActionSheet(
-                                                  actions: [wardpicker()],
+                                                  actions: [permwardpicker()],
                                                   cancelButton:
                                                       CupertinoActionSheetAction(
                                                     child: Text('Done'),
@@ -472,7 +496,7 @@ class _addressFormState extends State<addressForm> {
                                       ),
                                       child: Center(
                                         child: Text(
-                                          '${bloods[ind]}',
+                                          '${permwards[index]}',
                                           style: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
@@ -550,6 +574,7 @@ class _addressFormState extends State<addressForm> {
                                     permstreettol: permTol.text.trim(),
                                     permblocknoaddress:
                                         int.parse(permBnoadd.text.trim()),
+                                    tempward: tempwards[ind],
                                   );
                                   final response = ref
                                       .read(formModelProvider.notifier)
@@ -569,7 +594,7 @@ class _addressFormState extends State<addressForm> {
     });
   }
 
-  Widget wardpicker() => SizedBox(
+  Widget tempwardpicker() => SizedBox(
         height: 250,
         child: Center(
           child: CupertinoPicker(
@@ -579,13 +604,39 @@ class _addressFormState extends State<addressForm> {
                 setState(() {
                   this.ind = ind;
                 });
-                final blood = bloods[ind];
+                final blood = tempwards[ind];
                 print(blood);
               },
-              children: bloods.map((blood) {
+              children: tempwards.map((blood) {
                 return Center(
                   child: Text(
                     '${blood}',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  ),
+                );
+              }).toList()),
+        ),
+      );
+  Widget permwardpicker() => SizedBox(
+        height: 250,
+        child: Center(
+          child: CupertinoPicker(
+              looping: true,
+              itemExtent: 50,
+              onSelectedItemChanged: (index) {
+                setState(() {
+                  this.index = index;
+                });
+                final perm = permwards[index];
+                print(perm);
+              },
+              children: permwards.map((perm) {
+                return Center(
+                  child: Text(
+                    '${perm}',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

@@ -35,9 +35,9 @@ class _personalFormState extends State<personalForm> {
     'O+',
     'O-',
   ];
-  SingingCharacter? _character = SingingCharacter.Male;
+  //SingingCharacter? _character = SingingCharacter.Male;
 
-  String dropdownValue = 'A+';
+  // String dropdownValue = 'A+';
 
   final nameController = TextEditingController();
 
@@ -491,19 +491,20 @@ class _personalFormState extends State<personalForm> {
                                                 'Addedd sucessfully in Draft'),
                                           ));
                                   final personalForm = formModel(
-                                      fullNamepersonal:
-                                          nameController.text.trim(),
-                                      email: mailController.text.trim(),
-                                      pannumber: panController.text.trim(),
-                                      mobilenumber: int.parse(
-                                          mobileController.text.trim()),
-                                      age: int.parse(ageController.text.trim()),
-                                      handicappedidpersonal:
-                                          int.parse(htiController.text.trim()));
-                                  // blood:
-                                  // bloods[ind];
-                                  // gender:
-                                  // items[index];
+                                    fullNamepersonal:
+                                        nameController.text.trim(),
+                                    email: mailController.text.trim(),
+                                    pannumber: panController.text.trim(),
+                                    mobilenumber:
+                                        int.parse(mobileController.text.trim()),
+                                    age: int.parse(ageController.text.trim()),
+                                    handicappedidpersonal:
+                                        int.parse(htiController.text.trim()),
+                                    gender: items[index].trim(),
+                                    bloodgroup: bloods[ind].trim(),
+                                    dateofbirthpersonal:
+                                        dobController.text.trim(),
+                                  );
 
                                   final response = ref
                                       .read(formModelProvider.notifier)

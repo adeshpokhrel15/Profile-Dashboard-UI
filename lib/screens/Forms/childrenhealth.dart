@@ -521,6 +521,7 @@ class _childrenhealthProfileState extends State<childrenhealthProfile> {
                         childrenisOPVvaccinated: _checkOPVVaccinated,
                         childrenisPCVvaccinated: _checkPCVVaccinated,
                         childrenisIPVvaccinated: _checkIPVVaccinated,
+                        childrenbloodgroup: bloods[ind].trim(),
                       );
                       final response = ref
                           .read(formModelProvider.notifier)

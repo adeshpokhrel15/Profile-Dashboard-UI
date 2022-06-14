@@ -233,10 +233,12 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                                           ));
 
                                   final citizenshipForm = formModel(
-                                      citizenshipnumber: int.parse(
-                                          citizenshipnumber.text.trim()),
-                                      issuedat: issuedat.text.trim(),
-                                      verifiedby: verifiedby.text.trim());
+                                    citizenshipnumber: int.parse(
+                                        citizenshipnumber.text.trim()),
+                                    issuedat: issuedat.text.trim(),
+                                    verifiedby: verifiedby.text.trim(),
+                                    issueddate: issueddate.text.trim(),
+                                  );
                                   final response = ref
                                       .read(formModelProvider.notifier)
                                       .addForm(citizenshipForm);
