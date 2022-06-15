@@ -129,8 +129,8 @@ class _googlemapProfileState extends State<googlemapProfile> {
                       _form.currentState!.validate();
                       FocusScope.of(context).unfocus();
                       final googleForm = formModel(
-                        latitude: latitude.text.trim(),
-                        longitude: longitude.text.trim(),
+                        latitude: double.parse(latitude.text.trim()),
+                        longitude: double.parse(longitude.text.trim()),
                       );
                       final response = ref
                           .read(formModelProvider.notifier)

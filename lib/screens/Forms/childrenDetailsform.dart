@@ -279,7 +279,7 @@ class _childrendetailsFormState extends State<childrendetailsForm> {
                                   _form.currentState!.validate();
                                   FocusScope.of(context).unfocus();
                                   final childrenDetails = formModel(
-                                    name: name.text.trim(),
+                                    childrenFirstname: name.text.trim(),
                                     familydetailid: familydetailid.text.trim(),
                                     childrengender: items[index].trim(),
                                     childrendob: dobcontroller.text.trim(),

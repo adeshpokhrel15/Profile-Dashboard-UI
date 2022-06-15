@@ -12,13 +12,34 @@ class familyform extends StatefulWidget {
 
 class _familyformState extends State<familyform> {
   final _form = GlobalKey<FormState>();
-  final fathername = TextEditingController();
-  final mothername = TextEditingController();
-  final spousename = TextEditingController();
-  final grandfathername = TextEditingController();
-  final grandmothername = TextEditingController();
-  final sonname = TextEditingController();
-  final daughtername = TextEditingController();
+  final fatherFirstname = TextEditingController();
+  final fatherMiddlename = TextEditingController();
+  final fatherLastname = TextEditingController();
+
+  final motherFirstname = TextEditingController();
+  final motherSecondname = TextEditingController();
+  final motherLastname = TextEditingController();
+
+  final grandfatherFirstname = TextEditingController();
+  final grandfatherMiddlename = TextEditingController();
+  final grandfatherLastname = TextEditingController();
+
+  final grandmotherFirstname = TextEditingController();
+  final grandmotherSecondname = TextEditingController();
+  final grandmotherLastname = TextEditingController();
+
+  final spousFirstename = TextEditingController();
+  final spousMiddleename = TextEditingController();
+  final spousLastename = TextEditingController();
+
+  final sonFirstname = TextEditingController();
+  final sonMiddlename = TextEditingController();
+  final sonLastname = TextEditingController();
+
+  final daughterFirstname = TextEditingController();
+  final daughterMiddlename = TextEditingController();
+  final daughterLastname = TextEditingController();
+
   final totalson = TextEditingController();
   final totaldaughter = TextEditingController();
 
@@ -61,11 +82,11 @@ class _familyformState extends State<familyform> {
                               TextFormField(
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
-                                controller: fathername,
+                                controller: fatherFirstname,
                                 textCapitalization: TextCapitalization.words,
                                 validator: (val) {
                                   if (val!.isEmpty) {
-                                    return 'Father name is required';
+                                    return 'Father first name is required';
                                   }
                                   return null;
                                 },
@@ -73,12 +94,12 @@ class _familyformState extends State<familyform> {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Father name',
+                                  labelText: 'Father First Name',
                                   prefixIcon: Icon(
                                     Icons.person,
                                     color: Colors.blue,
                                   ),
-                                  hintText: 'Father name',
+                                  hintText: 'Father First Name',
                                 ),
                               ),
                               SizedBox(
@@ -87,91 +108,18 @@ class _familyformState extends State<familyform> {
                               TextFormField(
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
-                                validator: (val) {
-                                  if (val!.isEmpty) {
-                                    return 'Mother name is required';
-                                  }
-
-                                  return null;
-                                },
-                                keyboardType: TextInputType.emailAddress,
-                                controller: mothername,
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    labelText: 'Mother name ',
-                                    prefixIcon: Icon(
-                                      Icons.email,
-                                      color: Colors.orange,
-                                    ),
-                                    hintText: " Mother name "),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                keyboardType: TextInputType.emailAddress,
-                                controller: spousename,
+                                controller: fatherMiddlename,
+                                textCapitalization: TextCapitalization.words,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Spouse Name ',
+                                  labelText: 'Father Second Name',
                                   prefixIcon: Icon(
-                                    Icons.calendar_today,
-                                    color: Colors.lightBlue,
-                                  ),
-                                  hintText: "Spouse Name ",
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (val) {
-                                  if (val!.isEmpty) {
-                                    return 'Grand Father name is required ';
-                                  }
-                                  return null;
-                                },
-                                keyboardType: TextInputType.emailAddress,
-                                controller: grandfathername,
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    labelText: 'Grand Father name',
-                                    hintText: "Grand Father name"),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (val) {
-                                  if (val!.isEmpty) {
-                                    return 'Grand Mather name is required ';
-                                  }
-                                  return null;
-                                },
-                                keyboardType: TextInputType.emailAddress,
-                                controller: grandmothername,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  labelText: 'Grand mother name',
-                                  prefixIcon: Icon(
-                                    Icons.block,
+                                    Icons.person,
                                     color: Colors.blue,
                                   ),
-                                  hintText: "Grand mother name",
+                                  hintText: 'Father Second Name',
                                 ),
                               ),
                               SizedBox(
@@ -180,18 +128,24 @@ class _familyformState extends State<familyform> {
                               TextFormField(
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
-                                keyboardType: TextInputType.emailAddress,
-                                controller: sonname,
+                                controller: fatherLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Father last name is required';
+                                  }
+                                  return null;
+                                },
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Son Name  ',
+                                  labelText: 'Father Last Name',
                                   prefixIcon: Icon(
-                                    Icons.calendar_today,
-                                    color: Colors.lightBlue,
+                                    Icons.person,
+                                    color: Colors.blue,
                                   ),
-                                  hintText: "Son Name ",
+                                  hintText: 'Father Last Name',
                                 ),
                               ),
                               SizedBox(
@@ -200,18 +154,430 @@ class _familyformState extends State<familyform> {
                               TextFormField(
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
-                                keyboardType: TextInputType.emailAddress,
-                                controller: daughtername,
+                                controller: motherFirstname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Mother first name is required';
+                                  }
+                                  return null;
+                                },
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                   ),
-                                  labelText: 'Daughter Name ',
+                                  labelText: 'Mother First Name',
                                   prefixIcon: Icon(
-                                    Icons.calendar_today,
-                                    color: Colors.lightBlue,
+                                    Icons.person,
+                                    color: Colors.blue,
                                   ),
-                                  hintText: "Daughter Name",
+                                  hintText: 'Mother First Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: motherSecondname,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Mother Second Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Mother Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: motherLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Mother last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Mother Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Mother Last Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: spousFirstename,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Spouse first name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Spouse First Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Spouse First Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: spousMiddleename,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'SpouseSecond Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Spouse Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: spousLastename,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Spouse last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Spouse Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Spouse Last Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandfatherFirstname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Grandfather first name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandfather First Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Grandfather First Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandfatherMiddlename,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandfather Second Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Grandfather Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandfatherLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Grandfather last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandfather Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Grandfather Last Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandmotherFirstname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Grandmother first name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandmother First Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'GrandmotherFirst Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandmotherSecondname,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandmother Second Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Grandmother Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: grandmotherLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Grandmother last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Grandmother Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Grandmother Last Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: sonFirstname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Son first name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Son First Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Son first Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: sonMiddlename,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Son Second Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Son Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: sonLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Son last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Son Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Son Last Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: daughterFirstname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Daughter first name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Daughter First Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Daughter first Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: daughterMiddlename,
+                                textCapitalization: TextCapitalization.words,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Daughter Second Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Daughter Second Name',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              TextFormField(
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                controller: daughterLastname,
+                                textCapitalization: TextCapitalization.words,
+                                validator: (val) {
+                                  if (val!.isEmpty) {
+                                    return 'Daughter last name is required';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  labelText: 'Daughter Last Name',
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                  ),
+                                  hintText: 'Daughter Last Name',
                                 ),
                               ),
                               SizedBox(
@@ -283,15 +649,45 @@ class _familyformState extends State<familyform> {
                                                   'Addedd sucessfully in Draft'),
                                             ));
                                     final familyForm = formModel(
-                                      fatherdetails: fathername.text.trim(),
-                                      motherdetails: mothername.text.trim(),
-                                      spousename: spousename.text.trim(),
-                                      grandfathername:
-                                          grandfathername.text.trim(),
-                                      grandmothername:
-                                          grandmothername.text.trim(),
-                                      sonname: sonname.text.trim(),
-                                      daughtername: daughtername.text.trim(),
+                                      fatherFirstName:
+                                          fatherFirstname.text.trim(),
+                                      fatherMiddlename:
+                                          fatherMiddlename.text.trim(),
+                                      fatherLastname:
+                                          fatherLastname.text.trim(),
+                                      motherFirstName:
+                                          motherFirstname.text.trim(),
+                                      motherMiddlename:
+                                          motherSecondname.text.trim(),
+                                      motherLastname:
+                                          motherLastname.text.trim(),
+                                      spouseFirstName:
+                                          spousFirstename.text.trim(),
+                                      spouseMiddleName:
+                                          spousMiddleename.text.trim(),
+                                      spouseLastName:
+                                          spousLastename.text.trim(),
+                                      grandfatherFirstname:
+                                          grandfatherFirstname.text.trim(),
+                                      grandfatherMiddlename:
+                                          grandfatherMiddlename.text.trim(),
+                                      grandfatherLastname:
+                                          grandfatherLastname.text.trim(),
+                                      grandmotherFirstname:
+                                          grandmotherFirstname.text.trim(),
+                                      grandmotherMiddlename:
+                                          grandfatherMiddlename.text.trim(),
+                                      grandmotherLastname:
+                                          grandmotherLastname.text.trim(),
+                                      sonFirstname: sonFirstname.text.trim(),
+                                      sonMiddlename: sonMiddlename.text.trim(),
+                                      sonLastname: sonLastname.text.trim(),
+                                      daughterFirstname:
+                                          daughterFirstname.text.trim(),
+                                      daughterMiddlename:
+                                          daughterMiddlename.text.trim(),
+                                      daughterLastname:
+                                          daughterLastname.text.trim(),
                                       totalson: int.parse(totalson.text.trim()),
                                       totaldaughter:
                                           int.parse(totaldaughter.text.trim()),

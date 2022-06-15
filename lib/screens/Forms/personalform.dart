@@ -44,7 +44,11 @@ class _personalFormState extends State<personalForm> {
 
   // String dropdownValue = 'A+';
 
-  final nameController = TextEditingController();
+  final firstname = TextEditingController();
+
+  final middlename = TextEditingController();
+
+  final lastname = TextEditingController();
 
   final mailController = TextEditingController();
 
@@ -108,11 +112,11 @@ class _personalFormState extends State<personalForm> {
                             TextFormField(
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
-                              controller: nameController,
+                              controller: firstname,
                               textCapitalization: TextCapitalization.words,
                               validator: (val) {
                                 if (val!.isEmpty) {
-                                  return 'username is required';
+                                  return 'Firstname is required';
                                 }
                                 if (val.length > 30) {
                                   return 'maximum user length is 30';
@@ -123,12 +127,61 @@ class _personalFormState extends State<personalForm> {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                labelText: 'Full Name',
+                                labelText: 'First Name',
                                 prefixIcon: Icon(
                                   Icons.person,
                                   color: Colors.blue,
                                 ),
-                                hintText: 'Enter your Full Name',
+                                hintText: 'Enter your First Name',
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextFormField(
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              controller: middlename,
+                              textCapitalization: TextCapitalization.words,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                labelText: 'Middle Name',
+                                prefixIcon: Icon(
+                                  Icons.person,
+                                  color: Colors.blue,
+                                ),
+                                hintText: 'Enter your middle Name',
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextFormField(
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              controller: lastname,
+                              textCapitalization: TextCapitalization.words,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return 'FLastname is required';
+                                }
+                                if (val.length > 30) {
+                                  return 'maximum user length is 30';
+                                }
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                labelText: 'Last Name',
+                                prefixIcon: Icon(
+                                  Icons.person,
+                                  color: Colors.blue,
+                                ),
+                                hintText: 'Enter your Last Name',
                               ),
                             ),
                             SizedBox(
@@ -497,7 +550,9 @@ class _personalFormState extends State<personalForm> {
                                           ));
 
                                   final personalForm = formModel(
-                                    firstname: nameController.text.trim(),
+                                    firstname: firstname.text.trim(),
+                                    lastname: lastname.text.trim(),
+                                    middlename: middlename.text.trim(),
                                     email: mailController.text.trim(),
                                     pannumber: panController.text.trim(),
                                     mobilenumber:

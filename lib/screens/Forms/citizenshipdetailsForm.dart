@@ -233,8 +233,8 @@ class _citizendetailsFormState extends State<citizendetailsForm> {
                                           ));
 
                                   final citizenshipForm = formModel(
-                                    citizenshipnumber: int.parse(
-                                        citizenshipnumber.text.trim()),
+                                    citizenshipnumber:
+                                        citizenshipnumber.text.trim(),
                                     issuedat: issuedat.text.trim(),
                                     verifiedby: verifiedby.text.trim(),
                                     issueddate: issueddate.text.trim(),
