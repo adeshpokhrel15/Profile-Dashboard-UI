@@ -15,7 +15,9 @@ class FormProvider extends StateNotifier<List<formModel>> {
     final box = await Hive.openBox<formModel>('FormModel');
     if (state.isEmpty) {
       final useForm = formModel(
-        fullNamepersonal: useform.fullNamepersonal,
+        firstname: useform.firstname,
+        middlename: useform.middlename,
+        lastname: useform.lastname,
         gender: useform.gender,
         dateofbirthpersonal: useform.dateofbirthpersonal,
         bloodgroup: useform.bloodgroup,
@@ -52,13 +54,32 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.permblocknoaddress =
           user.permblocknoaddress ?? useform.permblocknoaddress;
 
-      user.fatherdetails = user.fatherdetails ?? useform.fatherdetails;
-      user.motherdetails = user.motherdetails ?? useform.motherdetails;
-      user.spousename = user.spousename ?? useform.spousename;
-      user.grandfathername = user.grandfathername ?? useform.grandfathername;
-      user.grandmothername = user.grandmothername ?? useform.grandmothername;
-      user.sonname = user.sonname ?? useform.sonname;
-      user.daughtername = user.daughtername ?? useform.daughtername;
+      user.fatherFirstName = user.fatherFirstName ?? useform.fatherFirstName;
+      user.fatherMiddlename = user.fatherMiddlename ?? useform.fatherMiddlename;
+      user.fatherLastname = user.fatherLastname ?? useform.fatherLastname;
+      user.motherFirstName = user.motherFirstName ?? useform.motherFirstName;
+      user.motherLastname = user.motherLastname ?? useform.motherLastname;
+      user.spouseFirstName = user.spouseFirstName ?? useform.spouseFirstName;
+      user.spouseMiddleName = user.spouseMiddleName ?? useform.spouseMiddleName;
+      user.spouseLastName = user.spouseLastName ?? useform.spouseLastName;
+      user.grandfatherFirstname =
+          user.grandfatherFirstname ?? useform.grandfatherFirstname;
+      user.grandfatherMiddlename =
+          user.grandfatherMiddlename ?? useform.grandfatherMiddlename;
+      user.grandfatherLastname = user.grandmotherFirstname =
+          user.grandmotherFirstname ?? useform.grandmotherFirstname;
+      user.grandmotherMiddlename =
+          user.grandmotherMiddlename ?? useform.grandmotherMiddlename;
+      user.grandmotherLastname =
+          user.grandmotherLastname ?? useform.grandmotherLastname;
+      user.sonFirstname = user.sonFirstname ?? useform.sonFirstname;
+      user.sonMiddlename = user.sonMiddlename ?? useform.sonMiddlename;
+      user.sonLastname = user.sonLastname ?? useform.sonLastname;
+      user.daughterFirstname =
+          user.daughterFirstname ?? useform.daughterFirstname;
+      user.daughterMiddlename =
+          user.daughterMiddlename ?? useform.daughterMiddlename;
+      user.daughterLastname = user.daughterLastname ?? useform.daughterLastname;
       user.totalson = user.totalson ?? useform.totalson;
       user.totaldaughter = user.totaldaughter ?? useform.totaldaughter;
 
@@ -132,7 +153,11 @@ class FormProvider extends StateNotifier<List<formModel>> {
       user.handicappedtypeid =
           user.handicappedtypeid ?? useform.handicappedtypeid;
 
-      user.name = user.name ?? useform.name;
+      user.childrenFirstname =
+          user.childrenFirstname ?? useform.childrenFirstname;
+      user.childrenMiddlename =
+          user.childrenMiddlename ?? useform.childrenMiddlename;
+      user.childrenLastname = user.childrenLastname ?? useform.childrenLastname;
       user.childrengender = user.childrengender ?? useform.childrengender;
       user.familydetailid = user.familydetailid ?? useform.familydetailid;
       user.childrendob = user.childrendob ?? useform.childrendob;

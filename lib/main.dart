@@ -33,7 +33,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter(); //hive initalize
-  Hive.registerAdapter(FormAdapter()); // hive register
+  Hive.registerAdapter(formModelAdapter()); // hive register
   final box = await Hive.openBox<formModel>('FormModel'); //hive open box
   // await Hive.openBox<Transistion>('tempTrans');
   runApp(

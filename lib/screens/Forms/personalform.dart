@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,6 +10,7 @@ import 'package:nepali_utils/nepali_utils.dart';
 import 'package:nepali_date_picker/nepali_date_picker.dart' as picker;
 import 'package:papro/models/formModel.dart';
 import 'package:papro/providers/formProvider.dart';
+import 'package:http/http.dart' as http;
 
 class personalForm extends StatefulWidget {
   static const routeName = 'personal-form';
@@ -490,23 +495,49 @@ class _personalFormState extends State<personalForm> {
                                             content: const Text(
                                                 'Addedd sucessfully in Draft'),
                                           ));
+
                                   final personalForm = formModel(
-                                    fullNamepersonal:
-                                        nameController.text.trim(),
+                                    firstname: nameController.text.trim(),
                                     email: mailController.text.trim(),
                                     pannumber: panController.text.trim(),
                                     mobilenumber:
                                         int.parse(mobileController.text.trim()),
                                     age: int.parse(ageController.text.trim()),
                                     handicappedidpersonal:
-                                        int.parse(htiController.text.trim()),
+                                        htiController.text.trim(),
                                     gender: items[index].trim(),
                                     bloodgroup: bloods[ind].trim(),
                                     dateofbirthpersonal:
                                         dobController.text.trim(),
                                   );
 
-                                  final response = ref
+                                  //  var jsonData = personalForm.toJson();
+
+                                  // print(jsonData['full_name']);
+                                  // print(jsonData['dob']);
+                                  // print(jsonData['gender']);
+                                  // print(jsonData['mobile_number']);
+                                  // print(jsonData['email']);
+
+                                  // var url = Uri.parse(
+                                  //     'https://reqbin.com/echo/post/json');
+                                  // var response = await http.post(
+                                  //   url,
+                                  //   headers: {
+                                  //     "Accept":
+                                  //         "application/json; charset=utf-8",
+                                  //     "Access-Control-Allow-Origin":
+                                  //         "*", // Required for CORS support to work
+                                  //     "Access-Control-Allow-Methods":
+                                  //         "POST, GET, OPTIONS",
+                                  //     HttpHeaders.contentTypeHeader:
+                                  //         "application/json",
+                                  //   },
+                                  //   body: json.encode(personalForm),
+                                  // );
+                                  // print(response.body);
+
+                                  final response1 = ref
                                       .read(formModelProvider.notifier)
                                       .addForm(personalForm);
                                 },

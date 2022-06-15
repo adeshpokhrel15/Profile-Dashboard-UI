@@ -6,7 +6,7 @@ part of 'formModel.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FormAdapter extends TypeAdapter<formModel> {
+class formModelAdapter extends TypeAdapter<formModel> {
   @override
   final int typeId = 0;
 
@@ -17,11 +17,13 @@ class FormAdapter extends TypeAdapter<formModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return formModel(
-      fullNamepersonal: fields[0] as String?,
+      firstname: fields[0] as String?,
+      middlename: fields[111] as String?,
+      lastname: fields[112] as String?,
       age: fields[1] as int?,
       gender: fields[2] as String?,
       dateofbirthpersonal: fields[3] as String?,
-      handicappedidpersonal: fields[4] as int?,
+      handicappedidpersonal: fields[4] as String?,
       mobilenumber: fields[5] as int?,
       email: fields[6] as String?,
       pannumber: fields[7] as String?,
@@ -38,13 +40,27 @@ class FormAdapter extends TypeAdapter<formModel> {
       permpward: fields[18] as int?,
       permstreettol: fields[19] as String?,
       permblocknoaddress: fields[20] as int?,
-      fatherdetails: fields[21] as String?,
-      motherdetails: fields[22] as String?,
-      spousename: fields[23] as String?,
-      grandfathername: fields[24] as String?,
-      grandmothername: fields[25] as String?,
-      sonname: fields[26] as String?,
-      daughtername: fields[27] as String?,
+      fatherFirstName: fields[21] as String?,
+      fatherMiddlename: fields[113] as String?,
+      fatherLastname: fields[114] as String?,
+      motherFirstName: fields[22] as String?,
+      motherMiddlename: fields[115] as String?,
+      motherLastname: fields[116] as String?,
+      spouseFirstName: fields[23] as String?,
+      spouseMiddleName: fields[127] as String?,
+      spouseLastName: fields[128] as String?,
+      grandfatherFirstname: fields[24] as String?,
+      grandfatherMiddlename: fields[117] as String?,
+      grandfatherLastname: fields[118] as String?,
+      grandmotherFirstname: fields[25] as String?,
+      grandmotherMiddlename: fields[119] as String?,
+      grandmotherLastname: fields[120] as String?,
+      sonFirstname: fields[26] as String?,
+      daughterFirstname: fields[27] as String?,
+      sonMiddlename: fields[121] as String?,
+      daughterMiddlename: fields[123] as String?,
+      sonLastname: fields[122] as String?,
+      daughterLastname: fields[124] as String?,
       totalson: fields[28] as int?,
       totaldaughter: fields[29] as int?,
       jobtype: fields[30] as String?,
@@ -70,7 +86,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       Streetname: fields[50] as String?,
       Housenumber: fields[51] as int?,
       toilettypeid: fields[52] as String?,
-      citizenshipnumber: fields[53] as int?,
+      citizenshipnumber: fields[53] as String?,
       issueddate: fields[54] as String?,
       issuedat: fields[55] as String?,
       verifiedby: fields[56] as String?,
@@ -91,7 +107,9 @@ class FormAdapter extends TypeAdapter<formModel> {
       skincolor: fields[71] as String?,
       ishandicap: fields[72] as bool?,
       handicappedtypeid: fields[73] as String?,
-      name: fields[74] as String?,
+      childrenFirstname: fields[74] as String?,
+      childrenMiddlename: fields[125] as String?,
+      childrenLastname: fields[126] as String?,
       childrengender: fields[75] as String?,
       familydetailid: fields[76] as String?,
       childrendob: fields[77] as String?,
@@ -126,17 +144,17 @@ class FormAdapter extends TypeAdapter<formModel> {
       vacinedose: fields[106] as String?,
       isgeneticdiseaseissue: fields[107] as bool?,
       geneticdiseasedescription: fields[108] as String?,
-      latitude: fields[109] as String?,
-      longitude: fields[110] as String?,
+      latitude: fields[109] as double?,
+      longitude: fields[110] as double?,
     );
   }
 
   @override
   void write(BinaryWriter writer, formModel obj) {
     writer
-      ..writeByte(111)
+      ..writeByte(129)
       ..writeByte(0)
-      ..write(obj.fullNamepersonal)
+      ..write(obj.firstname)
       ..writeByte(1)
       ..write(obj.age)
       ..writeByte(2)
@@ -178,19 +196,19 @@ class FormAdapter extends TypeAdapter<formModel> {
       ..writeByte(20)
       ..write(obj.permblocknoaddress)
       ..writeByte(21)
-      ..write(obj.fatherdetails)
+      ..write(obj.fatherFirstName)
       ..writeByte(22)
-      ..write(obj.motherdetails)
+      ..write(obj.motherFirstName)
       ..writeByte(23)
-      ..write(obj.spousename)
+      ..write(obj.spouseFirstName)
       ..writeByte(24)
-      ..write(obj.grandfathername)
+      ..write(obj.grandfatherFirstname)
       ..writeByte(25)
-      ..write(obj.grandmothername)
+      ..write(obj.grandmotherFirstname)
       ..writeByte(26)
-      ..write(obj.sonname)
+      ..write(obj.sonFirstname)
       ..writeByte(27)
-      ..write(obj.daughtername)
+      ..write(obj.daughterFirstname)
       ..writeByte(28)
       ..write(obj.totalson)
       ..writeByte(29)
@@ -284,7 +302,7 @@ class FormAdapter extends TypeAdapter<formModel> {
       ..writeByte(73)
       ..write(obj.handicappedtypeid)
       ..writeByte(74)
-      ..write(obj.name)
+      ..write(obj.childrenFirstname)
       ..writeByte(75)
       ..write(obj.childrengender)
       ..writeByte(76)
@@ -356,7 +374,43 @@ class FormAdapter extends TypeAdapter<formModel> {
       ..writeByte(109)
       ..write(obj.latitude)
       ..writeByte(110)
-      ..write(obj.longitude);
+      ..write(obj.longitude)
+      ..writeByte(111)
+      ..write(obj.middlename)
+      ..writeByte(112)
+      ..write(obj.lastname)
+      ..writeByte(113)
+      ..write(obj.fatherMiddlename)
+      ..writeByte(114)
+      ..write(obj.fatherLastname)
+      ..writeByte(115)
+      ..write(obj.motherMiddlename)
+      ..writeByte(116)
+      ..write(obj.motherLastname)
+      ..writeByte(117)
+      ..write(obj.grandfatherMiddlename)
+      ..writeByte(118)
+      ..write(obj.grandfatherLastname)
+      ..writeByte(119)
+      ..write(obj.grandmotherMiddlename)
+      ..writeByte(120)
+      ..write(obj.grandmotherLastname)
+      ..writeByte(121)
+      ..write(obj.sonMiddlename)
+      ..writeByte(122)
+      ..write(obj.sonLastname)
+      ..writeByte(123)
+      ..write(obj.daughterMiddlename)
+      ..writeByte(124)
+      ..write(obj.daughterLastname)
+      ..writeByte(125)
+      ..write(obj.childrenMiddlename)
+      ..writeByte(126)
+      ..write(obj.childrenLastname)
+      ..writeByte(127)
+      ..write(obj.spouseMiddleName)
+      ..writeByte(128)
+      ..write(obj.spouseLastName);
   }
 
   @override
@@ -365,7 +419,7 @@ class FormAdapter extends TypeAdapter<formModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FormAdapter &&
+      other is formModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

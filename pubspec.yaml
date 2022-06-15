@@ -49,6 +49,7 @@ dependencies:
   flutter_riverpod: ^1.0.4
   geolocator: ^8.2.1
   geocoding: ^2.0.4
+  http: ^0.13.4
   #grouped_checkbox: ^1.0.0
 
 dev_dependencies:
